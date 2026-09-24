@@ -1,0 +1,30 @@
+name: Mise à jour du calendrier FFE
+
+on:
+  schedule:
+    # Toutes les 3 h le samedi, le dimanche et le lundi (jours de rondes et de saisie des scores). Heure UTC.
+    - cron: "0 */3 * * 0,1,6"
+  workflow_dispatch: # lancement manuel possible depuis l'onglet Actions
+
+permissions:
+  contents: write
+
+jobs:
+  maj:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Lire le calendrier sur echecs.asso.fr
+        run: python scripts/update_calendrier.py
+      - name: Enregistrer si modifié
+        run: |
+          if [ -n "$(git status --porcelain calendrier.js)" ]; then
+            git config user.name "maj-calendrier"
+            git config user.email "actions@users.noreply.github.com"
+            git add calendrier.js
+            git commit -m "Mise à jour automatique du calendrier et des résultats"
+            git push
+          fi
