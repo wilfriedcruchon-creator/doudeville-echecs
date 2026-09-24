@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Résultats – Doudeville Accueil Échecs</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .bilans { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .chiffres { display: flex; gap: 20px; margin-top: 10px; }
+  .chiffres div { text-align: center; }
+  .chiffres b { display: block; font-size: 28px; line-height: 1.1; }
+  .chiffres span { font-size: 13px; color: var(--muted); }
+  .win { color: #1a7f37; } .draw { color: var(--muted); } .loss { color: #b42318; }
+  @media (prefers-color-scheme: dark) { .win { color: #56d364; } .loss { color: #ff8a80; } }
+  td.sc { white-space: nowrap; font-weight: 600; text-align: center; }
+  tr.win-row td:first-child, tr.loss-row td:first-child, tr.draw-row td:first-child { box-shadow: inset 4px 0 0 var(--muted); }
+  tr.win-row td:first-child { box-shadow: inset 4px 0 0 #1a7f37; }
+  tr.loss-row td:first-child { box-shadow: inset 4px 0 0 #b42318; }
+  .issue { font-size: 13px; font-weight: 600; margin-left: 6px; }
+</style>
+</head>
+<body>
+<main><div class="wrap">
+  <h1 class="page">Résultats</h1>
+  <p class="lead">Les scores des rencontres de la saison 2026-2027, repris automatiquement du site de la FFE.</p>
+
+  <div id="bilans" class="bilans"></div>
+
+  <div class="tabs" id="tabs" role="group" aria-label="Filtrer" style="margin-top:28px">
+    <button aria-pressed="true" data-f="club">Nos équipes</button>
+    <button aria-pressed="false" data-f="tous">Tout le groupe</button>
+  </div>
+  <div id="liste"></div>
+  <p class="legend">Source : <a href="https://www.echecs.asso.fr/EquipesCalendrier.aspx?Ref=2635&Saison=3000" rel="noopener">calendrier officiel FFE</a> · Mis à jour le <span id="maj"></span></p>
+</div></main>
+<script src="data.js"></script>
+<script src="calendrier.js"></script>
+<script src="site.js"></script>
+<script>
+document.getElementById("maj").textContent = fmtDate(MAJ);
+const club = m => /Doudeville/.test(m[0] + m[1]);
+const cle = (r, m) => `${r.n}-${m[0]}-${m[1]}`;
+
+/* Bilan de chaque équipe du club */
+document.getElementById("bilans").innerHTML = EQUIPES.map(e => {
+  const s = stats(matchsEquipe(e.nom));
+  const c = (x, l, cls) => `<div><b class="${cls}">${x}</b><span>${l}</span></div>`;
+  return `<div class="card"><h3>${esc(e.nom)}</h3><div class="meta">${esc(e.competition)}</div>` +
+    (s.joues
+      ? `<div class="chiffres">${c(s.v, "victoire" + (s.v > 1 ? "s" : ""), "win")}${c(s.n, "nul" + (s.n > 1 ? "s" : ""), "draw")}${c(s.d, "défaite" + (s.d > 1 ? "s" : ""), "loss")}</div>
+         <p class="meta">Parties : ${fmtNum(s.pour)} – ${fmtNum(s.contre)} · ${s.joues} match${s.joues > 1 ? "s" : ""} joué${s.joues > 1 ? "s" : ""}</p>`
+      : `<p class="meta">Aucun match joué pour le moment.</p>`) + `</div>`;
+}).join("");
+
+function ligne(r, m) {
+  const s = scoreNum(RESULTATS[cle(r, m)]);
+  let cls = "", mark = "";
+  const nous = /Doudeville/.test(m[0]) ? 0 : /Doudeville/.test(m[1]) ? 1 : -1;
+  if (s && nous >= 0 && !(/Doudeville/.test(m[0]) && /Doudeville/.test(m[1]))) {
+    const [a, b] = nous === 0 ? s : [s[1], s[0]];
+    cls = a > b ? "win-row" : a < b ? "loss-row" : "draw-row";
+    mark = `<span class="issue ${a > b ? "win" : a < b ? "loss" : "draw"}">${a > b ? "Victoire" : a < b ? "Défaite" : "Nul"}</span>`;
+  }
+  const gras = (txt, i) => s && s[i] > s[1 - i] ? `<strong>${esc(txt)}</strong>` : esc(txt);
+  return `<tr class="${cls}"><td>${gras(m[0], 0)}</td><td class="sc">${s ? fmtScore(RESULTATS[cle(r, m)]) : "–"}${mark}</td><td>${gras(m[1], 1)}</td><td>${esc(m[2])}</td></tr>`;
+}
+
+function afficher(filtre) {
+  const jouees = RONDES.filter(r => r.matchs.some(m => scoreNum(RESULTATS[cle(r, m)])))
+    .sort((a, b) => b.n - a.n);
+  const liste = document.getElementById("liste");
+  if (!jouees.length) {
+    const p = RONDES.find(r => r.date >= todayISO());
+    liste.innerHTML = `<div class="empty">Aucun résultat pour le moment.${p ? ` La première ronde a lieu le ${fmtDate(p.date, true)}.` : ""}</div>`;
+    return;
+  }
+  liste.innerHTML = jouees.map(r => {
+    const ms = r.matchs.filter(m => filtre === "tous" || club(m));
+    if (!ms.length) return "";
+    return `<h2>Ronde ${r.n} <span class="meta" style="font-weight:400;color:var(--muted);font-size:15px">· ${cap(fmtDate(r.date, true))}</span></h2>
+      <div class="table-scroll"><table><thead><tr><th>Blancs</th><th style="text-align:center">Score</th><th>Noirs</th><th>Lieu</th></tr></thead>
+      <tbody>${ms.map(m => ligne(r, m)).join("")}</tbody></table></div>`;
+  }).join("");
+}
+
+const boutons = [...document.querySelectorAll("#tabs button")];
+boutons.forEach(b => b.onclick = () => {
+  boutons.forEach(x => x.setAttribute("aria-pressed", x === b));
+  afficher(b.dataset.f);
+});
+afficher("club");
+</script>
+</body>
+</html>

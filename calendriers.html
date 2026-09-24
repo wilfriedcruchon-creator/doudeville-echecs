@@ -24,23 +24,15 @@ function ligne(m) {
   if (m.repos) return `<tr class="bye"><td>${m.ronde}</td><td>${cap(fmtDate(m.date))}</td><td colspan="4">Exempt (pas de match)</td></tr>`;
   const cls = [m.dom ? "home" : "", m.date < todayISO() ? "past" : ""].join(" ");
   return `<tr class="${cls}"><td>${m.ronde}</td><td>${cap(fmtDate(m.date))} · ${m.heure.replace(":", "h")}</td>
-    <td>${esc(m.blancs)}</td><td>${esc(m.noirs)}</td><td>${esc(m.lieu)}</td><td>${esc(m.res)}</td></tr>`;
+    <td>${esc(m.blancs)}</td><td>${esc(m.noirs)}</td><td>${esc(m.lieu)}</td><td>${fmtScore(m.res)}</td></tr>`;
 }
 const head = `<thead><tr><th>Ronde</th><th>Date</th><th>Blancs</th><th>Noirs</th><th>Lieu</th><th>Score</th></tr></thead>`;
 
 /* Bilan calculé à partir des scores publiés par la FFE (ex. "2.5-1.5") */
 function bilan(ms) {
-  let v = 0, n = 0, d = 0, pour = 0, contre = 0;
-  ms.forEach(m => {
-    const s = (m.res || "").split("-").map(x => parseFloat(x.replace(",", ".")));
-    if (s.length !== 2 || s.some(isNaN)) return;
-    const [a, b] = m.dom ? s : [s[1], s[0]];
-    pour += a; contre += b;
-    if (a > b) v++; else if (a < b) d++; else n++;
-  });
-  if (v + n + d === 0) return "";
-  const f = x => String(x).replace(".", ",");
-  return `<p><strong>Bilan :</strong> ${v} victoire${v > 1 ? "s" : ""}, ${n} nul${n > 1 ? "s" : ""}, ${d} défaite${d > 1 ? "s" : ""} · parties ${f(pour)} – ${f(contre)}</p>`;
+  const { v, n, d, pour, contre, joues } = stats(ms);
+  if (!joues) return "";
+  return `<p><strong>Bilan :</strong> ${v} victoire${v > 1 ? "s" : ""}, ${n} nul${n > 1 ? "s" : ""}, ${d} défaite${d > 1 ? "s" : ""} · parties ${fmtNum(pour)} – ${fmtNum(contre)}</p>`;
 }
 
 function equipe(e) {

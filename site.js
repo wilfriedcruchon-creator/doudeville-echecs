@@ -3,6 +3,7 @@ const PAGES = [
   ["index.html", "Accueil"],
   ["actualites.html", "Actualités"],
   ["calendriers.html", "Calendriers"],
+  ["resultats.html", "Résultats"],
   ["tournois.html", "Tournois"],
   ["club.html", "Le club"],
   ["contact.html", "Contact"],
@@ -36,6 +37,28 @@ function matchsEquipe(nom) {
       res: RESULTATS[`${r.n}-${m[0]}-${m[1]}`] || "",
     };
   });
+}
+/* Score FFE "2.5-1.5" -> [2.5, 1.5], ou null s'il n'y a pas (encore) de résultat lisible */
+function scoreNum(res) {
+  const s = (res || "").split("-").map(x => parseFloat(x.replace(",", ".")));
+  return s.length === 2 && !s.some(isNaN) ? s : null;
+}
+const fmtNum = x => String(x).replace(".", ",");
+function fmtScore(res) {
+  const s = scoreNum(res);
+  return s ? `${fmtNum(s[0])} – ${fmtNum(s[1])}` : esc(res || "");
+}
+/* Victoires / nuls / défaites et parties, du point de vue de l'équipe (ms = matchsEquipe) */
+function stats(ms) {
+  const t = { v: 0, n: 0, d: 0, pour: 0, contre: 0, joues: 0 };
+  ms.forEach(m => {
+    const s = scoreNum(m.res);
+    if (!s) return;
+    const [a, b] = m.dom ? s : [s[1], s[0]];
+    t.joues++; t.pour += a; t.contre += b;
+    if (a > b) t.v++; else if (a < b) t.d++; else t.n++;
+  });
+  return t;
 }
 function prochainMatch(nom) {
   return matchsEquipe(nom).find(m => !m.repos && m.date >= todayISO());
