@@ -22,7 +22,8 @@ document.getElementById("coords").innerHTML = `
   <dt>Séances</dt><dd>${ph(CLUB.horaires)}</dd>
   <dt>E-mail</dt><dd>${mail}</dd>
   <dt>Téléphone</dt><dd>${ph(CLUB.telephone)}</dd>
-  <dt>Président</dt><dd>${ph(CLUB.president)}</dd>`;
+  <dt>Président</dt><dd>${ph(CLUB.president)}</dd>
+  <dt>Webmaster</dt><dd>${esc(CLUB.webmaster)} · <a href="mailto:${esc(CLUB.emailWebmaster)}">${esc(CLUB.emailWebmaster)}</a></dd>`;
 </script>
 </body>
 </html>

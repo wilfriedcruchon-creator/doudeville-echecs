@@ -13,6 +13,8 @@ const CLUB = {
   telephone: "06 89 16 97 58",
   president: "Hubert Paillette",
   cotisations: "Adultes : 50 € · Jeunes : 45 €",
+  webmaster: "Wilfried Cruchon",
+  emailWebmaster: "wilfried.cruchon@gmail.com",
   ffe: "https://www.echecs.asso.fr/",
 };
 
