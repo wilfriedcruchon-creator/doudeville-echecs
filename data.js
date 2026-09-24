@@ -53,6 +53,34 @@ const GALERIE = [
   { fichier: "photo-01", alt: "Partie d'échecs géants devant la mairie de Doudeville", legende: "" },
 ];
 
+/* Archives reprises de l'ancien site (dae-doudeville.clubeo.com, 2013-2016).
+   photos : { fichier (dans images/archives/), alt, legende } */
+const ARCHIVES = {
+  histoire: {
+    note: "Texte publié sur l'ancien site du club en juin 2014 : les informations sont celles de cette date.",
+    paragraphes: [
+      "Le club de Doudeville a été créé le 1er avril 1997 par Hubert Paillette, avec l'aide de Louison Tartarin, ancien maire de Doudeville, et de l'association Doudeville Accueil, alors présidée par Bernard Vossier, Claire Leborgne étant secrétaire.",
+      "Le club prend le nom définitif de Doudeville Accueil Échecs le 30 décembre 2003, suite à l'affiliation à la Jeunesse et aux Sports, selon la loi Buffet du 19 janvier 2000.",
+      "Le lieu de jeu se situe au 1er étage de l'Hôtel de Ville de Doudeville, après avoir occupé plusieurs endroits dans la ville et accompagné ainsi les transformations et aménagements des loisirs de la commune.",
+      "Le club compte, en moyenne, environ une cinquantaine d'adhérents venant de la région de Doudeville et d'établissements scolaires. Il compte parmi son effectif des champions de Seine-Maritime ainsi que de Haute-Normandie. Certains joueurs ont même participé aux championnats de France à Amiens et à Reims, notamment Alexis Defrance, Olivier Souillard et Léa Beintein.",
+      "Le club a été champion par équipe dans le championnat régional en 2003, ainsi que champion en Nationale 4 chez les jeunes en 2006.",
+      "Sur le plan scolaire, nos joueurs ont participé à plusieurs championnats d'académie avec leur école, collège ou lycée. Le collège A. Raimbourg de Doudeville a remporté deux fois le championnat de l'académie de Rouen et participé à la finale d'académie, notamment à Cergy-Pontoise et à Hyères dans le Var. Les lycéens du lycée Jean XXIII d'Yvetot ont été deux fois en finale à Cannes.",
+      "Le club intervient dans le milieu scolaire, notamment à Jean Breton de Doudeville sur l'heure du midi le mardi, au collège Bobée d'Yvetot le vendredi midi, et à l'école de Grugny le mardi et le vendredi, dans le cadre du réaménagement scolaire.",
+    ],
+  },
+  actus: [
+    { date: "2015-04-04", titre: "Championnats jeunes individuels",
+      texte: "Les championnats régionaux, qui se sont déroulés à Bonneville-sur-Iton dans l'Eure en février, ont vu la victoire de notre petit-poussin Lilian B., avec 7 victoires sur 7. Il était déjà champion de Seine-Maritime, également avec 7 victoires sur 7, à Gonfreville-l'Orcher en octobre dernier." },
+    { date: "2013-05-20", titre: "Tournoi de blitz à Dieppe",
+      texte: "Deux joueurs de Doudeville sont qualifiés. Le tournoi de blitz qui s'est déroulé à Dieppe tout au long de la saison 2012-2013 a vu la qualification pour la finale, en juin à Dieppe, de Yannick Grignoux et d'un autre joueur du club. Rendez-vous au « Tout va bien » à 10 h le samedi 8 juin." },
+    { date: "2013-02-09", titre: "Le club crée son site Internet",
+      texte: "Doudeville Accueil Échecs ouvre son premier site officiel, pour communiquer avec ses joueurs, ses dirigeants, ses partenaires et toute personne suivant la vie du club." },
+  ],
+  photos: [
+    { fichier: "echiquier-2013.jpg", alt: "Un échiquier avec ses pièces disposées pour le début de partie", legende: "Album du 9 février 2013" },
+  ],
+};
+
 /* Challenge des parties rapides 2026-2027.
    date (AAAA-MM-JJ) si le jour est connu, sinon quand (texte libre). confirme:false => "À confirmer". */
 const CHALLENGE = {
