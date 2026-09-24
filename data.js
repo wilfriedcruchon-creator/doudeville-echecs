@@ -45,6 +45,24 @@ const TOURNOIS = [
   },
 ];
 
+/* Challenge des parties rapides 2026-2027.
+   date (AAAA-MM-JJ) si le jour est connu, sinon quand (texte libre). confirme:false => "À confirmer". */
+const CHALLENGE = {
+  titre: "Challenge des parties rapides 2026-2027",
+  rondes: [
+    { ronde: "1", date: "2026-10-04", lieu: "Gonfreville-l'Orcher", confirme: true },
+    { ronde: "2", date: "2026-11-14", lieu: "Criquebeuf-en-Caux", confirme: false },
+    { ronde: "3", date: "2026-12-13", lieu: "Dieppe", confirme: true },
+    { ronde: "4", date: "2027-01-24", lieu: "Doudeville", confirme: true },
+    { ronde: "5", date: "2027-02-14", lieu: "Petit-Caux", confirme: true },
+    { ronde: "6", date: "2027-03-14", lieu: "Sotteville-lès-Rouen", confirme: false },
+    { ronde: "7", date: "2027-04-11", lieu: "Saint-Étienne-du-Rouvray", confirme: true },
+    { ronde: "8", quand: "Avril 2027", lieu: "Bonsecours", confirme: false },
+    { ronde: "8", quand: "Mai 2027", lieu: "Rouen", confirme: false },
+    { ronde: "9", quand: "Juin 2027", lieu: "Gournay-en-Bray", confirme: false },
+  ],
+};
+
 /* Équipes et leurs calendriers */
 const EQUIPES = [
   {

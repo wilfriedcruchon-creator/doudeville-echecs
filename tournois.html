@@ -30,7 +30,16 @@ document.getElementById("list").innerHTML =
   `<h2>À venir</h2>` +
   (avenir.length ? `<div class="grid">${avenir.map(carte).join("")}</div>` : `<div class="empty">Aucun tournoi programmé pour le moment.</div>`) +
   (passes.length ? `<h2>Passés</h2><div class="grid">${passes.map(carte).join("")}</div>` : "") +
-  `<p class="legend" style="margin-top:28px">Retrouvez tous les tournois homologués sur <a href="${CLUB.ffe}" rel="noopener">echecs.asso.fr</a>.</p>`;
+  `<h2>${esc(CHALLENGE.titre)}</h2>
+   <div class="table-scroll"><table><thead><tr><th>Ronde</th><th>Date</th><th>Lieu</th><th>Statut</th></tr></thead><tbody>` +
+  CHALLENGE.rondes.map(r => {
+    const cls = [/Doudeville/.test(r.lieu) ? "home" : "", r.date && r.date < todayISO() ? "past" : ""].join(" ");
+    const quand = r.date ? cap(fmtDate(r.date, true)) : `${esc(r.quand)} <span class="meta" style="color:var(--muted)">(jour à préciser)</span>`;
+    return `<tr class="${cls}"><td>${esc(r.ronde)}</td><td>${quand}</td><td>${esc(r.lieu)}</td><td>${r.confirme ? "Confirmé" : "À confirmer"}</td></tr>`;
+  }).join("") +
+  `</tbody></table></div>
+   <p class="legend"><span class="swatch"></span>Étape organisée à Doudeville</p>
+   <p class="legend" style="margin-top:28px">Retrouvez tous les tournois homologués sur <a href="${CLUB.ffe}" rel="noopener">echecs.asso.fr</a>.</p>`;
 </script>
 </body>
 </html>
