@@ -6,27 +6,83 @@
 <meta name="robots" content="noindex">
 <title>Inscription – Doudeville Accueil Échecs</title>
 <link rel="stylesheet" href="style.css">
-<style>
-  .formulaire { width: 100%; height: 1500px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
-  @media (max-width: 640px) { .formulaire { height: 1800px; } }
-</style>
 </head>
 <body>
 <main><div class="wrap">
   <h1 class="page">Inscription</h1>
-  <p class="lead">Remplissez ce formulaire pour vous inscrire au club. Si l'affichage est trop petit,
-    <a id="lien" rel="noopener" target="_blank">ouvrez-le dans un nouvel onglet</a>.</p>
+  <p class="lead">Création de licence A (compétition).</p>
 
-  <iframe class="formulaire" id="formulaire" title="Formulaire d'inscription au club" loading="lazy">
-    Chargement…
-  </iframe>
+  <p id="tarifs"></p>
+  <p>Ce formulaire est à remplir uniquement sur demande du président du club. Aucun compte Google n'est nécessaire.</p>
+  <p class="aide" style="color:var(--muted)">Ces données servent uniquement à la gestion des inscriptions du club et à la création des licences auprès de la Fédération Française des Échecs. Pour les mineurs, les informations sont à compléter par le responsable légal de l'enfant.</p>
+
+  <div id="retour" role="status" aria-live="polite"></div>
+
+  <form class="inscription" id="form" novalidate>
+    <div>
+      <label for="nom">Nom et prénom <span class="req">*</span></label>
+      <input type="text" id="nom" autocomplete="name" required>
+    </div>
+    <div>
+      <label for="naissance">Date de naissance <span class="req">*</span></label>
+      <input type="date" id="naissance" autocomplete="bday" required min="1900-01-01">
+    </div>
+    <div>
+      <label for="mail">Adresse e-mail <span class="req">*</span></label>
+      <input type="email" id="mail" autocomplete="email" required>
+    </div>
+    <fieldset>
+      <legend>Règlement <span class="req">*</span></legend>
+      <div class="choix">
+        <label><input type="radio" name="reglement" value="Chèque" required> Chèque</label>
+        <label><input type="radio" name="reglement" value="Espèce"> Espèces</label>
+        <label><input type="radio" name="reglement" value="Virement"> Virement</label>
+        <label><input type="radio" name="reglement" value="Non effectué"> Pas encore réglé</label>
+      </div>
+    </fieldset>
+    <div class="piege" aria-hidden="true"><label>Ne pas remplir <input type="text" id="site" tabindex="-1" autocomplete="off"></label></div>
+    <button type="submit" id="envoyer">Envoyer mon inscription</button>
+    <p class="aide" style="color:var(--muted)"><span class="req">*</span> Champ obligatoire</p>
+  </form>
 </div></main>
 <script src="data.js"></script>
 <script src="site.js"></script>
 <script>
-const base = "https://docs.google.com/forms/d/e/1FAIpQLSd036mEm_8c9szUucaXdYr_Mp25FyGaFN5kAYQIAe8mRbvdNw/viewform";
-document.getElementById("formulaire").src = base + "?embedded=true";
-document.getElementById("lien").href = base;
+/* Envoi vers le Google Form du club : les réponses arrivent dans le même Google Sheet. */
+const FORM = "https://docs.google.com/forms/d/e/1FAIpQLSd036mEm_8c9szUucaXdYr_Mp25FyGaFN5kAYQIAe8mRbvdNw";
+const CHAMPS = { nom: "entry.328531782", naissance: "entry.146779572", mail: "entry.1142972188", reglement: "entry.895324932" };
+
+document.getElementById("tarifs").innerHTML = `<strong>Tarifs :</strong> ${esc(CLUB.cotisations)}`;
+const form = document.getElementById("form"), retour = document.getElementById("retour"), bouton = document.getElementById("envoyer");
+const message = (classe, html) => { retour.innerHTML = `<div class="message ${classe}">${html}</div>`; retour.scrollIntoView({ behavior: "smooth", block: "center" }); };
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  retour.innerHTML = "";
+  if (document.getElementById("site").value) return;              // anti-robot : champ caché rempli
+  const nom = form.nom.value.trim(), mail = form.mail.value.trim(), naissance = form.naissance.value;
+  const reglement = (form.querySelector('input[name="reglement"]:checked') || {}).value;
+  if (nom.length < 3 || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail) || !/^\d{4}-\d{2}-\d{2}$/.test(naissance) || !reglement) {
+    return message("erreur", "Merci de remplir tous les champs, avec une adresse e-mail valide.");
+  }
+  const [a, m, j] = naissance.split("-");
+  const donnees = new URLSearchParams({
+    [CHAMPS.nom]: nom,
+    [CHAMPS.naissance + "_year"]: a, [CHAMPS.naissance + "_month"]: String(+m), [CHAMPS.naissance + "_day"]: String(+j),
+    [CHAMPS.mail]: mail,
+    [CHAMPS.reglement]: reglement,
+    fvv: "1", pageHistory: "0",
+  });
+  bouton.disabled = true; bouton.textContent = "Envoi en cours…";
+  try {
+    await fetch(FORM + "/formResponse", { method: "POST", mode: "no-cors", body: donnees });
+    form.hidden = true;
+    message("ok", `<strong>Merci, votre inscription a bien été envoyée.</strong><br>Le club vous contactera si besoin à l'adresse ${esc(mail)}.`);
+  } catch (err) {
+    bouton.disabled = false; bouton.textContent = "Envoyer mon inscription";
+    message("erreur", `L'envoi n'a pas abouti. Vérifiez votre connexion et réessayez, ou <a href="${FORM}/viewform" target="_blank" rel="noopener">utilisez le formulaire Google</a>.`);
+  }
+});
 </script>
 </body>
 </html>

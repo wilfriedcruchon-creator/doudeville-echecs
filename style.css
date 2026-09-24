@@ -92,6 +92,28 @@ dl.info dt { color: var(--muted); }
 dl.info dd { margin: 0; }
 @media (max-width: 520px) { dl.info { grid-template-columns: 1fr; gap: 0; } dl.info dd { margin-bottom: 12px; } }
 
+/* Formulaires */
+form.inscription { max-width: 560px; display: grid; gap: 20px; }
+form.inscription label, form.inscription legend { font-weight: 600; display: block; margin-bottom: 6px; }
+form.inscription .req { color: #b42318; }
+form.inscription input[type="text"], form.inscription input[type="email"], form.inscription input[type="date"] {
+  width: 100%; font: inherit; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--bg); color: var(--text);
+}
+form.inscription input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+form.inscription fieldset { border: 0; padding: 0; margin: 0; }
+form.inscription .choix { display: grid; gap: 8px; }
+form.inscription .choix label { font-weight: 400; display: flex; gap: 10px; align-items: center; margin: 0; }
+form.inscription .aide { color: var(--muted); font-size: 14px; margin: 4px 0 0; }
+form.inscription .piege { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+form.inscription button[type="submit"] {
+  font: inherit; cursor: pointer; padding: 12px 22px; border-radius: 8px; border: 1px solid var(--accent);
+  background: var(--accent); color: #fff; justify-self: start;
+}
+form.inscription button[disabled] { opacity: .6; cursor: progress; }
+.message { max-width: 560px; padding: 16px 18px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); }
+.message.ok { border-color: #1a7f37; }
+.message.erreur { border-color: #b42318; }
 footer.site { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: 14px; }
 footer.site .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
