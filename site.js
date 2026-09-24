@@ -11,6 +11,8 @@ const PAGES = [
   ["archives.html", "Archives"],
   ["contact.html", "Contact"],
 ];
+/* La rubrique Vidéos n'apparaît dans le menu que lorsqu'il y a au moins une vidéo */
+if (typeof VIDEOS !== "undefined" && VIDEOS.length) PAGES.splice(7, 0, ["videos.html", "Vidéos"]);
 
 function esc(s) {
   return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -25,6 +27,11 @@ function fmtDate(iso, long) {
   return d.toLocaleDateString("fr-FR", long
     ? { weekday: "long", day: "numeric", month: "long", year: "numeric" }
     : { weekday: "short", day: "2-digit", month: "2-digit", year: "numeric" });
+}
+/* Identifiant YouTube (11 caractères) à partir d'un lien watch / youtu.be / embed / shorts, ou d'un identifiant seul */
+function idYoutube(v) {
+  const m = String(v || "").trim().match(/(?:v=|youtu\.be\/|embed\/|shorts\/|live\/)([\w-]{11})|^([\w-]{11})$/);
+  return m ? (m[1] || m[2]) : null;
 }
 const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 const todayISO = () => new Date().toISOString().slice(0, 10);

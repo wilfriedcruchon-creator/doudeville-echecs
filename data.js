@@ -53,6 +53,12 @@ const GALERIE = [
   { fichier: "photo-01", alt: "Partie d'échecs géants devant la mairie de Doudeville", legende: "" },
 ];
 
+/* Vidéos (hébergées sur YouTube, lecteur sans cookies chargé au clic). La plus récente en premier.
+   video : lien YouTube complet ou identifiant de 11 caractères ; date (AAAA-MM-JJ), legende et vignette sont facultatives.
+   Exemple : { video: "https://youtu.be/XXXXXXXXXXX", titre: "Tournoi de Doudeville", date: "2027-01-24", legende: "Les meilleurs moments." } */
+const VIDEOS = [
+];
+
 /* Archives reprises de l'ancien site (dae-doudeville.clubeo.com, 2013-2016).
    photos : { fichier (dans images/archives/), alt, legende } */
 const ARCHIVES = {
