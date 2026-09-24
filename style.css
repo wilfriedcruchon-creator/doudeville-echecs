@@ -21,7 +21,7 @@ body::before {
   content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background: url("images/fond.svg") center / cover no-repeat;
 }
-@media (prefers-color-scheme: dark) { body::before { filter: brightness(1.8) saturate(1.2); } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body::before { background-image: url("images/fond-sombre.svg"); } }
 @media print { body::before { display: none; } }
 .table-scroll, details { background: var(--bg); }
 
@@ -51,7 +51,16 @@ nav.main a[aria-current="page"] { color: var(--accent); background: var(--accent
 .hero h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.15; margin: 0 0 12px; }
 .hero p { color: var(--muted); max-width: 60ch; margin: 0; font-size: 18px; }
 
-main { padding: 36px 0 64px; }
+main { padding: 24px 12px 64px; }
+/* Le contenu repose sur un panneau en verre dépoli, au-dessus du fond */
+main > .wrap {
+  background: rgba(255, 255, 255, .86); border: 1px solid var(--line); border-radius: 16px;
+  padding: 32px 28px; box-shadow: 0 10px 40px rgba(11, 51, 145, .08);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) main > .wrap { background: rgba(18, 22, 29, .82); box-shadow: 0 10px 40px rgba(0, 0, 0, .35); } }
+@media (max-width: 640px) { main { padding: 12px 8px 48px; } main > .wrap { padding: 22px 16px; border-radius: 12px; } }
+@media print { main > .wrap { background: none; border: 0; box-shadow: none; padding: 0; } }
 h1.page { font-size: 32px; margin: 0 0 6px; }
 .lead { color: var(--muted); margin: 0 0 28px; }
 h2 { font-size: 20px; margin: 36px 0 12px; }

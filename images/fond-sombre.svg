@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
   <defs>
-    <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f9fe"/><stop offset=".62" stop-color="#e7eefb"/><stop offset="1" stop-color="#f4f6fb"/></linearGradient>
+    <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1636"/><stop offset=".62" stop-color="#101a3d"/><stop offset="1" stop-color="#141a26"/></linearGradient>
     <radialGradient id="halo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1120 560) scale(760 520)">
-      <stop offset="0" stop-color="#e6b33a" stop-opacity="0.3"/><stop offset=".45" stop-color="#e6b33a" stop-opacity="0.100"/><stop offset="1" stop-color="#e6b33a" stop-opacity="0"/>
+      <stop offset="0" stop-color="#e2b23a" stop-opacity="0.34"/><stop offset=".45" stop-color="#e2b23a" stop-opacity="0.113"/><stop offset="1" stop-color="#e2b23a" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="or" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2b23a"/><stop offset="1" stop-color="#a87400"/></linearGradient>
-    <linearGradient id="bleu" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a63c4"/><stop offset="1" stop-color="#0b3391"/></linearGradient>
+    <linearGradient id="or" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0c95a"/><stop offset="1" stop-color="#c48a10"/></linearGradient>
+    <linearGradient id="bleu" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fa6ec"/><stop offset="1" stop-color="#3a63c4"/></linearGradient>
     <linearGradient id="fondu-sol" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".22" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient>
     <mask id="m-sol"><rect y="600" width="1600" height="400" fill="url(#fondu-sol)"/></mask>
     <linearGradient id="fondu-gauche" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".25"/><stop offset=".45" stop-color="#fff" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient>
     <mask id="m-gauche"><rect width="1600" height="1000" fill="url(#fondu-gauche)"/></mask>
-    <radialGradient id="bok"><stop offset="0" stop-color="#e6b33a" stop-opacity=".9"/><stop offset=".7" stop-color="#e6b33a" stop-opacity=".35"/><stop offset="1" stop-color="#e6b33a" stop-opacity="0"/></radialGradient>
-    <linearGradient id="rayon" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6b33a" stop-opacity=".22"/><stop offset="1" stop-color="#e6b33a" stop-opacity="0"/></linearGradient>
+    <radialGradient id="bok"><stop offset="0" stop-color="#e2b23a" stop-opacity=".9"/><stop offset=".7" stop-color="#e2b23a" stop-opacity=".35"/><stop offset="1" stop-color="#e2b23a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="rayon" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2b23a" stop-opacity=".22"/><stop offset="1" stop-color="#e2b23a" stop-opacity="0"/></linearGradient>
 
     <g id="base"><rect x="-64" y="-14" width="128" height="16" rx="8"/><rect x="-74" y="0" width="148" height="18" rx="8"/></g>
     <g id="pawn"><circle cx="0" cy="-118" r="28"/><path d="M-22 -92 h44 l-6 14 h-32 z"/><path d="M-17 -78 h34 c4 36 24 58 38 76 h-110 c14 -18 34 -40 38 -76 z" transform="translate(0 0)"/><use href="#base"/></g>
@@ -39,7 +39,7 @@
     </g>
 
     <!-- bokeh -->
-    <g fill="url(#bok)" opacity="0.18">
+    <g fill="url(#bok)" opacity="0.16">
       <circle cx="1220" cy="150" r="70"/><circle cx="1390" cy="90" r="42"/><circle cx="1000" cy="230" r="34"/>
       <circle cx="1510" cy="270" r="58"/><circle cx="1130" cy="360" r="26"/><circle cx="1330" cy="380" r="38"/><circle cx="880" cy="110" r="24"/>
     </g>
@@ -51,7 +51,7 @@
 
     <!-- damier en perspective -->
     <g mask="url(#m-sol)">
-      <g fill="#0b3391" fill-opacity="0.13">
+      <g fill="#7fa6ec" fill-opacity="0.2">
 <polygon points="-200.0,1000.0 0.0,1000.0 193.9,905.5 42.4,905.5"/>
 <polygon points="200.0,1000.0 400.0,1000.0 497.0,905.5 345.5,905.5"/>
 <polygon points="600.0,1000.0 800.0,1000.0 800.0,905.5 648.5,905.5"/>
@@ -150,9 +150,9 @@
 <polygon points="898.6,642.1 915.1,642.1 887.2,634.3 874.7,634.3"/>
 <polygon points="931.5,642.1 947.9,642.1 912.1,634.3 899.6,634.3"/>
       </g>
-      <rect y="600" width="1600" height="400" fill="#d9a300" fill-opacity="0.1"/>
+      <rect y="600" width="1600" height="400" fill="#e2b23a" fill-opacity="0.1"/>
     </g>
-    <ellipse cx="1120" cy="612" rx="720" ry="26" fill="#e6b33a" fill-opacity="0.28"/>
+    <ellipse cx="1120" cy="612" rx="720" ry="26" fill="#e2b23a" fill-opacity="0.38"/>
 
     <!-- reflets -->
     <g opacity=".10" mask="url(#m-sol)">
@@ -162,17 +162,17 @@
     </g>
 
     <!-- ombres portées -->
-    <g fill="#0b3391" fill-opacity=".16">
+    <g fill="#000" fill-opacity=".16">
       <ellipse cx="1150" cy="812" rx="190" ry="20"/><ellipse cx="830" cy="842" rx="160" ry="18"/>
       <ellipse cx="1430" cy="842" rx="130" ry="16"/><ellipse cx="1520" cy="900" rx="80" ry="12"/><ellipse cx="640" cy="880" rx="70" ry="10"/>
     </g>
 
     <!-- pièces -->
-    <use href="#queen"  transform="translate(1150 800) scale(2.0)" fill="url(#or)"   fill-opacity="0.3"/>
-    <use href="#knight" transform="translate(830 830) scale(1.8)"  fill="url(#bleu)" fill-opacity="0.26"/>
-    <use href="#bishop" transform="translate(1430 830) scale(1.5)" fill="url(#bleu)" fill-opacity="0.26"/>
-    <use href="#pawn"   transform="translate(1520 890) scale(.85)" fill="url(#or)"   fill-opacity="0.3"/>
-    <use href="#pawn"   transform="translate(640 870) scale(.75)"  fill="url(#or)"   fill-opacity="0.24"/>
-    <use href="#rook"   transform="translate(1010 900) scale(1.0)" fill="url(#bleu)" fill-opacity="0.23"/>
+    <use href="#queen"  transform="translate(1150 800) scale(2.0)" fill="url(#or)"   fill-opacity="0.42"/>
+    <use href="#knight" transform="translate(830 830) scale(1.8)"  fill="url(#bleu)" fill-opacity="0.36"/>
+    <use href="#bishop" transform="translate(1430 830) scale(1.5)" fill="url(#bleu)" fill-opacity="0.36"/>
+    <use href="#pawn"   transform="translate(1520 890) scale(.85)" fill="url(#or)"   fill-opacity="0.42"/>
+    <use href="#pawn"   transform="translate(640 870) scale(.75)"  fill="url(#or)"   fill-opacity="0.34"/>
+    <use href="#rook"   transform="translate(1010 900) scale(1.0)" fill="url(#bleu)" fill-opacity="0.32"/>
   </g>
 </svg>
