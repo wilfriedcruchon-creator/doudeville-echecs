@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tournois – Doudeville Accueil Échecs</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main><div class="wrap">
+  <h1 class="page">Tournois</h1>
+  <p class="lead">Les tournois organisés par le club et ceux de la région.</p>
+  <div id="list"></div>
+</div></main>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+const t = [...TOURNOIS].sort((a, b) => a.date.localeCompare(b.date));
+const avenir = t.filter(x => x.date >= todayISO()), passes = t.filter(x => x.date < todayISO()).reverse();
+const carte = x => `<article class="card"><h3>${esc(x.titre)}</h3>
+  <div class="meta">${cap(fmtDate(x.date, true))} · ${esc(x.lieu)}${x.cadence ? " · " + esc(x.cadence) : ""}</div>
+  ${x.info ? `<p>${esc(x.info)}</p>` : ""}</article>`;
+document.getElementById("list").innerHTML =
+  `<h2>À venir</h2>` +
+  (avenir.length ? `<div class="grid">${avenir.map(carte).join("")}</div>` : `<div class="empty">Aucun tournoi programmé pour le moment.</div>`) +
+  (passes.length ? `<h2>Passés</h2><div class="grid">${passes.map(carte).join("")}</div>` : "") +
+  `<p class="legend" style="margin-top:28px">Retrouvez tous les tournois homologués sur <a href="${CLUB.ffe}" rel="noopener">echecs.asso.fr</a>.</p>`;
+</script>
+</body>
+</html>

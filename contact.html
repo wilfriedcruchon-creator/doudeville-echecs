@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact – Doudeville Accueil Échecs</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main><div class="wrap">
+  <h1 class="page">Contact</h1>
+  <p class="lead">Une question, une envie de nous rejoindre ? Écrivez-nous.</p>
+  <dl class="info" id="coords"></dl>
+</div></main>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+const mail = /^\[/.test(CLUB.email) ? ph(CLUB.email) : `<a href="mailto:${esc(CLUB.email)}">${esc(CLUB.email)}</a>`;
+document.getElementById("coords").innerHTML = `
+  <dt>Club</dt><dd>${esc(CLUB.nom)}, ${esc(CLUB.ville)}</dd>
+  <dt>Salle de jeu</dt><dd>${ph(CLUB.salle)}</dd>
+  <dt>Séances</dt><dd>${ph(CLUB.horaires)}</dd>
+  <dt>E-mail</dt><dd>${mail}</dd>
+  <dt>Téléphone</dt><dd>${ph(CLUB.telephone)}</dd>
+  <dt>Président</dt><dd>${ph(CLUB.president)}</dd>`;
+</script>
+</body>
+</html>

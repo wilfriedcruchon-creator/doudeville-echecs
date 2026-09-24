@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le club – Doudeville Accueil Échecs</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main><div class="wrap">
+  <h1 class="page">Le club</h1>
+  <p class="lead">Présentation de Doudeville Accueil Échecs.</p>
+
+  <h2>Qui sommes-nous ?</h2>
+  <p>Doudeville Accueil Échecs est un club d'échecs installé à Doudeville, en Seine-Maritime. Il est affilié à la Fédération Française des Échecs et engage des équipes dans les championnats par équipes de la Ligue de Normandie.</p>
+  <p>Le club accueille les joueurs de tous niveaux : débutants, joueurs de loisir et compétiteurs. Chacun peut venir jouer, progresser et participer, s'il le souhaite, aux compétitions.</p>
+
+  <h2>Nos équipes</h2>
+  <div class="grid" id="equipes"></div>
+
+  <h2>Pratique</h2>
+  <dl class="info" id="pratique"></dl>
+
+  <h2>Venir nous voir</h2>
+  <p>Passez à une séance : le premier essai est sans engagement. Consultez la page <a href="contact.html">Contact</a> pour nous écrire.</p>
+</div></main>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+document.getElementById("equipes").innerHTML = EQUIPES.map(e =>
+  `<div class="card"><h3>${esc(e.nom)}</h3><div class="meta">${esc(e.categorie)} · ${esc(e.competition)}</div></div>`).join("");
+document.getElementById("pratique").innerHTML = `
+  <dt>Lieu</dt><dd>${ph(CLUB.salle)}</dd>
+  <dt>Séances</dt><dd>${ph(CLUB.horaires)}</dd>
+  <dt>Cotisations</dt><dd>${ph(CLUB.cotisations)}</dd>
+  <dt>Président</dt><dd>${ph(CLUB.president)}</dd>`;
+</script>
+</body>
+</html>

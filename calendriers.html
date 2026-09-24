@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendriers – Doudeville Accueil Échecs</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main><div class="wrap">
+  <h1 class="page">Calendriers</h1>
+  <p class="lead">Saison 2026-2027 · les matchs de chaque équipe du club.</p>
+
+  <div class="tabs" id="tabs" role="group" aria-label="Choisir une équipe"></div>
+  <div id="view"></div>
+</div></main>
+<script src="data.js"></script>
+<script src="calendrier.js"></script>
+<script src="site.js"></script>
+<script>
+const tabs = document.getElementById("tabs"), view = document.getElementById("view");
+
+function ligne(m) {
+  if (m.repos) return `<tr class="bye"><td>${m.ronde}</td><td>${cap(fmtDate(m.date))}</td><td colspan="4">Exempt (pas de match)</td></tr>`;
+  const cls = [m.dom ? "home" : "", m.date < todayISO() ? "past" : ""].join(" ");
+  return `<tr class="${cls}"><td>${m.ronde}</td><td>${cap(fmtDate(m.date))} · ${m.heure.replace(":", "h")}</td>
+    <td>${esc(m.blancs)}</td><td>${esc(m.noirs)}</td><td>${esc(m.lieu)}</td><td>${esc(m.res)}</td></tr>`;
+}
+const head = `<thead><tr><th>Ronde</th><th>Date</th><th>Blancs</th><th>Noirs</th><th>Lieu</th><th>Score</th></tr></thead>`;
+
+/* Bilan calculé à partir des scores publiés par la FFE (ex. "2.5-1.5") */
+function bilan(ms) {
+  let v = 0, n = 0, d = 0, pour = 0, contre = 0;
+  ms.forEach(m => {
+    const s = (m.res || "").split("-").map(x => parseFloat(x.replace(",", ".")));
+    if (s.length !== 2 || s.some(isNaN)) return;
+    const [a, b] = m.dom ? s : [s[1], s[0]];
+    pour += a; contre += b;
+    if (a > b) v++; else if (a < b) d++; else n++;
+  });
+  if (v + n + d === 0) return "";
+  const f = x => String(x).replace(".", ",");
+  return `<p><strong>Bilan :</strong> ${v} victoire${v > 1 ? "s" : ""}, ${n} nul${n > 1 ? "s" : ""}, ${d} défaite${d > 1 ? "s" : ""} · parties ${f(pour)} – ${f(contre)}</p>`;
+}
+
+function equipe(e) {
+  const ms = matchsEquipe(e.nom);
+  view.innerHTML = `
+    <h2>${esc(e.nom)} <span class="tag">${esc(e.categorie)}</span></h2>
+    <p class="meta" style="color:var(--muted);margin-top:-6px">${esc(e.competition)}</p>
+    ${bilan(ms)}
+    <div class="table-scroll"><table>${head}<tbody>${ms.map(ligne).join("")}</tbody></table></div>
+    <p class="legend"><span class="swatch"></span>Match à domicile · Source : <a href="${e.source}" rel="noopener">calendrier officiel FFE</a> · Mis à jour le ${fmtDate(MAJ)}</p>`;
+}
+function groupe() {
+  view.innerHTML = `
+    <h2>Toutes les rondes du groupe D</h2>
+    <p class="meta" style="color:var(--muted);margin-top:-6px">Régionale Normandie — Groupe D</p>` +
+    RONDES.map(r => `<details><summary>Ronde ${r.n} — ${cap(fmtDate(r.date, true))} à ${r.heure.replace(":", "h")}</summary>
+      <div class="table-scroll"><table><thead><tr><th>Blancs</th><th>Noirs</th><th>Lieu</th></tr></thead><tbody>
+      ${r.matchs.map(m => `<tr class="${/Doudeville/.test(m[0] + m[1]) ? "home" : ""}"><td>${esc(m[0])}</td><td>${esc(m[1])}</td><td>${esc(m[2])}</td></tr>`).join("")}
+      </tbody></table></div></details>`).join("");
+}
+
+const items = EQUIPES.map(e => ({ label: e.nom, fn: () => equipe(e) }))
+  .concat([{ label: "Tout le groupe", fn: groupe }]);
+items.forEach((it, i) => {
+  const b = document.createElement("button");
+  b.textContent = it.label;
+  b.onclick = () => { [...tabs.children].forEach(x => x.setAttribute("aria-pressed", x === b)); it.fn(); history.replaceState(null, "", "#" + i); };
+  tabs.appendChild(b);
+});
+const start = Math.min(+location.hash.slice(1) || 0, items.length - 1);
+tabs.children[start].click();
+</script>
+</body>
+</html>

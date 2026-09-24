@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doudeville Accueil Échecs</title>
+<meta name="description" content="Club d'échecs de Doudeville : calendriers des équipes, actualités, tournois et contact.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="hero"><div class="wrap">
+  <div>
+    <h1>Doudeville Accueil Échecs</h1>
+    <p>Le club d'échecs de Doudeville. Parties amicales, compétitions par équipes et tournois, dans une ambiance conviviale.</p>
+  </div>
+  <img src="logo.png" alt="Logo du club Doudeville Accueil Échecs" width="200" height="200">
+</div></section>
+
+<main><div class="wrap">
+  <h2>Prochaines rencontres</h2>
+  <div class="grid" id="next"></div>
+
+  <h2>Dernière actualité</h2>
+  <div id="news"></div>
+  <p><a href="actualites.html">Toutes les actualités →</a></p>
+
+  <h2>Prochain tournoi</h2>
+  <div id="tournoi"></div>
+  <p><a href="tournois.html">Tous les tournois →</a></p>
+</div></main>
+
+<script src="data.js"></script>
+<script src="calendrier.js"></script>
+<script src="site.js"></script>
+<script>
+document.getElementById("next").innerHTML = EQUIPES.map(e => {
+  const m = prochainMatch(e.nom);
+  if (!m) return `<div class="card"><h3>${esc(e.nom)}</h3><p class="meta">Saison terminée</p></div>`;
+  return `<div class="card next">
+    <span class="tag">${esc(e.nom)}</span>
+    <div class="vs">${esc(m.blancs)} – ${esc(m.noirs)}</div>
+    <div class="meta">Ronde ${m.ronde} · ${cap(fmtDate(m.date, true))} à ${m.heure.replace(":", "h")}</div>
+    <div class="meta">${m.dom ? "À domicile · " : "À l'extérieur · "}${esc(m.lieu)}</div>
+  </div>`;
+}).join("") + `<div class="card"><a href="calendriers.html">Voir tous les calendriers →</a></div>`;
+
+const a = ACTUALITES[0];
+document.getElementById("news").innerHTML = a
+  ? `<div class="card"><h3>${esc(a.titre)}</h3><div class="meta">${cap(fmtDate(a.date, true))}</div><p>${esc(a.texte)}</p></div>`
+  : `<div class="empty">Aucune actualité pour le moment.</div>`;
+
+const t = TOURNOIS.filter(x => x.date >= todayISO()).sort((x, y) => x.date.localeCompare(y.date))[0];
+document.getElementById("tournoi").innerHTML = t
+  ? `<div class="card"><h3>${esc(t.titre)}</h3><div class="meta">${cap(fmtDate(t.date, true))} · ${esc(t.lieu)}</div><p>${esc(t.cadence || "")}</p></div>`
+  : `<div class="empty">Aucun tournoi programmé pour le moment.</div>`;
+</script>
+</body>
+</html>
