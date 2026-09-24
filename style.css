@@ -47,6 +47,28 @@ nav.main a { text-decoration: none; color: var(--muted); padding: 8px 12px; bord
 nav.main a:hover { background: var(--surface); color: var(--text); }
 nav.main a[aria-current="page"] { color: var(--accent); background: var(--accent-soft); font-weight: 600; }
 
+/* En-tête : bleu du club, filet doré, onglet actif en or */
+header.site {
+  background: linear-gradient(100deg, #0a2570 0%, #0b3391 55%, #1b4fc0 100%);
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 4px 18px rgba(10, 37, 112, .28);
+}
+header.site .wrap { max-width: 1180px; min-height: 68px; }
+.brand { color: #fff; font-size: 17px; }
+.brand img { height: 48px; width: 48px; border-radius: 10px; padding: 2px; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
+nav.main a { color: rgba(255, 255, 255, .86); border-radius: 999px; padding: 8px 14px; transition: background .15s, color .15s; }
+nav.main a:hover { background: rgba(255, 255, 255, .16); color: #fff; }
+nav.main a[aria-current="page"] { background: var(--gold); color: #10204f; font-weight: 700; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) header.site { background: linear-gradient(100deg, #070f2b 0%, #0d1c52 55%, #14307f 100%); }
+}
+@media (max-width: 900px) {
+  header.site .wrap { gap: 6px; padding-top: 8px; padding-bottom: 8px; }
+  nav.main { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding-bottom: 4px; scrollbar-width: none; }
+  nav.main::-webkit-scrollbar { display: none; }
+  nav.main a { white-space: nowrap; padding: 7px 12px; }
+}
+
 .hero { padding: 24px 12px 0; }
 .hero h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.15; margin: 0 0 12px; }
 .hero p { color: var(--muted); max-width: 60ch; margin: 0; font-size: 18px; }
