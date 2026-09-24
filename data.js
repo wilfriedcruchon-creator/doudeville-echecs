@@ -54,7 +54,7 @@ const GALERIE = [
 ];
 
 /* Vidéos (hébergées sur YouTube, lecteur sans cookies chargé au clic). La plus récente en premier.
-   video : lien YouTube complet ou identifiant de 11 caractères ; date (AAAA-MM-JJ), legende et vignette sont facultatives.
+   video : lien YouTube complet ou identifiant de 11 caractères ; date (AAAA-MM-JJ), legende, vignette et format (dimensions réelles de la vidéo : "4 / 5", "9 / 16", "4 / 3" ; "16 / 9" par défaut) sont facultatives.
    Exemple : { video: "https://youtu.be/XXXXXXXXXXX", titre: "Tournoi de Doudeville", date: "2027-01-24", legende: "Les meilleurs moments." } */
 const VIDEOS = [
 ];

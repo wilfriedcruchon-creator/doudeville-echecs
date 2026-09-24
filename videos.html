@@ -58,7 +58,7 @@ if (!VIDEOS.length) {
     if (!id) return "";
     const vignette = v.vignette ? ` vignette" style="background-image:url('${esc(v.vignette)}')` : "";
     return `<article class="video">
-      <div class="lecteur" data-id="${esc(id)}" data-titre="${esc(v.titre)}">
+      <div class="lecteur" data-id="${esc(id)}" data-titre="${esc(v.titre)}"${v.format ? ` style="aspect-ratio:${esc(v.format)}"` : ""}>
         <button class="jouer${vignette}" type="button" aria-label="Lire la vidéo : ${esc(v.titre)}">
           <span class="rond"></span><small>La vidéo se charge depuis YouTube au clic</small>
         </button>
