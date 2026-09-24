@@ -58,8 +58,8 @@ const CHALLENGE = {
     { ronde: "6", date: "2027-03-14", lieu: "Sotteville-lès-Rouen", confirme: false },
     { ronde: "7", date: "2027-04-11", lieu: "Saint-Étienne-du-Rouvray", confirme: true },
     { ronde: "8", quand: "Avril 2027", lieu: "Bonsecours", confirme: false },
-    { ronde: "8", quand: "Mai 2027", lieu: "Rouen", confirme: false },
-    { ronde: "9", quand: "Juin 2027", lieu: "Gournay-en-Bray", confirme: false },
+    { ronde: "9", quand: "Mai 2027", lieu: "Rouen", confirme: false },
+    { ronde: "10", quand: "Juin 2027", lieu: "Gournay-en-Bray", confirme: false },
   ],
 };
 
