@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://doudeville-echecs.fr/sitemap.xml
