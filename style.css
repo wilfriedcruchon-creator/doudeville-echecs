@@ -16,12 +16,12 @@
     --line: #2b3340; --accent: #8fb3e6; --accent-soft: #1f2a3a; --home: #2c2717;
   }
 }
-/* Fond : damier en perspective, pièces en silhouette et cercles (images/fond.svg), qui s'efface vers le haut à gauche */
+/* Fond : illustration de pièces d'échecs (images/fond.jpg), voilée pour garder le texte lisible */
 body::before {
   content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  background: url("images/fond.svg") center / cover no-repeat;
+  background: linear-gradient(rgba(255, 255, 255, .22), rgba(255, 255, 255, .30)), url("images/fond.jpg") center / cover no-repeat;
 }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body::before { background-image: url("images/fond-sombre.svg"); } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body::before { background-image: linear-gradient(rgba(8, 14, 36, .58), rgba(8, 14, 36, .68)), url("images/fond.jpg"); } }
 @media print { body::before { display: none; } }
 .table-scroll, details { background: var(--bg); }
 
@@ -47,19 +47,19 @@ nav.main a { text-decoration: none; color: var(--muted); padding: 8px 12px; bord
 nav.main a:hover { background: var(--surface); color: var(--text); }
 nav.main a[aria-current="page"] { color: var(--accent); background: var(--accent-soft); font-weight: 600; }
 
-.hero { padding: 48px 0 8px; }
+.hero { padding: 24px 12px 0; }
 .hero h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.15; margin: 0 0 12px; }
 .hero p { color: var(--muted); max-width: 60ch; margin: 0; font-size: 18px; }
 
 main { padding: 24px 12px 64px; }
 /* Le contenu repose sur un panneau en verre dépoli, au-dessus du fond */
-main > .wrap {
-  background: rgba(255, 255, 255, .74); border: 1px solid var(--line); border-radius: 16px;
+main > .wrap, .hero .wrap {
+  background: rgba(255, 255, 255, .84); border: 1px solid var(--line); border-radius: 16px;
   padding: 32px 28px; box-shadow: 0 10px 40px rgba(11, 51, 145, .08);
   -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
 }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) main > .wrap { background: rgba(18, 22, 29, .72); box-shadow: 0 10px 40px rgba(0, 0, 0, .35); } }
-@media (max-width: 640px) { main { padding: 12px 8px 48px; } main > .wrap { padding: 22px 16px; border-radius: 12px; } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) main > .wrap, :root:not([data-theme="light"]) .hero .wrap { background: rgba(18, 22, 29, .80); box-shadow: 0 10px 40px rgba(0, 0, 0, .35); } }
+@media (max-width: 640px) { main { padding: 12px 8px 48px; } main > .wrap, .hero .wrap { padding: 22px 16px; border-radius: 12px; } .hero { padding: 12px 8px 0; } }
 @media print { main > .wrap { background: none; border: 0; box-shadow: none; padding: 0; } }
 h1.page { font-size: 32px; margin: 0 0 6px; }
 .lead { color: var(--muted); margin: 0 0 28px; }
