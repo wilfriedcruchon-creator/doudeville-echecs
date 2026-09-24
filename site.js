@@ -36,7 +36,9 @@ function matchsEquipe(nom) {
     if (!m) return { ronde: r.n, date: r.date, heure: r.heure, repos: true };
     return {
       ronde: r.n, date: r.date, heure: r.heure,
-      blancs: m[0], noirs: m[1], lieu: m[2], dom: m[0] === nom,
+      blancs: m[0], noirs: m[1], lieu: m[2],
+      dom: /^doudeville$/i.test(m[2].trim()),   // match joué à Doudeville (le lieu, pas la couleur)
+      blancsNous: m[0] === nom,                  // l'équipe a les blancs : sert à orienter le score
       res: RESULTATS[`${r.n}-${m[0]}-${m[1]}`] || "",
     };
   });
@@ -57,7 +59,7 @@ function stats(ms) {
   ms.forEach(m => {
     const s = scoreNum(m.res);
     if (!s) return;
-    const [a, b] = m.dom ? s : [s[1], s[0]];
+    const [a, b] = m.blancsNous ? s : [s[1], s[0]];
     t.joues++; t.pour += a; t.contre += b;
     if (a > b) t.v++; else if (a < b) t.d++; else t.n++;
   });
