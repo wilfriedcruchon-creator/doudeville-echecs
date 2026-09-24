@@ -71,7 +71,6 @@ if (!VIDEOS.length) {
         <h3>${esc(v.titre)}</h3>
         ${v.date ? `<div class="meta">${cap(fmtDate(v.date, true))}</div>` : ""}
         ${v.legende ? `<p>${esc(v.legende)}</p>` : ""}
-        <p><a class="yt" href="https://www.youtube.com/watch?v=${esc(id)}" target="_blank" rel="noopener">Voir sur YouTube</a></p>
       </div></article>`;
   }).join("");
 
