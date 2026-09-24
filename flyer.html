@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flyer – Doudeville Accueil Échecs</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .flyer-wrap { display: grid; gap: 28px; grid-template-columns: minmax(0, 480px) 1fr; align-items: start; }
+  .flyer-wrap img { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid var(--line); }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+  .btn { font: inherit; text-decoration: none; cursor: pointer; padding: 10px 18px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: #fff; }
+  .btn.sec { background: var(--bg); color: var(--accent); }
+  @media (max-width: 760px) { .flyer-wrap { grid-template-columns: 1fr; } }
+  @media print {
+    main .wrap > *:not(.flyer-wrap) { display: none; }
+    .flyer-wrap { display: block; } .flyer-wrap > div { display: none; }
+    .flyer-wrap img { border: 0; max-height: 100vh; width: auto; margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+<main><div class="wrap">
+  <h1 class="page">Flyer</h1>
+  <p class="lead">Le flyer du club, à télécharger, imprimer ou partager.</p>
+
+  <div class="flyer-wrap">
+    <a href="images/flyer-club.jpg" target="_blank" rel="noopener"><img src="images/flyer-club.jpg" alt="Flyer du club Doudeville Accueil Échecs : séances le mardi de 17 h à 19 h et le samedi de 15 h à 17 h" width="800" height="1147"></a>
+    <div>
+      <h2>Rejoignez-nous</h2>
+      <dl class="info" id="infos"></dl>
+      <div class="actions">
+        <a class="btn" href="images/flyer-club.jpg" download="flyer-doudeville-accueil-echecs.jpg">Télécharger</a>
+        <button class="btn sec" onclick="window.print()">Imprimer</button>
+      </div>
+      <p class="legend">Vous pouvez le déposer chez vos commerçants, à l'école ou à la mairie pour faire connaître le club.</p>
+    </div>
+  </div>
+</div></main>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+document.getElementById("infos").innerHTML = `
+  <dt>Séances</dt><dd>${esc(CLUB.horaires)}</dd>
+  <dt>Lieu</dt><dd>${esc(CLUB.salle)}</dd>
+  <dt>Contact</dt><dd><a href="mailto:${esc(CLUB.email)}">${esc(CLUB.email)}</a><br>${esc(CLUB.telephone)}</dd>`;
+</script>
+</body>
+</html>

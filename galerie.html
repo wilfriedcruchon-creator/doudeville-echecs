@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galerie – Doudeville Accueil Échecs</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .galerie { columns: 3 240px; column-gap: 14px; }
+  .galerie figure { margin: 0 0 14px; break-inside: avoid; }
+  .galerie button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 8px; overflow: hidden; }
+  .galerie img { width: 100%; height: auto; display: block; transition: transform .2s; }
+  .galerie button:hover img { transform: scale(1.02); }
+  .galerie figcaption { font-size: 14px; color: var(--muted); margin-top: 6px; }
+  dialog#vue { border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 96vh; }
+  dialog#vue::backdrop { background: rgba(0,0,0,.88); }
+  dialog#vue img { max-width: 96vw; max-height: 90vh; display: block; margin: 0 auto; border-radius: 6px; }
+  dialog#vue p { color: #fff; text-align: center; margin: 8px 0 0; }
+  dialog#vue .nav { position: fixed; top: 50%; transform: translateY(-50%); font-size: 32px; color: #fff; background: rgba(0,0,0,.4); border: 0; border-radius: 50%; width: 48px; height: 48px; cursor: pointer; }
+  dialog#vue .prev { left: 12px; } dialog#vue .next { right: 12px; }
+  dialog#vue .close { position: fixed; top: 12px; right: 12px; font-size: 28px; color: #fff; background: rgba(0,0,0,.4); border: 0; border-radius: 50%; width: 44px; height: 44px; cursor: pointer; }
+</style>
+</head>
+<body>
+<main><div class="wrap">
+  <h1 class="page">Galerie</h1>
+  <p class="lead">La vie du club en images. Cliquez sur une photo pour l'agrandir.</p>
+  <div id="galerie" class="galerie"></div>
+</div></main>
+
+<dialog id="vue" aria-label="Photo agrandie">
+  <button class="close" aria-label="Fermer">×</button>
+  <button class="nav prev" aria-label="Photo précédente">‹</button>
+  <img alt="">
+  <p></p>
+  <button class="nav next" aria-label="Photo suivante">›</button>
+</dialog>
+
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+const dir = "images/galerie/";
+const g = document.getElementById("galerie");
+if (!GALERIE.length) {
+  g.outerHTML = `<div class="empty">Aucune photo pour le moment.</div>`;
+} else {
+  g.innerHTML = GALERIE.map((p, i) => `<figure>
+    <button data-i="${i}" aria-label="Agrandir : ${esc(p.alt)}"><img src="${dir}${esc(p.fichier)}-mini.jpg" alt="${esc(p.alt)}" loading="lazy"></button>
+    ${p.legende ? `<figcaption>${esc(p.legende)}</figcaption>` : ""}</figure>`).join("");
+
+  const vue = document.getElementById("vue"), img = vue.querySelector("img"), leg = vue.querySelector("p");
+  let cur = 0;
+  const montrer = i => {
+    cur = (i + GALERIE.length) % GALERIE.length;
+    const p = GALERIE[cur];
+    img.src = `${dir}${p.fichier}.jpg`; img.alt = p.alt; leg.textContent = p.legende || "";
+  };
+  g.addEventListener("click", e => {
+    const b = e.target.closest("button[data-i]"); if (!b) return;
+    montrer(+b.dataset.i); vue.showModal();
+  });
+  vue.querySelector(".close").onclick = () => vue.close();
+  vue.querySelector(".prev").onclick = () => montrer(cur - 1);
+  vue.querySelector(".next").onclick = () => montrer(cur + 1);
+  vue.addEventListener("click", e => { if (e.target === vue) vue.close(); });
+  vue.addEventListener("keydown", e => {
+    if (e.key === "ArrowLeft") montrer(cur - 1);
+    if (e.key === "ArrowRight") montrer(cur + 1);
+  });
+  if (GALERIE.length < 2) vue.querySelectorAll(".nav").forEach(b => b.hidden = true);
+}
+</script>
+</body>
+</html>

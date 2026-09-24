@@ -6,6 +6,8 @@ const PAGES = [
   ["resultats.html", "Résultats"],
   ["tournois.html", "Tournois"],
   ["club.html", "Le club"],
+  ["galerie.html", "Galerie"],
+  ["flyer.html", "Flyer"],
   ["contact.html", "Contact"],
 ];
 

@@ -45,6 +45,12 @@ const TOURNOIS = [
   },
 ];
 
+/* Galerie photos. Pour ajouter une photo : déposer photo-XX.jpg et photo-XX-mini.jpg dans images/galerie/
+   puis ajouter une ligne ci-dessous (la plus récente en premier). legende est facultative. */
+const GALERIE = [
+  { fichier: "photo-01", alt: "Partie d'échecs géants devant la mairie de Doudeville", legende: "" },
+];
+
 /* Challenge des parties rapides 2026-2027.
    date (AAAA-MM-JJ) si le jour est connu, sinon quand (texte libre). confirme:false => "À confirmer". */
 const CHALLENGE = {
