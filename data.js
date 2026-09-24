@@ -27,11 +27,22 @@ const ACTUALITES = [
 ];
 
 /* Tournois — date : AAAA-MM-JJ */
+/* Champs facultatifs : cadence, info, details (liste), image, lien */
 const TOURNOIS = [
-  /* Exemple :
-  { date: "2026-12-05", titre: "Tournoi rapide de Doudeville", lieu: "Doudeville",
-    cadence: "Rapide 15 min + 5 s", info: "Inscriptions sur place dès 13 h 30." },
-  */
+  {
+    date: "2026-10-04",
+    titre: "19e Tournoi rapide d'Orcher la Tour",
+    lieu: "Complexe Dojo Échecs, rue des Sports, Gonfreville-l'Orcher",
+    cadence: "12 min + 3 s/coup",
+    details: [
+      "9 rondes",
+      "Homologué FIDE et FFE",
+      "Pointage de 8 h 30 à 9 h 00 · 1re ronde à 9 h 15",
+      "Nombreux prix",
+      "Compte pour le Challenge 76",
+    ],
+    image: "images/affiche-orcher-2026.jpg",
+  },
 ];
 
 /* Équipes et leurs calendriers */

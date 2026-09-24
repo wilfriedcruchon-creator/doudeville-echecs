@@ -55,6 +55,9 @@ h2:first-child { margin-top: 0; }
 .card p { margin: 8px 0 0; }
 .tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 2px 8px; }
 
+.tournoi .affiche { width: 100%; height: auto; border-radius: 8px; display: block; margin-bottom: 14px; }
+.tournoi ul { margin: 10px 0 0; padding-left: 20px; }
+.grid:has(.tournoi) { grid-template-columns: 1fr; }
 .next .who { font-weight: 600; }
 .next .vs { font-size: 18px; margin: 6px 0 4px; }
 
