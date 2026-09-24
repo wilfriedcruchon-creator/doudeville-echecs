@@ -53,10 +53,11 @@ header.site {
   border-bottom: 3px solid var(--gold);
   box-shadow: 0 4px 18px rgba(10, 37, 112, .28);
 }
-header.site .wrap { max-width: 1180px; min-height: 68px; }
+header.site .wrap { max-width: 1320px; min-height: 68px; }
 .brand { color: #fff; font-size: 17px; }
 .brand img { height: 48px; width: 48px; border-radius: 10px; padding: 2px; box-shadow: 0 2px 8px rgba(0, 0, 0, .3); }
-nav.main a { color: rgba(255, 255, 255, .86); border-radius: 999px; padding: 8px 14px; transition: background .15s, color .15s; }
+nav.main { gap: 2px; }
+nav.main a { color: rgba(255, 255, 255, .86); border-radius: 999px; padding: 8px 11px; transition: background .15s, color .15s; }
 nav.main a:hover { background: rgba(255, 255, 255, .16); color: #fff; }
 nav.main a[aria-current="page"] { background: var(--gold); color: #10204f; font-weight: 700; }
 @media (prefers-color-scheme: dark) {
