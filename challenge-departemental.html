@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Challenge départemental – Doudeville Accueil Échecs</title>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Classement des joueurs de Doudeville Accueil Échecs au Challenge départemental de Seine-Maritime : place, catégorie et points.">
+<link rel="canonical" href="https://doudeville-echecs.fr/challenge-departemental.html">
+<meta name="theme-color" content="#8a1310">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Doudeville Accueil Échecs">
+<meta property="og:title" content="Challenge départemental – Doudeville Accueil Échecs">
+<meta property="og:description" content="Classement des joueurs de Doudeville Accueil Échecs au Challenge départemental de Seine-Maritime : place, catégorie et points.">
+<meta property="og:url" content="https://doudeville-echecs.fr/challenge-departemental.html">
+<meta property="og:image" content="https://doudeville-echecs.fr/images/partage.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<main><div class="wrap">
+  <h1 class="page">Challenge départemental</h1>
+  <p class="lead">Les joueurs du club classés au Challenge départemental de Seine-Maritime.</p>
+
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Place</th><th>Joueur</th><th>Catégorie</th><th>Total</th></tr></thead>
+      <tbody id="classement"></tbody>
+    </table>
+  </div>
+
+  <p class="legend" style="margin-top:14px">
+    Catégories : Ppo petit poussin · Pou poussin · Pup pupille · Ben benjamin · Min minime · Cad cadet ·
+    Jun junior · Sen sénior · Sep sénior + · Vet vétéran — suivi de M (masculin) ou F (féminin).
+  </p>
+  <p class="legend">Classement général du Challenge départemental, organisé par le comité départemental d'échecs de Seine-Maritime. Seuls les joueurs de Doudeville Accueil Échecs sont repris ici ; « Total » compte les points et le bonus.</p>
+</div></main>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+document.getElementById("classement").innerHTML = CHALLENGE_DEPARTEMENTAL.map(j =>
+  `<tr><td>${j.pl}</td><td>${esc(j.nom)}</td><td>${esc(j.cat)}</td><td>${esc(j.total)}</td></tr>`
+).join("");
+</script>
+</body>
+</html>

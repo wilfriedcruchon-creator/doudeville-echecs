@@ -54,6 +54,37 @@ const GALERIE = [
   { fichier: "photo-02", alt: "Premier logo du club : un cavalier blanc sur un damier rouge et jaune, avec les lettres D, A, E et une fleur bleue", legende: "Le tout premier logo du club, créé par Hubert Paillette il y a une trentaine d'années." },
 ];
 
+/* Classement des joueurs du club au Challenge départemental (comité départemental d'échecs de Seine-Maritime).
+   pl = place au classement général ; total = nombre de points total (points + bonus). Source : document transmis par le club. */
+const CHALLENGE_DEPARTEMENTAL = [
+  { pl: 5, nom: "Cruchon Wilfried", cat: "SenM", total: "48,00" },
+  { pl: 26, nom: "Paillette Hubert", cat: "VetM", total: "28,00" },
+  { pl: 56, nom: "Khettache Nassim", cat: "CadM", total: "20,50" },
+  { pl: 61, nom: "Grignoux Yannick", cat: "SepM", total: "19,00" },
+  { pl: 75, nom: "Hebert Jacky", cat: "VetM", total: "16,00" },
+  { pl: 99, nom: "Douville Alexandre", cat: "JunM", total: "13,00" },
+  { pl: 100, nom: "Bulard Laurent", cat: "VetM", total: "13,00" },
+  { pl: 125, nom: "Gentet Elouan", cat: "MinM", total: "10,50" },
+  { pl: 137, nom: "Vauclin Jacques", cat: "VetM", total: "9,00" },
+  { pl: 213, nom: "Mendes Alexis", cat: "SenM", total: "7,00" },
+  { pl: 245, nom: "Archimbaud Kenan", cat: "SenM", total: "6,00" },
+  { pl: 246, nom: "Angot David", cat: "SenM", total: "6,00" },
+  { pl: 284, nom: "Cinna Lionel", cat: "SenM", total: "5,50" },
+  { pl: 285, nom: "Chemin Marc", cat: "VetM", total: "5,50" },
+  { pl: 286, nom: "Guesdon Philippe", cat: "VetM", total: "5,50" },
+  { pl: 316, nom: "Sery Elvin", cat: "MinM", total: "5,00" },
+  { pl: 317, nom: "Pointel David", cat: "SenM", total: "5,00" },
+  { pl: 319, nom: "Lecoutre Samuel", cat: "CadM", total: "5,00" },
+  { pl: 322, nom: "Brault Vincenzo", cat: "PupM", total: "5,00" },
+  { pl: 352, nom: "Wallerich Anatole", cat: "CadM", total: "4,50" },
+  { pl: 365, nom: "Zayakh Rayane", cat: "MinM", total: "4,00" },
+  { pl: 370, nom: "Auber Ryan", cat: "MinM", total: "4,00" },
+  { pl: 380, nom: "Dutertre Nicolas", cat: "SepM", total: "3,50" },
+  { pl: 383, nom: "Auber Rayan", cat: "MinM", total: "3,00" },
+  { pl: 385, nom: "Lecomte Louis", cat: "VetM", total: "3,00" },
+  { pl: 388, nom: "Le Marc Emeric", cat: "BenM", total: "3,00" },
+];
+
 /* Vidéos (hébergées sur YouTube, lecteur sans cookies chargé au clic). La plus récente en premier.
    video : lien YouTube complet ou identifiant de 11 caractères ; date (AAAA-MM-JJ), legende, vignette et format (dimensions réelles de la vidéo : "4 / 5", "9 / 16", "4 / 3" ; "16 / 9" par défaut) sont facultatives.
    Exemple : { video: "https://youtu.be/XXXXXXXXXXX", titre: "Tournoi de Doudeville", date: "2027-01-24", legende: "Les meilleurs moments." } */
