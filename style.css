@@ -3,17 +3,17 @@
   --surface: #f5f6f8;
   --text: #1c2230;
   --muted: #5d6677;
-  --line: #dfe3ea;
-  --accent: #0b3391;
-  --gold: #d9a300;
-  --accent-soft: #e6ecf8;
+  --line: #e5dcd4;
+  --accent: #a3120e;
+  --gold: #c9972a;
+  --accent-soft: #f8e3e0;
   --home: #fff6df;
   --max: 960px;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #12161d; --surface: #1a2029; --text: #e8ebf0; --muted: #98a2b3;
-    --line: #2b3340; --accent: #8fb3e6; --accent-soft: #1f2a3a; --home: #2c2717;
+    --bg: #1a1412; --surface: #241a17; --text: #f0e8e4; --muted: #b3a199;
+    --line: #3a2622; --accent: #ff7a66; --accent-soft: #3a1414; --home: #2c2717;
   }
 }
 /* Fond : illustration de pièces d'échecs (images/fond.jpg), voilée pour garder le texte lisible */
@@ -21,7 +21,7 @@ body::before {
   content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background: linear-gradient(rgba(255, 255, 255, .22), rgba(255, 255, 255, .30)), url("images/fond.jpg") center / cover no-repeat;
 }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body::before { background-image: linear-gradient(rgba(8, 14, 36, .58), rgba(8, 14, 36, .68)), url("images/fond.jpg"); } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body::before { background-image: linear-gradient(rgba(26, 6, 5, .55), rgba(26, 6, 5, .68)), url("images/fond.jpg"); } }
 @media print { body::before { display: none; } }
 .table-scroll, details { background: var(--bg); }
 
@@ -40,18 +40,18 @@ header.site .wrap { display: flex; align-items: center; justify-content: space-b
 .brand img { height: 44px; width: 44px; border-radius: 6px; background: #fff; display: block; }
 header.site { border-bottom: 3px solid var(--gold); }
 .hero .wrap { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-.hero img { width: 200px; height: 200px; border-radius: 12px; background: #fff; padding: 6px; box-shadow: 0 6px 24px rgba(11, 51, 145, .12); }
+.hero img { width: 200px; height: 200px; border-radius: 12px; background: #fff; padding: 6px; box-shadow: 0 6px 24px rgba(163, 18, 14, .18); }
 @media (max-width: 640px) { .hero img { width: 130px; height: 130px; order: -1; } }
 nav.main { display: flex; flex-wrap: wrap; gap: 4px; }
 nav.main a { text-decoration: none; color: var(--muted); padding: 8px 12px; border-radius: 6px; font-size: 15px; }
 nav.main a:hover { background: var(--surface); color: var(--text); }
 nav.main a[aria-current="page"] { color: var(--accent); background: var(--accent-soft); font-weight: 600; }
 
-/* En-tête : bleu du club, filet doré, onglet actif en or */
+/* En-tête : rouge du club, filet doré, onglet actif en or */
 header.site {
-  background: linear-gradient(100deg, #0a2570 0%, #0b3391 55%, #1b4fc0 100%);
+  background: linear-gradient(100deg, #4a0908 0%, #8a1310 55%, #c11f16 100%);
   border-bottom: 3px solid var(--gold);
-  box-shadow: 0 4px 18px rgba(10, 37, 112, .28);
+  box-shadow: 0 4px 18px rgba(90, 10, 8, .30);
 }
 header.site .wrap { max-width: 1320px; min-height: 68px; }
 .brand { color: #fff; font-size: 17px; }
@@ -59,9 +59,9 @@ header.site .wrap { max-width: 1320px; min-height: 68px; }
 nav.main { gap: 2px; }
 nav.main a { color: rgba(255, 255, 255, .86); border-radius: 999px; padding: 8px 11px; transition: background .15s, color .15s; }
 nav.main a:hover { background: rgba(255, 255, 255, .16); color: #fff; }
-nav.main a[aria-current="page"] { background: var(--gold); color: #10204f; font-weight: 700; }
+nav.main a[aria-current="page"] { background: var(--gold); color: #3a0a0a; font-weight: 700; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) header.site { background: linear-gradient(100deg, #070f2b 0%, #0d1c52 55%, #14307f 100%); }
+  :root:not([data-theme="light"]) header.site { background: linear-gradient(100deg, #2b0605 0%, #4a0908 55%, #6b0f0c 100%); }
 }
 @media (max-width: 900px) {
   header.site .wrap { gap: 6px; padding-top: 8px; padding-bottom: 8px; }
@@ -78,10 +78,10 @@ main { padding: 24px 12px 64px; }
 /* Le contenu repose sur un panneau en verre dépoli, au-dessus du fond */
 main > .wrap, .hero .wrap {
   background: rgba(255, 255, 255, .84); border: 1px solid var(--line); border-radius: 16px;
-  padding: 32px 28px; box-shadow: 0 10px 40px rgba(11, 51, 145, .08);
+  padding: 32px 28px; box-shadow: 0 10px 40px rgba(140, 15, 10, .10);
   -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
 }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) main > .wrap, :root:not([data-theme="light"]) .hero .wrap { background: rgba(18, 22, 29, .80); box-shadow: 0 10px 40px rgba(0, 0, 0, .35); } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) main > .wrap, :root:not([data-theme="light"]) .hero .wrap { background: rgba(26, 20, 18, .82); box-shadow: 0 10px 40px rgba(0, 0, 0, .35); } }
 @media (max-width: 640px) { main { padding: 12px 8px 48px; } main > .wrap, .hero .wrap { padding: 22px 16px; border-radius: 12px; } .hero { padding: 12px 8px 0; } }
 @media print { main > .wrap { background: none; border: 0; box-shadow: none; padding: 0; } }
 h1.page { font-size: 32px; margin: 0 0 6px; }
