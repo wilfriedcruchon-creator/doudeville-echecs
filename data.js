@@ -18,8 +18,15 @@ const CLUB = {
   ffe: "https://www.echecs.asso.fr/",
 };
 
-/* Actualités — la plus récente en premier. date : AAAA-MM-JJ */
+/* Actualités — la plus récente en premier. date : AAAA-MM-JJ. lien et lienTexte sont facultatifs. */
 const ACTUALITES = [
+  {
+    date: "2026-10-01",
+    titre: "La liste des licenciés est disponible",
+    texte: "Retrouvez la liste des licenciés du club, avec leur classement Elo, mis à jour automatiquement chaque semaine depuis le site de la FFE.",
+    lien: "licencies.html",
+    lienTexte: "Voir la liste des licenciés",
+  },
   {
     date: "2026-09-24",
     titre: "Le calendrier des équipes seniors est en ligne",

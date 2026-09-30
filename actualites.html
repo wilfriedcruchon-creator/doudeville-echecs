@@ -28,7 +28,8 @@
 <script>
 document.getElementById("list").innerHTML = ACTUALITES.length
   ? ACTUALITES.map(a => `<article class="card"><h3>${esc(a.titre)}</h3>
-      <div class="meta">${cap(fmtDate(a.date, true))}</div><p>${esc(a.texte)}</p></article>`).join("")
+      <div class="meta">${cap(fmtDate(a.date, true))}</div><p>${esc(a.texte)}</p>
+      ${a.lien ? `<p><a href="${esc(a.lien)}">${esc(a.lienTexte || "En savoir plus")} →</a></p>` : ""}</article>`).join("")
   : `<div class="empty">Aucune actualité pour le moment.</div>`;
 </script>
 </body>
