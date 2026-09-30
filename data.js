@@ -51,6 +51,7 @@ const TOURNOIS = [
    puis ajouter une ligne ci-dessous (la plus récente en premier). legende est facultative. */
 const GALERIE = [
   { fichier: "photo-01", alt: "Partie d'échecs géants devant la mairie de Doudeville", legende: "" },
+  { fichier: "photo-02", alt: "Premier logo du club : un cavalier blanc sur un damier rouge et jaune, avec les lettres D, A, E et une fleur bleue", legende: "Le tout premier logo du club, créé par Hubert Paillette il y a une trentaine d'années." },
 ];
 
 /* Vidéos (hébergées sur YouTube, lecteur sans cookies chargé au clic). La plus récente en premier.
