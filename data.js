@@ -85,6 +85,29 @@ const CHALLENGE_DEPARTEMENTAL = [
   { pl: 388, nom: "Le Marc Emeric", cat: "BenM", total: "3,00" },
 ];
 
+/* Licenciés actifs du club (nom, prénom, n° FFE uniquement), par ordre alphabétique du nom.
+   Source : export des licences FFE. Page non indexée, accessible uniquement depuis "Le club". */
+const LICENCIES = [
+  { nom: "Annet-Hue", prenom: "Evan", licence: "X52584" },
+  { nom: "Archimbaud", prenom: "Kenan", licence: "V08998" },
+  { nom: "Brault", prenom: "Vincenzo", licence: "X72710" },
+  { nom: "Colignon", prenom: "Charles", licence: "T05922" },
+  { nom: "Cruchon", prenom: "Wilfried", licence: "Z50926" },
+  { nom: "Deslandre", prenom: "Anatole", licence: "V57495" },
+  { nom: "Dutertre", prenom: "Nicolas", licence: "Z69185" },
+  { nom: "Garot", prenom: "Nicolas", licence: "N57705" },
+  { nom: "Gombrowicz", prenom: "Cyrille", licence: "U50918" },
+  { nom: "Hebert", prenom: "Jacky", licence: "L08866" },
+  { nom: "Lecomte", prenom: "Louis", licence: "T64839" },
+  { nom: "Lenoble", prenom: "Philippe", licence: "T05907" },
+  { nom: "Martin", prenom: "Richard", licence: "V57496" },
+  { nom: "Paillette", prenom: "Hubert", licence: "N07004" },
+  { nom: "Palmero", prenom: "Ezio", licence: "T05929" },
+  { nom: "Pointel", prenom: "David", licence: "W12660" },
+  { nom: "Tronel", prenom: "Benoit", licence: "X82008" },
+  { nom: "Varin", prenom: "Herve", licence: "C51779" },
+];
+
 /* Vidéos (hébergées sur YouTube, lecteur sans cookies chargé au clic). La plus récente en premier.
    video : lien YouTube complet ou identifiant de 11 caractères ; date (AAAA-MM-JJ), legende, vignette et format (dimensions réelles de la vidéo : "4 / 5", "9 / 16", "4 / 3" ; "16 / 9" par défaut) sont facultatives.
    Exemple : { video: "https://youtu.be/XXXXXXXXXXX", titre: "Tournoi de Doudeville", date: "2027-01-24", legende: "Les meilleurs moments." } */

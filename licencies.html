@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Licenciés – Doudeville Accueil Échecs</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main><div class="wrap">
+  <h1 class="page">Licenciés</h1>
+  <p class="lead">Les licenciés actifs du club pour la saison en cours, par ordre alphabétique.</p>
+
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Nom</th><th>Prénom</th><th>N° de licence</th></tr></thead>
+      <tbody id="liste"></tbody>
+    </table>
+  </div>
+  <p class="legend" style="margin-top:14px">Liste établie à partir de l'export des licences de la Fédération Française des Échecs.</p>
+</div></main>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+document.getElementById("liste").innerHTML = LICENCIES.map(l =>
+  `<tr><td>${esc(l.nom)}</td><td>${esc(l.prenom)}</td><td>${esc(l.licence)}</td></tr>`
+).join("");
+</script>
+</body>
+</html>
