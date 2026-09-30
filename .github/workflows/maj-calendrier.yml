@@ -4,6 +4,8 @@ on:
   schedule:
     # Toutes les 3 h le samedi, le dimanche et le lundi (jours de rondes et de saisie des scores). Heure UTC.
     - cron: "0 */3 * * 0,1,6"
+    # Une fois par jour en semaine (mar-ven), pour suivre aussi les corrections faites par la ligue hors week-end.
+    - cron: "0 6 * * 2,3,4,5"
   workflow_dispatch: # lancement manuel possible depuis l'onglet Actions
 
 permissions:

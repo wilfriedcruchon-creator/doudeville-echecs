@@ -1,5 +1,5 @@
 /* Fichier généré automatiquement par scripts/update_calendrier.py — ne pas modifier à la main. */
-/* Dernière mise à jour : 24/09/2026 21:18 */
+/* Dernière mise à jour : 30/09/2026 21:12 */
 const RONDES = [
  {
   "n": 1,
@@ -8,7 +8,7 @@ const RONDES = [
   "matchs": [
    [
     "Échiquier Dieppois 4",
-    "Sotteville 1",
+    "Sotteville 3",
     "Dieppe"
    ],
    [
@@ -44,7 +44,7 @@ const RONDES = [
     "Doudeville"
    ],
    [
-    "Sotteville 1",
+    "Sotteville 3",
     "Gonfreville 4",
     "Sotteville-lès-Rouen"
    ],
@@ -67,7 +67,7 @@ const RONDES = [
    ],
    [
     "Gonfreville 5",
-    "Sotteville 1",
+    "Sotteville 3",
     "Gonfreville"
    ],
    [
@@ -93,7 +93,7 @@ const RONDES = [
     "Doudeville"
    ],
    [
-    "Sotteville 1",
+    "Sotteville 3",
     "Montivilliers 1",
     "Sotteville-lès-Rouen"
    ],
@@ -126,7 +126,7 @@ const RONDES = [
    ],
    [
     "Montivilliers 2",
-    "Sotteville 1",
+    "Sotteville 3",
     "Sotteville-lès-Rouen"
    ],
    [
@@ -142,7 +142,7 @@ const RONDES = [
   "heure": "14:15",
   "matchs": [
    [
-    "Sotteville 1",
+    "Sotteville 3",
     "Doudeville 1",
     "Sotteville-lès-Rouen"
    ],
@@ -185,7 +185,7 @@ const RONDES = [
    ],
    [
     "Doudeville 2",
-    "Sotteville 1",
+    "Sotteville 3",
     "Sotteville-lès-Rouen"
    ]
   ]
@@ -238,7 +238,7 @@ const RONDES = [
     "Doudeville"
    ],
    [
-    "Sotteville 1",
+    "Sotteville 3",
     "Échiquier Dieppois 3",
     "Dieppe"
    ]
@@ -246,4 +246,4 @@ const RONDES = [
  }
 ];
 const RESULTATS = {};
-const MAJ = "2026-09-24";
+const MAJ = "2026-09-30";
