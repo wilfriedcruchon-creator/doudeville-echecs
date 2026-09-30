@@ -1,0 +1,30 @@
+name: Mise à jour de l'Elo des licenciés
+
+on:
+  schedule:
+    # Une fois par semaine, le lundi matin (heure UTC) : l'Elo ne change qu'après un tournoi homologué.
+    - cron: "0 6 * * 1"
+  workflow_dispatch: # lancement manuel possible depuis l'onglet Actions
+
+permissions:
+  contents: write
+
+jobs:
+  maj:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Lire les Elo sur echecs.asso.fr
+        run: python scripts/update_elo.py
+      - name: Enregistrer si modifié
+        run: |
+          if [ -n "$(git status --porcelain data.js)" ]; then
+            git config user.name "maj-elo"
+            git config user.email "actions@users.noreply.github.com"
+            git add data.js
+            git commit -m "Mise à jour automatique de l'Elo des licenciés"
+            git push
+          fi
