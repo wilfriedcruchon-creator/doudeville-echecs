@@ -6,15 +6,31 @@
 <meta name="robots" content="noindex">
 <title>Licenciés – Doudeville Accueil Échecs</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  #tableLicencies th button {
+    font: inherit; font-weight: inherit; color: inherit; background: none; border: 0; cursor: pointer;
+    padding: 0; display: inline-flex; align-items: center; gap: 5px; width: 100%; text-align: left;
+  }
+  #tableLicencies th button:hover { text-decoration: underline; }
+  #tableLicencies th .fleche { opacity: .35; font-size: 11px; }
+  #tableLicencies th[aria-sort] .fleche { opacity: 1; }
+</style>
 </head>
 <body>
 <main><div class="wrap">
   <h1 class="page">Licenciés</h1>
-  <p class="lead">Les licenciés actifs du club pour la saison en cours.</p>
+  <p class="lead">Les licenciés actifs du club pour la saison en cours. Cliquez sur une colonne pour trier.</p>
 
   <div class="table-scroll">
-    <table>
-      <thead><tr><th>Nom</th><th>Prénom</th><th>N° de licence</th><th>Elo standard</th><th>Elo rapide</th><th>Elo blitz</th></tr></thead>
+    <table id="tableLicencies">
+      <thead><tr>
+        <th data-tri="nom" data-type="texte">Nom</th>
+        <th data-tri="prenom" data-type="texte">Prénom</th>
+        <th data-tri="licence" data-type="texte">N° de licence</th>
+        <th data-tri="elo" data-type="nombre">Elo standard</th>
+        <th data-tri="eloRapide" data-type="nombre">Elo rapide</th>
+        <th data-tri="eloBlitz" data-type="nombre">Elo blitz</th>
+      </tr></thead>
       <tbody id="liste"></tbody>
     </table>
   </div>
@@ -24,9 +40,54 @@
 <script src="data.js"></script>
 <script src="site.js"></script>
 <script>
-document.getElementById("liste").innerHTML = LICENCIES.map(l =>
-  `<tr><td>${esc(l.nom)}</td><td>${esc(l.prenom)}</td><td>${esc(l.licence)}</td><td>${esc(l.elo)}</td><td>${esc(l.eloRapide)}</td><td>${esc(l.eloBlitz)}</td></tr>`
-).join("");
+const corps = document.getElementById("liste");
+const cols = ["nom", "prenom", "licence", "elo", "eloRapide", "eloBlitz"];
+
+function dessiner(lignes) {
+  corps.innerHTML = lignes.map(l =>
+    `<tr>${cols.map(c => `<td>${esc(l[c])}</td>`).join("")}</tr>`
+  ).join("");
+}
+
+/* Entête cliquable : bouton + petite flèche, pour rester accessible au clavier */
+document.querySelectorAll("#tableLicencies thead th").forEach(th => {
+  const texte = th.textContent;
+  const bouton = document.createElement("button");
+  bouton.type = "button";
+  bouton.innerHTML = `${esc(texte)}<span class="fleche">↕</span>`;
+  th.textContent = "";
+  th.appendChild(bouton);
+});
+
+let triActuel = { colonne: null, sens: 1 };
+
+function trier(colonne) {
+  const th = document.querySelector(`#tableLicencies th[data-tri="${colonne}"]`);
+  const type = th.dataset.type;
+  triActuel.sens = triActuel.colonne === colonne ? -triActuel.sens : 1;
+  triActuel.colonne = colonne;
+
+  const valeur = l => type === "nombre" ? parseInt(l[colonne], 10) || 0 : l[colonne];
+  const lignes = [...LICENCIES].sort((a, b) => {
+    const va = valeur(a), vb = valeur(b);
+    const cmp = type === "nombre" ? va - vb : String(va).localeCompare(String(vb), "fr");
+    return cmp * triActuel.sens;
+  });
+  dessiner(lignes);
+
+  document.querySelectorAll("#tableLicencies th").forEach(t => {
+    t.removeAttribute("aria-sort");
+    t.querySelector(".fleche").textContent = "↕";
+  });
+  th.setAttribute("aria-sort", triActuel.sens === 1 ? "ascending" : "descending");
+  th.querySelector(".fleche").textContent = triActuel.sens === 1 ? "↑" : "↓";
+}
+
+document.querySelectorAll("#tableLicencies th button").forEach((b, i) =>
+  b.addEventListener("click", () => trier(cols[i]))
+);
+
+trier("nom"); // tri initial, par ordre alphabétique
 </script>
 </body>
 </html>
