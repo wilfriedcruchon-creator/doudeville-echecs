@@ -11,6 +11,9 @@
   .archive-photos figure { margin: 0; }
   .archive-photos img { width: 100%; height: auto; display: block; border-radius: 8px; }
   .archive-photos figcaption { font-size: 14px; color: var(--muted); margin-top: 6px; }
+  .logo-historique { margin: 24px 0 0; }
+  .logo-historique img { width: 200px; height: auto; display: block; border-radius: 10px; border: 1px solid var(--line); box-shadow: 0 4px 14px rgba(0,0,0,.14); }
+  .logo-historique figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; max-width: 46ch; }
 </style>
 <meta name="description" content="L'histoire du club d'échecs de Doudeville, créé en 1997, et les souvenirs de l'ancien site : titres, actualités et photos d'archives.">
 <link rel="canonical" href="https://doudeville-echecs.fr/archives.html">
@@ -46,6 +49,10 @@
 const A = ARCHIVES;
 document.getElementById("histoire").innerHTML =
   A.histoire.paragraphes.map(p => `<p>${esc(p)}</p>`).join("") +
+  `<figure class="logo-historique">
+     <img src="images/archives/ancien-logo-dae.png" alt="Premier logo du club : un cavalier blanc sur un damier rouge et jaune, avec les lettres D, A, E et une fleur bleue" loading="lazy">
+     <figcaption>Le tout premier logo du club, créé par Hubert Paillette il y a une trentaine d'années.</figcaption>
+   </figure>` +
   `<p class="legend">${esc(A.histoire.note)}</p>`;
 document.getElementById("actus").innerHTML = A.actus.map(a =>
   `<article class="card"><h3>${esc(a.titre)}</h3><div class="meta">${cap(fmtDate(a.date, true))}</div><p>${esc(a.texte)}</p></article>`).join("");
