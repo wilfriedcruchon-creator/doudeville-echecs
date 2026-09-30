@@ -85,27 +85,27 @@ const CHALLENGE_DEPARTEMENTAL = [
   { pl: 388, nom: "Le Marc Emeric", cat: "BenM", total: "3,00" },
 ];
 
-/* Licenciés actifs du club (nom, prénom, n° FFE uniquement), par ordre alphabétique du nom.
+/* Licenciés actifs du club (nom, prénom, n° FFE, Elo standard), par ordre alphabétique du nom.
    Source : export des licences FFE. Page non indexée, accessible uniquement depuis "Le club". */
 const LICENCIES = [
-  { nom: "Annet-Hue", prenom: "Evan", licence: "X52584" },
-  { nom: "Archimbaud", prenom: "Kenan", licence: "V08998" },
-  { nom: "Brault", prenom: "Vincenzo", licence: "X72710" },
-  { nom: "Colignon", prenom: "Charles", licence: "T05922" },
-  { nom: "Cruchon", prenom: "Wilfried", licence: "Z50926" },
-  { nom: "Deslandre", prenom: "Anatole", licence: "V57495" },
-  { nom: "Dutertre", prenom: "Nicolas", licence: "Z69185" },
-  { nom: "Garot", prenom: "Nicolas", licence: "N57705" },
-  { nom: "Gombrowicz", prenom: "Cyrille", licence: "U50918" },
-  { nom: "Hebert", prenom: "Jacky", licence: "L08866" },
-  { nom: "Lecomte", prenom: "Louis", licence: "T64839" },
-  { nom: "Lenoble", prenom: "Philippe", licence: "T05907" },
-  { nom: "Martin", prenom: "Richard", licence: "V57496" },
-  { nom: "Paillette", prenom: "Hubert", licence: "N07004" },
-  { nom: "Palmero", prenom: "Ezio", licence: "T05929" },
-  { nom: "Pointel", prenom: "David", licence: "W12660" },
-  { nom: "Tronel", prenom: "Benoit", licence: "X82008" },
-  { nom: "Varin", prenom: "Herve", licence: "C51779" },
+  { nom: "Annet-Hue", prenom: "Evan", licence: "X52584", elo: "1299 E" },
+  { nom: "Archimbaud", prenom: "Kenan", licence: "V08998", elo: "1708 F" },
+  { nom: "Brault", prenom: "Vincenzo", licence: "X72710", elo: "1299 E" },
+  { nom: "Colignon", prenom: "Charles", licence: "T05922", elo: "1299 E" },
+  { nom: "Cruchon", prenom: "Wilfried", licence: "Z50926", elo: "1399 E" },
+  { nom: "Deslandre", prenom: "Anatole", licence: "V57495", elo: "1299 E" },
+  { nom: "Dutertre", prenom: "Nicolas", licence: "Z69185", elo: "1399 E" },
+  { nom: "Garot", prenom: "Nicolas", licence: "N57705", elo: "1593 F" },
+  { nom: "Gombrowicz", prenom: "Cyrille", licence: "U50918", elo: "1585 F" },
+  { nom: "Hebert", prenom: "Jacky", licence: "L08866", elo: "1399 E" },
+  { nom: "Lecomte", prenom: "Louis", licence: "T64839", elo: "1489 F" },
+  { nom: "Lenoble", prenom: "Philippe", licence: "T05907", elo: "1399 E" },
+  { nom: "Martin", prenom: "Richard", licence: "V57496", elo: "1465 F" },
+  { nom: "Paillette", prenom: "Hubert", licence: "N07004", elo: "1516 F" },
+  { nom: "Palmero", prenom: "Ezio", licence: "T05929", elo: "1299 E" },
+  { nom: "Pointel", prenom: "David", licence: "W12660", elo: "1399 E" },
+  { nom: "Tronel", prenom: "Benoit", licence: "X82008", elo: "1299 E" },
+  { nom: "Varin", prenom: "Herve", licence: "C51779", elo: "1639 F" },
 ];
 
 /* Vidéos (hébergées sur YouTube, lecteur sans cookies chargé au clic). La plus récente en premier.

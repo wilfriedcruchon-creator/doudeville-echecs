@@ -14,7 +14,7 @@
 
   <div class="table-scroll">
     <table>
-      <thead><tr><th>Nom</th><th>Prénom</th><th>N° de licence</th></tr></thead>
+      <thead><tr><th>Nom</th><th>Prénom</th><th>N° de licence</th><th>Elo standard</th></tr></thead>
       <tbody id="liste"></tbody>
     </table>
   </div>
@@ -24,7 +24,7 @@
 <script src="site.js"></script>
 <script>
 document.getElementById("liste").innerHTML = LICENCIES.map(l =>
-  `<tr><td>${esc(l.nom)}</td><td>${esc(l.prenom)}</td><td>${esc(l.licence)}</td></tr>`
+  `<tr><td>${esc(l.nom)}</td><td>${esc(l.prenom)}</td><td>${esc(l.licence)}</td><td>${esc(l.elo)}</td></tr>`
 ).join("");
 </script>
 </body>
