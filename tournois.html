@@ -21,7 +21,6 @@
 <main><div class="wrap">
   <h1 class="page">Tournois</h1>
   <p class="lead">Les tournois organisés par le club et ceux de la région.</p>
-  <p><a href="challenge-departemental.html">Voir le classement du club au Challenge départemental →</a></p>
   <div id="list"></div>
 </div></main>
 <script src="data.js"></script>
@@ -43,6 +42,7 @@ document.getElementById("list").innerHTML =
   (avenir.length ? `<div class="grid">${avenir.map(carte).join("")}</div>` : `<div class="empty">Aucun tournoi programmé pour le moment.</div>`) +
   (passes.length ? `<h2>Passés</h2><div class="grid">${passes.map(carte).join("")}</div>` : "") +
   `<h2>${esc(CHALLENGE.titre)}</h2>
+   <p><a href="challenge-departemental.html">Voir le classement du club au Challenge départemental →</a></p>
    <div class="table-scroll"><table><thead><tr><th>Ronde</th><th>Date</th><th>Lieu</th><th>Statut</th></tr></thead><tbody>` +
   CHALLENGE.rondes.map(r => {
     const cls = [/Doudeville/.test(r.lieu) ? "home" : "", r.date && r.date < todayISO() ? "past" : ""].join(" ");
