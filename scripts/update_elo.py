@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Met à jour le champ elo de chaque joueur de LICENCIES (dans data.js) depuis la page club FFE.
+"""Met à jour les champs elo / eloRapide / eloBlitz de chaque joueur de LICENCIES (dans data.js)
+depuis la page club FFE.
 
 Usage : python scripts/update_elo.py
-Ne touche qu'aux licences déjà présentes dans LICENCIES (le champ "elo" uniquement) :
+Ne touche qu'aux licences déjà présentes dans LICENCIES (les 3 champs Elo uniquement) :
 n'ajoute ni ne retire aucun joueur, ne modifie ni nom ni prénom. La liste des licenciés
-reste une décision manuelle du club ; seul leur classement Elo standard est automatique.
+reste une décision manuelle du club ; seul leur classement Elo est automatique.
 Sans dépendance externe (bibliothèque standard uniquement). Le fichier n'est réécrit que
 si la lecture de la FFE a réussi ET que des valeurs ont réellement changé.
 """
@@ -24,7 +25,9 @@ LIGNE = re.compile(
     r'<tr class=liste_(?:clair|fonce)>\s*'
     r'<td align=center>(?P<licence>\w+)</td>\s*'
     r'<td align=left>(?:<a[^>]*>)?(?P<nom>[^<]+)(?:</a>)?</td>.*?'
-    r'<td align=right>(?P<elo>\d+&nbsp;[EFN])</td>',
+    r'<td align=right>(?P<std>\d+&nbsp;[EFN])</td>\s*'
+    r'<td align=right>(?P<rap>\d+&nbsp;[EFN])</td>\s*'
+    r'<td align=right>(?P<blitz>\d+&nbsp;[EFN])</td>',
     re.S,
 )
 
@@ -68,7 +71,8 @@ def elos_du_club():
         page_n += 1
     for p in pages:
         for m in LIGNE.finditer(p):
-            elos[m.group("licence")] = html.unescape(m.group("elo")).replace("\xa0", " ")
+            nettoyer = lambda s: html.unescape(s).replace("\xa0", " ")
+            elos[m.group("licence")] = (nettoyer(m.group("std")), nettoyer(m.group("rap")), nettoyer(m.group("blitz")))
     return elos
 
 
@@ -88,14 +92,16 @@ def main():
         licence = m.group("licence")
         if licence not in elos:
             return m.group(0)
-        nouveau = elos[licence]
-        if nouveau != m.group("elo"):
-            modifies.append((licence, m.group("elo"), nouveau))
-        return f'{m.group("avant")}elo: "{nouveau}" {m.group("apres")}'
+        std, rap, blitz = elos[licence]
+        avant = (m.group("elo"), m.group("rap"), m.group("blitz"))
+        apres = (std, rap, blitz)
+        if apres != avant:
+            modifies.append((licence, avant, apres))
+        return f'{m.group("avant")}elo: "{std}", eloRapide: "{rap}", eloBlitz: "{blitz}" {m.group("fin")}'
 
     ligne_obj = re.compile(
         r'(?P<avant>\{\s*nom:\s*"[^"]*",\s*prenom:\s*"[^"]*",\s*licence:\s*"(?P<licence>[^"]*)",\s*)'
-        r'elo:\s*"(?P<elo>[^"]*)"\s*(?P<apres>\})'
+        r'elo:\s*"(?P<elo>[^"]*)",\s*eloRapide:\s*"(?P<rap>[^"]*)",\s*eloBlitz:\s*"(?P<blitz>[^"]*)"\s*(?P<fin>\})'
     )
     nouveau_bloc = ligne_obj.sub(remplacer, bloc.group(1))
 
