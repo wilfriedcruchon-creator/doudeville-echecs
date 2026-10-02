@@ -95,17 +95,22 @@ const CHALLENGE_DEPARTEMENTAL = [
 /* Licenciés actifs du club (nom, prénom, n° FFE, Elo standard/rapide/blitz), par ordre alphabétique du nom.
    Source : export des licences FFE. Page non indexée, accessible uniquement depuis "Le club". */
 const LICENCIES = [
+  { nom: "Angot", prenom: "David", licence: "Z82469", elo: "1399 E", eloRapide: "1748 F", eloBlitz: "1199 E" },
   { nom: "Annet-Hue", prenom: "Evan", licence: "X52584", elo: "1299 E", eloRapide: "1535 F", eloBlitz: "920 E" },
   { nom: "Archimbaud", prenom: "Kenan", licence: "V08998", elo: "1708 F", eloRapide: "1644 F", eloBlitz: "1653 E" },
+  { nom: "Baudet", prenom: "Axel", licence: "Z68428", elo: "1299 E", eloRapide: "799 E", eloBlitz: "799 E" },
   { nom: "Brault", prenom: "Vincenzo", licence: "X72710", elo: "1299 E", eloRapide: "1416 F", eloBlitz: "799 E" },
+  { nom: "Chemin", prenom: "Marc", licence: "Y16884", elo: "1432 F", eloRapide: "1475 F", eloBlitz: "1476 E" },
   { nom: "Colignon", prenom: "Charles", licence: "T05922", elo: "1299 E", eloRapide: "799 E", eloBlitz: "799 E" },
   { nom: "Cruchon", prenom: "Wilfried", licence: "Z50926", elo: "1399 E", eloRapide: "1516 F", eloBlitz: "1199 E" },
   { nom: "Deslandre", prenom: "Anatole", licence: "V57495", elo: "1299 E", eloRapide: "1199 E", eloBlitz: "999 E" },
   { nom: "Dutertre", prenom: "Nicolas", licence: "Z69185", elo: "1399 E", eloRapide: "1199 E", eloBlitz: "1199 E" },
   { nom: "Garot", prenom: "Nicolas", licence: "N57705", elo: "1593 F", eloRapide: "1646 F", eloBlitz: "1633 E" },
   { nom: "Gombrowicz", prenom: "Cyrille", licence: "U50918", elo: "1585 F", eloRapide: "1539 F", eloBlitz: "1525 E" },
+  { nom: "Hautot Delisle", prenom: "Erwan", licence: "X76478", elo: "1299 E", eloRapide: "940 N", eloBlitz: "999 E" },
   { nom: "Hebert", prenom: "Jacky", licence: "L08866", elo: "1399 E", eloRapide: "1170 N", eloBlitz: "1399 E" },
   { nom: "Lecomte", prenom: "Louis", licence: "T64839", elo: "1489 F", eloRapide: "1418 F", eloBlitz: "880 E" },
+  { nom: "Lecoutre", prenom: "Samuel", licence: "Z63856", elo: "1299 E", eloRapide: "1512 F", eloBlitz: "1199 E" },
   { nom: "Lenoble", prenom: "Philippe", licence: "T05907", elo: "1399 E", eloRapide: "1199 E", eloBlitz: "1199 E" },
   { nom: "Martin", prenom: "Richard", licence: "V57496", elo: "1465 F", eloRapide: "1558 F", eloBlitz: "1199 E" },
   { nom: "Paillette", prenom: "Hubert", licence: "N07004", elo: "1516 F", eloRapide: "1460 N", eloBlitz: "1520 N" },
