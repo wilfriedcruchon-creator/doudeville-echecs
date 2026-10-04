@@ -18,8 +18,20 @@ const CLUB = {
   ffe: "https://www.echecs.asso.fr/",
 };
 
-/* Actualités — la plus récente en premier. date : AAAA-MM-JJ. lien et lienTexte sont facultatifs. */
+/* Actualités — la plus récente en premier. date : AAAA-MM-JJ. Une ligne du texte (séparée par \n) = un paragraphe.
+   Facultatifs : lien + lienTexte ; photos = liste de `fichier` de la galerie (elles s'affichent sous le texte).
+   Toute photo d'actualité doit aussi figurer dans GALERIE ci-dessous. */
 const ACTUALITES = [
+  {
+    date: "2026-10-04",
+    titre: "19e Rapide d'Orcher la Tour : une belle journée d'échecs",
+    texte: "Une belle journée à Gonfreville l’Orcher pour le 19e Rapide d’Orcher la Tour réunissant 126 participants (dont un Grand Maître et trois Maîtres FIDE).\n" +
+      "David Angot se hisse à la 46e place avec un score de 5/9.\n" +
+      "David Pointel atteint la 66e place avec un joli 4,5/9.\n" +
+      "Wilfried Cruchon fait 72e avec également un 4,5/9.\n" +
+      "Une belle journée d’échecs et un repas super copieux partagé au buffet à volonté qui se trouvait à deux pas du tournoi ^^",
+    photos: ["photo-03", "photo-04"],
+  },
   {
     date: "2026-10-01",
     titre: "La liste des licenciés est disponible",
@@ -57,6 +69,8 @@ const TOURNOIS = [
 /* Galerie photos. Pour ajouter une photo : déposer photo-XX.jpg et photo-XX-mini.jpg dans images/galerie/
    puis ajouter une ligne ci-dessous (la plus récente en premier). legende est facultative. */
 const GALERIE = [
+  { fichier: "photo-03", alt: "Une partie en cours au 19e Rapide d'Orcher la Tour, dans une grande salle garnie d'échiquiers", legende: "19e Rapide d'Orcher la Tour, Gonfreville-l'Orcher (4 octobre 2026)." },
+  { fichier: "photo-04", alt: "Trois joueurs posent devant une vitrine de trophées", legende: "19e Rapide d'Orcher la Tour, Gonfreville-l'Orcher (4 octobre 2026)." },
   { fichier: "photo-01", alt: "Partie d'échecs géants devant la mairie de Doudeville", legende: "" },
   { fichier: "photo-02", alt: "Premier logo du club : un cavalier blanc sur un damier rouge et jaune, avec les lettres D, A, E et une fleur bleue", legende: "Le tout premier logo du club, créé par Hubert Paillette il y a une trentaine d'années." },
 ];

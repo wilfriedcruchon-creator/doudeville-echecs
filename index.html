@@ -95,7 +95,7 @@ document.getElementById("next").innerHTML = EQUIPES.map(e => {
 
 const a = ACTUALITES[0];
 document.getElementById("news").innerHTML = a
-  ? `<div class="card"><h3>${esc(a.titre)}</h3><div class="meta">${cap(fmtDate(a.date, true))}</div><p>${esc(a.texte)}</p>
+  ? `<div class="card"><h3>${esc(a.titre)}</h3><div class="meta">${cap(fmtDate(a.date, true))}</div>${paragraphes(a.texte)}${photosActu(a.photos)}
       ${a.lien ? `<p><a href="${esc(a.lien)}">${esc(a.lienTexte || "En savoir plus")} →</a></p>` : ""}</div>`
   : `<div class="empty">Aucune actualité pour le moment.</div>`;
 

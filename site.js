@@ -33,6 +33,17 @@ function idYoutube(v) {
   const m = String(v || "").trim().match(/(?:v=|youtu\.be\/|embed\/|shorts\/|live\/)([\w-]{11})|^([\w-]{11})$/);
   return m ? (m[1] || m[2]) : null;
 }
+/* Texte en plusieurs paragraphes : une ligne du texte (séparée par \n) = un paragraphe */
+const paragraphes = t => String(t || "").split("\n").map(p => p.trim()).filter(Boolean).map(p => `<p>${esc(p)}</p>`).join("");
+/* Photos d'une actualité : renvoie le HTML des vignettes, en reprenant légende et texte alternatif de la galerie */
+function photosActu(fichiers) {
+  if (!fichiers || !fichiers.length || typeof GALERIE === "undefined") return "";
+  return `<div class="photos-actu">` + fichiers.map(f => {
+    const p = GALERIE.find(g => g.fichier === f);
+    if (!p) return "";
+    return `<a href="images/galerie/${esc(f)}.jpg" target="_blank" rel="noopener"><img src="images/galerie/${esc(f)}-mini.jpg" alt="${esc(p.alt)}" loading="lazy"></a>`;
+  }).join("") + `</div>`;
+}
 const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 const todayISO = () => new Date().toISOString().slice(0, 10);
 
