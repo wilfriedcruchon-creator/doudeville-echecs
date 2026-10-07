@@ -9,6 +9,7 @@ import html
 import json
 import re
 import sys
+import time
 import urllib.request
 from datetime import datetime
 from pathlib import Path
@@ -22,10 +23,18 @@ SORTIE = Path(__file__).resolve().parent.parent / "calendrier.js"
 LIEUX = {"SOTTEVILLE LES ROUEN": "Sotteville-lès-Rouen"}
 
 
-def telecharger(url):
+def telecharger(url, essais=3):
+    # Le site de la FFE est parfois lent : on réessaie avant d'abandonner.
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (site-club-echecs)"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return r.read().decode("utf-8", errors="replace")
+    for n in range(1, essais + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return r.read().decode("utf-8", errors="replace")
+        except OSError as e:
+            if n == essais:
+                raise
+            print(f"Essai {n}/{essais} échoué ({e}), nouvel essai dans {30 * n} s", file=sys.stderr)
+            time.sleep(30 * n)
 
 
 def texte(cellule):

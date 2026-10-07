@@ -12,6 +12,7 @@ si la lecture de la FFE a réussi ET que des valeurs ont réellement changé.
 import html
 import re
 import sys
+import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -32,13 +33,21 @@ LIGNE = re.compile(
 )
 
 
-def get(url, data=None, cookie=None):
+def get(url, data=None, cookie=None, essais=3):
+    # Le site de la FFE est parfois lent : on réessaie avant d'abandonner.
     req = urllib.request.Request(
         url, data=data, method="POST" if data else "GET",
         headers={"User-Agent": UA, "Accept-Language": "fr-FR", **({"Cookie": cookie} if cookie else {})},
     )
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return r.read().decode("utf-8", "replace"), r.headers.get("Set-Cookie")
+    for n in range(1, essais + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return r.read().decode("utf-8", "replace"), r.headers.get("Set-Cookie")
+        except OSError as e:
+            if n == essais:
+                raise
+            print(f"Essai {n}/{essais} échoué ({e}), nouvel essai dans {30 * n} s", file=sys.stderr)
+            time.sleep(30 * n)
 
 
 def champ_cache(page, nom):
