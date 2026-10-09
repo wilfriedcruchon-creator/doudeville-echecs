@@ -103,3 +103,11 @@ function prochainMatch(nom) {
       <span>Club affilié à la <a href="${CLUB.ffe}" rel="noopener">Fédération Française des Échecs</a></span>
     </div></footer>`);
 })();
+
+/* Composition de l'équipe : nom, prénom et Elo seulement (repris de LICENCIES) */
+function composition(e) {
+  const js = (e.joueurs || []).map(n => LICENCIES.find(l => l.licence === n)).filter(Boolean);
+  if (!js.length) return "";
+  return `<h4 style="margin:16px 0 6px">Composition</h4><ul class="compo" style="list-style:none;padding:0;margin:0">` +
+    js.map(j => `<li style="display:flex;justify-content:space-between;gap:12px;padding:3px 0;border-top:1px solid var(--line)"><span>${esc(j.prenom)} ${esc(j.nom)}</span><span class="meta">${esc(j.elo)}</span></li>`).join("") + `</ul>`;
+}
