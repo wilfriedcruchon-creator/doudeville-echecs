@@ -40,4 +40,3 @@ Président : Hubert Paillette. Webmaster : Wilfried Cruchon, wilfried.cruchon@gm
 - Calendriers des équipes jeunes (à ajouter quand l'utilisateur les aura).
 - Barème du classement (à connaître après la ronde 1 du 11/10/2026) et vérification du format réel des scores FFE.
 - Challenge des parties rapides : ronde 8 Bonsecours « avril 2026 » interprétée comme avril 2027 ; ronde 2 un samedi, à confirmer.
-- Page licenciés : proposer de remplacer « licenciés actifs » par « licenciés » (un licencié est « En attente de paiement »).
