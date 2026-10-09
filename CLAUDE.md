@@ -25,6 +25,7 @@ Demander quand même confirmation pour les actions risquées ou difficiles à an
 ## Vie privée (important)
 - **Ne jamais committer les exports de licences** (`*.xlsx`, `*.csv`) : ils contiennent adresses, e-mails et téléphones. Si le dépôt est cloné ailleurs, les exclure localement dans `.git/info/exclude` (`*.xlsx`, `*.csv`, `.~lock.*`, `*.tmp`).
 - La page licenciés n'affiche que nom, prénom, n° de licence et Elo (F = FIDE, N = national, E = estimé). Elle contient des mineurs : garder `noindex`, ne rien ajouter d'autre.
+- Page Résultats : la composition des équipes (champ `joueurs` de `EQUIPES`, numéros de licence) affiche prénom, nom et Elo, y compris pour les jeunes (accord de l'utilisateur, 09/10/2026). Ni date de naissance, ni catégorie, ni n° de licence.
 - Ne jamais publier de photo de personnes reconnaissables, surtout des enfants, sans accord explicite.
 
 ## Photos
