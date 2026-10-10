@@ -45,9 +45,9 @@ document.getElementById("list").innerHTML =
    <p><a href="challenge-departemental.html">Voir le classement du club au Challenge départemental →</a></p>
    <div class="table-scroll"><table><thead><tr><th>Ronde</th><th>Date</th><th>Lieu</th><th>Statut</th></tr></thead><tbody>` +
   CHALLENGE.rondes.map(r => {
-    const cls = [/Doudeville/.test(r.lieu) ? "home" : "", r.date && r.date < todayISO() ? "past" : ""].join(" ");
+    const cls = [/Doudeville/.test(r.lieu) ? "home" : "", r.date && r.date < todayISO() ? "past" : "", r.annule ? "past" : ""].join(" ");
     const quand = r.date ? cap(fmtDate(r.date, true)) : `${esc(r.quand)} <span class="meta" style="color:var(--muted)">(jour à préciser)</span>`;
-    return `<tr class="${cls}"><td>${esc(r.ronde)}</td><td>${quand}</td><td>${esc(r.lieu)}</td><td>${r.confirme ? "Confirmé" : "À confirmer"}</td></tr>`;
+    return `<tr class="${cls}"><td>${esc(r.ronde)}</td><td>${r.annule ? `<s>${quand}</s>` : quand}</td><td>${r.annule ? `<s>${esc(r.lieu)}</s>` : esc(r.lieu)}</td><td>${r.annule ? "<strong>Annulé</strong>" : r.confirme ? "Confirmé" : "À confirmer"}</td></tr>`;
   }).join("") +
   `</tbody></table></div>
    <p class="legend"><span class="swatch"></span>Étape organisée à Doudeville</p>

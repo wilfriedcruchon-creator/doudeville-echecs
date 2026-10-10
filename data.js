@@ -23,6 +23,14 @@ const CLUB = {
    Toute photo d'actualité doit aussi figurer dans GALERIE ci-dessous. */
 const ACTUALITES = [
   {
+    date: "2026-10-10",
+    titre: "Tournoi de Criquebeuf-en-Caux annulé",
+    texte: "Le tournoi de Criquebeuf-en-Caux, prévu le 14 novembre 2026 et comptant pour la 2e ronde du Challenge des parties rapides, est annulé.\n" +
+      "Le calendrier du Challenge est mis à jour sur la page Tournois.",
+    lien: "tournois.html",
+    lienTexte: "Voir le calendrier des tournois",
+  },
+  {
     date: "2026-10-04",
     titre: "19e Rapide d'Orcher la Tour : une belle journée d'échecs",
     texte: "Une belle journée à Gonfreville l’Orcher pour le 19e Rapide d’Orcher la Tour réunissant 126 participants (dont un Grand Maître et trois Maîtres FIDE).\n" +
@@ -173,12 +181,12 @@ const ARCHIVES = {
 };
 
 /* Challenge des parties rapides 2026-2027.
-   date (AAAA-MM-JJ) si le jour est connu, sinon quand (texte libre). confirme:false => "À confirmer". */
+   date (AAAA-MM-JJ) si le jour est connu, sinon quand (texte libre). confirme:false => "À confirmer" ; annule:true => "Annulé". */
 const CHALLENGE = {
   titre: "Challenge des parties rapides 2026-2027",
   rondes: [
     { ronde: "1", date: "2026-10-04", lieu: "Gonfreville-l'Orcher", confirme: true },
-    { ronde: "2", date: "2026-11-14", lieu: "Criquebeuf-en-Caux", confirme: false },
+    { ronde: "2", date: "2026-11-14", lieu: "Criquebeuf-en-Caux", confirme: false, annule: true },
     { ronde: "3", date: "2026-12-13", lieu: "Dieppe", confirme: true },
     { ronde: "4", date: "2027-01-24", lieu: "Doudeville", confirme: true },
     { ronde: "5", date: "2027-02-14", lieu: "Petit-Caux", confirme: true },
