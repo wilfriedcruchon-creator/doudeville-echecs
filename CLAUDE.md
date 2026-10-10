@@ -40,4 +40,4 @@ Président : Hubert Paillette. Webmaster : Wilfried Cruchon, wilfried.cruchon@gm
 ## En attente
 - Calendriers des équipes jeunes (à ajouter quand l'utilisateur les aura).
 - Barème du classement (à connaître après la ronde 1 du 11/10/2026) et vérification du format réel des scores FFE.
-- Challenge des parties rapides : ronde 8 Bonsecours « avril 2026 » interprétée comme avril 2027 ; ronde 2 un samedi, à confirmer.
+- Challenge des parties rapides : ronde 8 Bonsecours « avril 2026 » interprétée comme avril 2027, à confirmer. (Ronde 2 de Criquebeuf-en-Caux annulée : marquée `annule: true` dans CHALLENGE.)
