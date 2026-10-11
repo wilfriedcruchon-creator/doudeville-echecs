@@ -83,7 +83,7 @@ const TOURNOIS = [
 /* Galerie photos. Pour ajouter une photo : déposer photo-XX.jpg et photo-XX-mini.jpg dans images/galerie/
    puis ajouter une ligne ci-dessous (la plus récente en premier). legende est facultative. */
 const GALERIE = [
-  { fichier: "photo-05", alt: "Cinq membres du club posent ensemble sur un chemin bordé d'arbres, deux d'entre eux ont le visage flouté", legende: "Championnat par équipes à Gonfreville-l'Orcher (11 octobre 2026)." },
+  { fichier: "photo-05", alt: "Cinq membres du club posent ensemble sur un chemin bordé d'arbres", legende: "Championnat par équipes à Gonfreville-l'Orcher (11 octobre 2026)." },
   { fichier: "photo-06", alt: "Un joueur du club concentré devant son échiquier, dans une salle de tournoi", legende: "Championnat par équipes à Gonfreville-l'Orcher (11 octobre 2026)." },
   { fichier: "photo-07", alt: "Vue d'ensemble de la salle de jeu, remplie de joueurs devant leurs échiquiers", legende: "Championnat par équipes à Gonfreville-l'Orcher (11 octobre 2026)." },
   { fichier: "photo-03", alt: "Une partie en cours au 19e Rapide d'Orcher la Tour, dans une grande salle garnie d'échiquiers", legende: "19e Rapide d'Orcher la Tour, Gonfreville-l'Orcher (4 octobre 2026)." },
