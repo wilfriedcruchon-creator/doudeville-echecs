@@ -23,6 +23,12 @@ const CLUB = {
    Toute photo d'actualité doit aussi figurer dans GALERIE ci-dessous. */
 const ACTUALITES = [
   {
+    date: "2026-10-11",
+    titre: "Championnat par équipes : deux matchs à Gonfreville l'Orcher",
+    texte: "Les deux équipes de Doudeville se rendaient aujourd'hui à Gonfreville l'Orcher pour affronter les équipes 4 et 5 du prestigieux club d'Orcher la Tour. L'équipe 1 s'incline 3 à 2 face à l'équipe 5 du club local et l'équipe 2 réussit à arracher le score de parité grâce à deux exploits signés Jacky Hebert et Elouan Gentet.",
+    photos: ["photo-05", "photo-06", "photo-07"],
+  },
+  {
     date: "2026-10-10",
     titre: "Tournoi de Criquebeuf-en-Caux annulé",
     texte: "Le tournoi de Criquebeuf-en-Caux, prévu le 14 novembre 2026 et comptant pour la 2e ronde du Challenge des parties rapides, est annulé.\n" +
@@ -77,6 +83,9 @@ const TOURNOIS = [
 /* Galerie photos. Pour ajouter une photo : déposer photo-XX.jpg et photo-XX-mini.jpg dans images/galerie/
    puis ajouter une ligne ci-dessous (la plus récente en premier). legende est facultative. */
 const GALERIE = [
+  { fichier: "photo-05", alt: "Cinq membres du club posent ensemble sur un chemin bordé d'arbres, deux d'entre eux ont le visage flouté", legende: "Championnat par équipes à Gonfreville-l'Orcher (11 octobre 2026)." },
+  { fichier: "photo-06", alt: "Un joueur du club concentré devant son échiquier, dans une salle de tournoi", legende: "Championnat par équipes à Gonfreville-l'Orcher (11 octobre 2026)." },
+  { fichier: "photo-07", alt: "Vue d'ensemble de la salle de jeu, remplie de joueurs devant leurs échiquiers", legende: "Championnat par équipes à Gonfreville-l'Orcher (11 octobre 2026)." },
   { fichier: "photo-03", alt: "Une partie en cours au 19e Rapide d'Orcher la Tour, dans une grande salle garnie d'échiquiers", legende: "19e Rapide d'Orcher la Tour, Gonfreville-l'Orcher (4 octobre 2026)." },
   { fichier: "photo-04", alt: "Trois joueurs posent devant une vitrine de trophées", legende: "19e Rapide d'Orcher la Tour, Gonfreville-l'Orcher (4 octobre 2026)." },
   { fichier: "photo-01", alt: "Partie d'échecs géants devant la mairie de Doudeville", legende: "" },
