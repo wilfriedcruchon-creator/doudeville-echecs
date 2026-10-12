@@ -1,5 +1,5 @@
 /* Fichier généré automatiquement par scripts/update_calendrier.py — ne pas modifier à la main. */
-/* Dernière mise à jour : 30/09/2026 21:12 */
+/* Dernière mise à jour : 12/10/2026 18:03 */
 const RONDES = [
  {
   "n": 1,
@@ -245,5 +245,9 @@ const RONDES = [
   ]
  }
 ];
-const RESULTATS = {};
-const MAJ = "2026-09-30";
+const RESULTATS = {
+ "1-Échiquier Dieppois 4-Sotteville 3": "0-4",
+ "1-Gonfreville 4-Doudeville 2": "2-2",
+ "1-Gonfreville 5-Doudeville 1": "3-2"
+};
+const MAJ = "2026-10-12";
