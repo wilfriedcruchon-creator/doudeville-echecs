@@ -207,6 +207,23 @@ const CHALLENGE = {
   ],
 };
 
+/* Trophée départemental 76 2026-2027 (comité départemental). Matchs par équipes de 4 joueurs, à 14 h 15, cadence 50 min + 10 s.
+   Source : calendrier et règlement transmis par le comité. Lieux à ajouter (champ lieu) quand ils seront connus. */
+const TROPHEE = {
+  titre: "Trophée départemental 76 2026-2027",
+  infos: "Équipes de 4 joueurs · Matchs à 14 h 15 · Cadence : 50 min + 10 s par coup",
+  rondes: [
+    { ronde: "1", date: "2026-11-28" },
+    { ronde: "2", date: "2026-12-12" },
+    { ronde: "3", date: "2027-01-16" },
+    { ronde: "4", date: "2027-02-13" },
+    { ronde: "5", date: "2027-03-13" },
+    { ronde: "6", date: "2027-04-10" },
+    { ronde: "7", date: "2027-05-15" },
+    { ronde: "8", date: "2027-06-05" },
+  ],
+};
+
 /* Équipes et leurs calendriers */
 /* joueurs : numéros de licence (nom, prénom et Elo sont repris de LICENCIES, donc mis à jour automatiquement). */
 const EQUIPES = [

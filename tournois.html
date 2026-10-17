@@ -51,6 +51,11 @@ document.getElementById("list").innerHTML =
   }).join("") +
   `</tbody></table></div>
    <p class="legend"><span class="swatch"></span>Étape organisée à Doudeville</p>
+   <h2>${esc(TROPHEE.titre)}</h2>
+   <p class="meta" style="color:var(--muted)">${esc(TROPHEE.infos)}</p>
+   <div class="table-scroll"><table><thead><tr><th>Ronde</th><th>Date</th><th>Lieu</th></tr></thead><tbody>` +
+  TROPHEE.rondes.map(r => `<tr class="${r.date < todayISO() ? "past" : ""}"><td>${esc(r.ronde)}</td><td>${cap(fmtDate(r.date, true))}</td><td>${r.lieu ? esc(r.lieu) : "<span class=\"meta\" style=\"color:var(--muted)\">À préciser</span>"}</td></tr>`).join("") +
+  `</tbody></table></div>
    <p class="legend" style="margin-top:28px">Retrouvez tous les tournois homologués sur <a href="${CLUB.ffe}" rel="noopener">echecs.asso.fr</a>.</p>`;
 </script>
 </body>

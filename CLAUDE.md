@@ -35,6 +35,15 @@ Demander quand même confirmation pour les actions risquées ou difficiles à an
 - Toujours dire à l'utilisateur ce qui a été flouté pour qu'il puisse corriger.
 - Ne pas nommer de personnes dans les légendes ou textes alternatifs sans confirmation.
 
+## Trophée départemental 76 (saison 2026-2027)
+Données dans `TROPHEE` (`data.js`), affichées sur `tournois.html` ; ajouter `lieu` à chaque ronde quand il est connu. Règlement V09/2026 du CDJE76 (PDF reçu le 17/10/2026, non versé au dépôt), résumé :
+- Équipes de 4 joueurs licenciés A, matchs à 14 h 15, cadence 50 min + 10 s. Dates impératives (forfait sinon) ; avancer un match possible avec accord écrit du directeur de groupe, sauf dernière ronde.
+- Plusieurs équipes d'un même club : un joueur ayant joué pour l'une ne peut plus jouer pour l'autre. Les joueurs du Trophée peuvent jouer dans les divisions supérieures (donc en Régionale).
+- Elo standard ≤ 1800 à la première apparition en équipe ; 100 points d'écart max entre échiquiers (le mieux classé devant) ; composition remise 5 min avant, sans trou, identique au match retour.
+- Forfait d'équipe : 25 € (50 € à la dernière ronde) ; 3 forfaits de joueurs = match perdu 3-0. Le club qui reçoit fournit salle et matériel. PV à transmettre avant 22 h le soir même.
+- Points de match : victoire 3, nul 2, défaite 1, forfait 0.
+- Dates : 28/11/26, 12/12/26, 16/01/27, 13/02/27, 13/03/27, 10/04/27, 15/05/27, 05/06/27 (tous des samedis).
+
 ## Informations de contact publiées
 Président : Hubert Paillette. Webmaster : Wilfried Cruchon, wilfried.cruchon@gmail.com.
 
@@ -42,3 +51,4 @@ Président : Hubert Paillette. Webmaster : Wilfried Cruchon, wilfried.cruchon@gm
 - Calendriers des équipes jeunes (à ajouter quand l'utilisateur les aura).
 - Barème du classement (à connaître après la ronde 1 du 11/10/2026) et vérification du format réel des scores FFE.
 - Challenge des parties rapides : ronde 8 Bonsecours « avril 2026 » interprétée comme avril 2027, à confirmer. (Ronde 2 de Criquebeuf-en-Caux annulée : marquée `annule: true` dans CHALLENGE.)
+- Trophée départemental : savoir si le club engage une ou deux équipes ; lieux des rondes à ajouter. Conflit de dates : sam. 13/03/27 = ronde 5 du Trophée et ronde 8 de la Régionale (les deux équipes à Dieppe) ; les 28/11, 12/12 et 16/01 sont la veille d'une ronde de Régionale. Licences de Gaetan et des deux Gonthier « en attente de paiement » (à vérifier avant le premier match).
