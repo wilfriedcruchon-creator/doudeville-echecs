@@ -63,7 +63,7 @@ document.getElementById("bilans").innerHTML = EQUIPES.map(e => {
     (s.joues
       ? `<div class="chiffres">${c(s.v, "victoire" + (s.v > 1 ? "s" : ""), "win")}${c(s.n, "nul" + (s.n > 1 ? "s" : ""), "draw")}${c(s.d, "défaite" + (s.d > 1 ? "s" : ""), "loss")}</div>
          <p class="meta">Parties : ${fmtNum(s.pour)} – ${fmtNum(s.contre)} · ${s.joues} match${s.joues > 1 ? "s" : ""} joué${s.joues > 1 ? "s" : ""}</p>`
-      : `<p class="meta">Aucun match joué pour le moment.</p>`) + composition(e) + `</div>`;
+      : `<p class="meta">Aucun match joué pour le moment.</p>`) + composition(e, true) + `</div>`;
 }).join("");
 
 /* Classement du groupe (une seule table pour Doudeville 1 et 2), lu sur le site de la FFE */
