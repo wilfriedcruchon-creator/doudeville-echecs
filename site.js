@@ -114,5 +114,5 @@ function composition(e, parElo) {
   if (parElo) js.sort((a, b) => (parseInt(b.elo, 10) || 0) - (parseInt(a.elo, 10) || 0)); /* Elo standard décroissant, ex æquo : ordre alphabétique conservé */
   if (!js.length) return "";
   return `<h4 style="margin:16px 0 6px">Composition</h4><ul class="compo" style="list-style:none;padding:0;margin:0">` +
-    js.map(j => `<li style="display:flex;justify-content:space-between;gap:12px;padding:3px 0;border-top:1px solid var(--line)"><span>${esc(j.prenom)} ${esc(j.nom)}</span><span class="meta">${esc(j.elo)}</span></li>`).join("") + `</ul>`;
+    js.map(j => `<li style="display:flex;justify-content:space-between;gap:12px;padding:3px 0;border-top:1px solid var(--line)"><span>${esc(j.prenom)} ${esc(j.nom)}${j.licence === e.capitaine ? ' <span class="meta" style="color:var(--muted)">(capitaine)</span>' : ""}</span><span class="meta">${esc(j.elo)}</span></li>`).join("") + `</ul>`;
 }

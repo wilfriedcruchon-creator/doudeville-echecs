@@ -254,7 +254,7 @@ const TROPHEE = {
 };
 
 /* Équipes et leurs calendriers */
-/* joueurs : numéros de licence (nom, prénom et Elo sont repris de LICENCIES, donc mis à jour automatiquement). */
+/* joueurs : numéros de licence (nom, prénom et Elo sont repris de LICENCIES, donc mis à jour automatiquement) ; capitaine : numéro de licence du capitaine. */
 const EQUIPES = [
   {
     id: "d1",
@@ -263,6 +263,7 @@ const EQUIPES = [
     competition: "Régionale Normandie — Groupe D",
     source: "https://www.echecs.asso.fr/EquipesCalendrier.aspx?Ref=2635&Saison=3000",
     joueurs: ["V08998", "V57495", "Z69185", "N57705", "U50918", "T05907", "V57496", "N07004", "C51779"],
+    capitaine: "N07004",
   },
   {
     id: "d2",
@@ -271,6 +272,7 @@ const EQUIPES = [
     competition: "Régionale Normandie — Groupe D",
     source: "https://www.echecs.asso.fr/EquipesCalendrier.aspx?Ref=2635&Saison=3000",
     joueurs: ["Y16884", "Z50926", "Z50927", "X76478", "L08866", "T64839", "Z63856", "X82008"],
+    capitaine: "Y16884",
   },
 ];
 
