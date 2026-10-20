@@ -27,11 +27,12 @@
 <script src="site.js"></script>
 <script>
 const t = [...TOURNOIS].sort((a, b) => a.date.localeCompare(b.date));
-const avenir = t.filter(x => x.date >= todayISO()), passes = t.filter(x => x.date < todayISO()).reverse();
+const fin = x => x.dateFin || x.date;
+const avenir = t.filter(x => fin(x) >= todayISO()), passes = t.filter(x => fin(x) < todayISO()).reverse();
 const carte = x => `<article class="card tournoi">
   ${x.image ? `<a href="${esc(x.image)}" target="_blank" rel="noopener"><img class="affiche" src="${esc(x.image)}" alt="Affiche : ${esc(x.titre)}" loading="lazy"></a>` : ""}
   <h3>${esc(x.titre)}</h3>
-  <div class="meta">${cap(fmtDate(x.date, true))}</div>
+  <div class="meta">${cap(fmtDate(x.date, true))}${x.dateFin ? " et " + fmtDate(x.dateFin, true) : ""}</div>
   <div class="meta">${esc(x.lieu)}${x.cadence ? " · Cadence : " + esc(x.cadence) : ""}</div>
   ${x.details ? `<ul>${x.details.map(d => `<li>${esc(d)}</li>`).join("")}</ul>` : ""}
   ${x.info ? `<p>${esc(x.info)}</p>` : ""}

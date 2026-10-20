@@ -23,6 +23,16 @@ const CLUB = {
    Toute photo d'actualité doit aussi figurer dans GALERIE ci-dessous. */
 const ACTUALITES = [
   {
+    date: "2026-10-20",
+    titre: "Championnat de Seine-Maritime Jeunes, les 14 et 15 novembre à Gonfreville l'Orcher",
+    texte: "Le Championnat de Seine-Maritime Jeunes d'échecs aura lieu les 14 et 15 novembre 2026 au dojo du club d'échecs de Gonfreville l'Orcher (2 rue des Sports).\n" +
+      "Les U08 et U10 jouent le samedi 14 novembre de 13 h à 19 h ; les U12 à U20 le dimanche 15 novembre de 9 h à 18 h 30.\n" +
+      "Licence A obligatoire, droit d'inscription de 10 €. Inscription et paiement avant le mercredi 11 novembre : aucune inscription ne pourra être prise sur place.\n" +
+      "L'inscription se fait à titre individuel ; contacter Hubert ou Wilfried pour plus d'informations.",
+    lien: "https://orcherlatour.fr/informationssmjeunes2026",
+    lienTexte: "Informations et bulletin d'inscription",
+  },
+  {
     date: "2026-10-11",
     titre: "Championnat par équipes : deux matchs à Gonfreville l'Orcher",
     texte: "Les deux équipes de Doudeville se rendaient aujourd'hui à Gonfreville l'Orcher pour affronter les équipes 4 et 5 du prestigieux club d'Orcher la Tour. L'équipe 1 s'incline 3 à 2 face à l'équipe 5 du club local et l'équipe 2 réussit à arracher le score de parité grâce à deux exploits signés Jacky Hebert et Elouan Gentet.",
@@ -64,6 +74,23 @@ const ACTUALITES = [
 /* Tournois — date : AAAA-MM-JJ */
 /* Champs facultatifs : cadence, info, details (liste), image, lien */
 const TOURNOIS = [
+  {
+    date: "2026-11-14",
+    dateFin: "2026-11-15",
+    titre: "Championnat de Seine-Maritime Jeunes",
+    lieu: "Dojo club échecs, 2 rue des Sports, Gonfreville-l'Orcher",
+    details: [
+      "U08 et U10 : samedi 14 novembre de 13 h à 19 h",
+      "U12 à U20 : dimanche 15 novembre de 9 h à 18 h 30",
+      "Licence A obligatoire",
+      "Droit d'inscription : 10 €",
+      "Date limite d'inscription et de paiement : mercredi 11 novembre. Aucune inscription ne pourra être prise sur place",
+    ],
+    info: "L'inscription se fait à titre individuel ; contacter Hubert ou Wilfried pour plus d'informations.",
+    organisateur: "Organisé par Orcher la Tour",
+    lien: "https://orcherlatour.fr/informationssmjeunes2026",
+    image: "images/affiche-championnat-jeunes-76-2026.jpg",
+  },
   {
     date: "2026-10-04",
     titre: "19e Tournoi rapide d'Orcher la Tour",
