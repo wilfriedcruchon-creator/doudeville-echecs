@@ -29,6 +29,8 @@ const ACTUALITES = [
       "Les U08 et U10 jouent le samedi 14 novembre de 13 h à 19 h ; les U12 à U20 le dimanche 15 novembre de 9 h à 18 h 30.\n" +
       "Licence A obligatoire, droit d'inscription de 10 €. Inscription et paiement avant le mercredi 11 novembre : aucune inscription ne pourra être prise sur place.\n" +
       "L'inscription se fait à titre individuel ; contacter Hubert ou Wilfried pour plus d'informations.",
+    bandeau: "images/affiche-championnat-jeunes-76-2026.jpg",
+    bandeauAlt: "Bandeau du Championnat de Seine-Maritime Jeunes d'échecs, les 14 et 15 novembre 2026 à Gonfreville l'Orcher : U08 et U10 le samedi de 13 h à 19 h, U12 à U20 le dimanche de 9 h à 18 h 30, licence A obligatoire, 10 €, inscription avant le mercredi 11 novembre",
     lien: "https://orcherlatour.fr/informationssmjeunes2026",
     lienTexte: "Informations et bulletin d'inscription",
   },

@@ -97,6 +97,8 @@ h2:first-child { margin-top: 0; }
 .tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 2px 8px; }
 
 /* Photos sous une actualité */
+.bandeau-actu { display: block; line-height: 0; margin-bottom: 14px; }
+.bandeau-actu img { width: 100%; height: auto; display: block; border-radius: 8px; }
 .photos-actu { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 14px; align-items: start; }
 .photos-actu a { display: block; line-height: 0; }
 .photos-actu img { width: 100%; height: auto; display: block; border-radius: 8px; }

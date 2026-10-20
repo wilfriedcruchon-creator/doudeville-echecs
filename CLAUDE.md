@@ -8,7 +8,7 @@ L'utilisateur est le webmaster bénévole du club ; il me confie les mises à jo
 - **`data.js`** : tout le contenu éditable (CLUB, ACTUALITES, TOURNOIS, GALERIE, CHALLENGE, CHALLENGE_DEPARTEMENTAL, LICENCIES, ARCHIVES, VIDEOS, EQUIPES). Le relire avant de le modifier.
 - **`calendrier.js`** : GÉNÉRÉ par `scripts/update_calendrier.py`. Ne jamais l'éditer à la main.
 - `site.js` (en-tête, menu, pied de page, fonctions communes), `style.css` (thème rouge/or), une page `.html` par rubrique.
-- Actualités : dans `texte`, une ligne `\n` = un paragraphe ; champs facultatifs `lien` / `lienTexte` et `photos: ["photo-XX"]` (fichiers de GALERIE affichés sous le texte). Nouvelles entrées en tête de liste.
+- Actualités : dans `texte`, une ligne `\n` = un paragraphe ; champs facultatifs `lien` / `lienTexte` et `photos: ["photo-XX"]` (fichiers de GALERIE affichés sous le texte). Champs facultatifs `bandeau` (chemin d'une affiche/bandeau affiché en tête de l'actualité) et `bandeauAlt`. Nouvelles entrées en tête de liste.
 - Pages hors menu : `inscription.html`, `licencies.html`, `challenge-departemental.html` (toutes `noindex`), `videos.html` (vide, masquée tant que VIDEOS = []).
 - Ajouter une équipe : URL FFE dans `SOURCES` de `scripts/update_calendrier.py` + entrée dans `EQUIPES`.
 

@@ -44,6 +44,10 @@ function photosActu(fichiers) {
     return `<a href="images/galerie/${esc(f)}.jpg" target="_blank" rel="noopener"><img src="images/galerie/${esc(f)}-mini.jpg" alt="${esc(p.alt)}" loading="lazy"></a>`;
   }).join("") + `</div>`;
 }
+/* Bandeau / affiche en tête d'une actualité (champs bandeau = chemin de l'image, bandeauAlt = texte alternatif) */
+const bandeauActu = a => a.bandeau
+  ? `<a class="bandeau-actu" href="${esc(a.bandeau)}" target="_blank" rel="noopener"><img src="${esc(a.bandeau)}" alt="${esc(a.bandeauAlt || "Affiche : " + a.titre)}" loading="lazy"></a>`
+  : "";
 const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 const todayISO = () => new Date().toISOString().slice(0, 10);
 
