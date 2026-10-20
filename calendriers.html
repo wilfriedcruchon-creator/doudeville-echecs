@@ -56,7 +56,18 @@ function equipe(e) {
     <p class="legend"><span class="swatch"></span>Match à domicile · Source : <a href="${e.source}" rel="noopener">calendrier officiel FFE</a> · Mis à jour le ${fmtDate(MAJ)}</p>`;
 }
 
+/* Championnat départemental (équipe du club engagée au Trophée départemental 76) */
+function trophee() {
+  view.innerHTML = `
+    <h2>${esc(TROPHEE.titre)}</h2>
+    <p class="meta" style="color:var(--muted);margin-top:-6px">${esc(TROPHEE.infos)}</p>
+    <div class="table-scroll"><table><thead><tr><th>Ronde</th><th>Date</th><th>Lieu</th></tr></thead><tbody>${TROPHEE.rondes.map(r =>
+      `<tr class="${r.date < todayISO() ? "past" : ""}"><td>${esc(r.ronde)}</td><td>${cap(fmtDate(r.date, true))} · 14h15</td><td>${r.lieu ? esc(r.lieu) : '<span class="meta" style="color:var(--muted)">À préciser</span>'}</td></tr>`).join("")}</tbody></table></div>
+    <p class="legend">Les adversaires et les lieux seront ajoutés dès que le comité départemental les aura communiqués.</p>`;
+}
+
 const items = EQUIPES.map(e => ({ label: e.nom, fn: () => equipe(e) }));
+items.push({ label: "Championnat départemental", fn: trophee });
 items.forEach((it, i) => {
   const b = document.createElement("button");
   b.textContent = it.label;

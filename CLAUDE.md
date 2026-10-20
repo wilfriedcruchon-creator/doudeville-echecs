@@ -36,7 +36,7 @@ Demander quand même confirmation pour les actions risquées ou difficiles à an
 - Ne pas nommer de personnes dans les légendes ou textes alternatifs sans confirmation.
 
 ## Trophée départemental 76 (saison 2026-2027)
-Données dans `TROPHEE` (`data.js`), affichées sur `tournois.html` ; ajouter `lieu` à chaque ronde quand il est connu. Règlement V09/2026 du CDJE76 (PDF reçu le 17/10/2026, non versé au dépôt), résumé :
+Données dans `TROPHEE` (`data.js`), affichées sur `calendriers.html` (onglet « Championnat départemental ») ; ajouter `lieu` à chaque ronde quand il est connu. Règlement V09/2026 du CDJE76 (PDF reçu le 17/10/2026, non versé au dépôt), résumé :
 - Équipes de 4 joueurs licenciés A, matchs à 14 h 15, cadence 50 min + 10 s. Dates impératives (forfait sinon) ; avancer un match possible avec accord écrit du directeur de groupe, sauf dernière ronde.
 - Plusieurs équipes d'un même club : un joueur ayant joué pour l'une ne peut plus jouer pour l'autre. Les joueurs du Trophée peuvent jouer dans les divisions supérieures (donc en Régionale).
 - Mise à jour du 20/10/2026 (mail d'Etienne Grancher, nouveau PDF non lu) : limite Elo ABAISSÉE à 1700 (joueurs de moins de 1700 Elo à la date de la 1re ronde, 28/11/2026), au lieu de 1800 dans la V09/2026 ci-dessous. Inscription par simple retour de mail (nom, prénom, coordonnées du capitaine, lieu de jeu), date limite 07/11/2026, pas de limite d'équipes par club, aucun droit d'inscription. Le mail parle aussi d'« une seule partie par match » et de format « toutes rondes » : à clarifier.
