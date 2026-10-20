@@ -13,7 +13,7 @@ L'utilisateur est le webmaster bénévole du club ; il me confie les mises à jo
 - Ajouter une équipe : URL FFE dans `SOURCES` de `scripts/update_calendrier.py` + entrée dans `EQUIPES`.
 
 ## Mises à jour automatiques (GitHub Actions)
-- `maj-calendrier.yml` : calendrier et résultats depuis la FFE (toutes les 3 h du samedi au lundi, une fois par jour du mardi au vendredi).
+- `maj-calendrier.yml` : calendrier, résultats ET classement du groupe (`CLASSEMENT` dans `calendrier.js`, lu sur `Equipes.aspx?Groupe=2635`, affiché une seule fois sur la page Résultats ; si la page du classement est illisible, l'ancien est conservé) depuis la FFE (toutes les 3 h du samedi au lundi, une fois par jour du mardi au vendredi).
 - `maj-elo.yml` : le lundi, met à jour UNIQUEMENT `elo`, `eloRapide`, `eloBlitz` des licences déjà présentes dans LICENCIES. La liste des joueurs reste manuelle.
 - Les scripts (`scripts/`) n'utilisent que la bibliothèque standard Python et réessaient 3 fois si le site de la FFE est lent. Un échec isolé est sans gravité : le prochain passage rattrape.
 
@@ -50,6 +50,6 @@ Président : Hubert Paillette. Webmaster : Wilfried Cruchon, wilfried.cruchon@gm
 
 ## En attente
 - Calendriers des équipes jeunes (à ajouter quand l'utilisateur les aura).
-- Barème du classement (à connaître après la ronde 1 du 11/10/2026) et vérification du format réel des scores FFE.
+- Classement FFE : barème de points de match constaté après la ronde 1 (victoire 3, nul 2, défaite 1 ; colonnes Pts, j., d. = différentiel, p./c. = parties pour/contre). Scores FFE au format entier « 2-2 ». À re-vérifier si le format change (ex. demi-points « 2.5-1.5 »).
 - Challenge des parties rapides : ronde 8 Bonsecours « avril 2026 » interprétée comme avril 2027, à confirmer. (Ronde 2 de Criquebeuf-en-Caux annulée : marquée `annule: true` dans CHALLENGE.)
 - Trophée départemental : le club a engagé UNE équipe (mail du 17/10/2026, accusé de réception d'Etienne Grancher le 18/10, où le conflit du 13/03/27 a été signalé). Mais ce mail ne donnait pas le capitaine, ses coordonnées ni le lieu de jeu, demandés pour l'inscription (limite 07/11/2026) : à vérifier avec l'utilisateur. Lieux des rondes à ajouter au site. Nouveau règlement du 20/10/2026 (PDF joint au mail, non lisible via Gmail) à comparer avec le résumé. Veilles de ronde de Régionale : 28/11, 12/12 et 16/01. Licences de Gaetan et des deux Gonthier « en attente de paiement » (à vérifier avant le premier match). Archimbaud (1708 F) dépasse la nouvelle limite de 1700.

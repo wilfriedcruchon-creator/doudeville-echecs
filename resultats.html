@@ -38,6 +38,8 @@
 
   <div id="bilans" class="bilans"></div>
 
+  <div id="classement"></div>
+
   <div class="tabs" id="tabs" role="group" aria-label="Filtrer" style="margin-top:28px">
     <button aria-pressed="true" data-f="club">Nos équipes</button>
     <button aria-pressed="false" data-f="tous">Tout le groupe</button>
@@ -63,6 +65,19 @@ document.getElementById("bilans").innerHTML = EQUIPES.map(e => {
          <p class="meta">Parties : ${fmtNum(s.pour)} – ${fmtNum(s.contre)} · ${s.joues} match${s.joues > 1 ? "s" : ""} joué${s.joues > 1 ? "s" : ""}</p>`
       : `<p class="meta">Aucun match joué pour le moment.</p>`) + composition(e) + `</div>`;
 }).join("");
+
+/* Classement du groupe (une seule table pour Doudeville 1 et 2), lu sur le site de la FFE */
+(function () {
+  const box = document.getElementById("classement");
+  if (typeof CLASSEMENT === "undefined" || !CLASSEMENT || !CLASSEMENT.equipes.length) return;
+  const v = x => x === null || x === undefined ? "–" : fmtNum(x);
+  const lignes = [...CLASSEMENT.equipes].sort((a, b) => (a.pl ?? 99) - (b.pl ?? 99)).map(e =>
+    `<tr class="${/Doudeville/.test(e.nom) ? "home" : ""}"><td>${v(e.pl)}</td><td>${/Doudeville/.test(e.nom) ? `<strong>${esc(e.nom)}</strong>` : esc(e.nom)}</td>
+      <td class="sc">${v(e.pts)}</td><td>${v(e.j)}</td><td>${v(e.p)}</td><td>${v(e.c)}</td><td>${v(e.d)}</td></tr>`).join("");
+  box.innerHTML = `<h2>Classement</h2><p class="meta" style="color:var(--muted);margin-top:-6px">${esc(CLASSEMENT.groupe)}</p>
+    <div class="table-scroll"><table><thead><tr><th>Pl.</th><th>Équipe</th><th style="text-align:center">Pts</th><th>Matchs</th><th>Pour</th><th>Contre</th><th>Diff.</th></tr></thead><tbody>${lignes}</tbody></table></div>
+    <p class="legend"><span class="swatch"></span>Équipes de Doudeville · Pts : points de match · Pour / Contre : parties gagnées / perdues · Source : <a href="${esc(CLASSEMENT.source)}" rel="noopener">classement officiel FFE</a> · Mis à jour le <span>${fmtDate(MAJ)}</span></p>`;
+})();
 
 function ligne(r, m) {
   const s = scoreNum(RESULTATS[cle(r, m)]);

@@ -1,5 +1,5 @@
 /* Fichier généré automatiquement par scripts/update_calendrier.py — ne pas modifier à la main. */
-/* Dernière mise à jour : 14/10/2026 06:29 */
+/* Dernière mise à jour : 20/10/2026 21:15 */
 const RONDES = [
  {
   "n": 1,
@@ -251,4 +251,91 @@ const RESULTATS = {
  "1-Gonfreville 5-Doudeville 1": "3-2",
  "1-Montivilliers 1-Montivilliers 2": "4-1"
 };
-const MAJ = "2026-10-14";
+const CLASSEMENT = {
+ "groupe": "Régionale Normandie, groupe D",
+ "source": "https://www.echecs.asso.fr/Equipes.aspx?Groupe=2635",
+ "equipes": [
+  {
+   "pl": null,
+   "nom": "Échiquier Dieppois 3",
+   "pts": null,
+   "j": null,
+   "d": null,
+   "p": null,
+   "c": null
+  },
+  {
+   "pl": 1,
+   "nom": "Sotteville 3",
+   "pts": 3,
+   "j": 1,
+   "d": 4,
+   "p": 4,
+   "c": 0
+  },
+  {
+   "pl": 2,
+   "nom": "Montivilliers 1",
+   "pts": 3,
+   "j": 1,
+   "d": 3,
+   "p": 4,
+   "c": 1
+  },
+  {
+   "pl": 3,
+   "nom": "Gonfreville 5",
+   "pts": 3,
+   "j": 1,
+   "d": 1,
+   "p": 3,
+   "c": 2
+  },
+  {
+   "pl": 4,
+   "nom": "Doudeville 2",
+   "pts": 2,
+   "j": 1,
+   "d": 0,
+   "p": 2,
+   "c": 2
+  },
+  {
+   "pl": 5,
+   "nom": "Gonfreville 4",
+   "pts": 2,
+   "j": 1,
+   "d": 0,
+   "p": 2,
+   "c": 2
+  },
+  {
+   "pl": 6,
+   "nom": "Doudeville 1",
+   "pts": 1,
+   "j": 1,
+   "d": -1,
+   "p": 2,
+   "c": 3
+  },
+  {
+   "pl": 7,
+   "nom": "Montivilliers 2",
+   "pts": 1,
+   "j": 1,
+   "d": -3,
+   "p": 1,
+   "c": 4
+  },
+  {
+   "pl": 8,
+   "nom": "Échiquier Dieppois 4",
+   "pts": 1,
+   "j": 1,
+   "d": -4,
+   "p": 0,
+   "c": 4
+  }
+ ]
+};
+const MAJ = "2026-10-20";
