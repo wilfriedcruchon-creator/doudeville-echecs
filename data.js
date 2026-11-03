@@ -271,7 +271,7 @@ const EQUIPES = [
     categorie: "Seniors",
     competition: "Régionale Normandie — Groupe D",
     source: "https://www.echecs.asso.fr/EquipesCalendrier.aspx?Ref=2635&Saison=3000",
-    joueurs: ["Y16884", "Z50926", "Z50927", "X76478", "L08866", "T64839", "Z63856", "X82008"],
+    joueurs: ["Y16884", "Z50926", "Z50927", "X76478", "L08866", "T64839", "Z63856", "X82008", "T10595"],
     capitaine: "Y16884",
   },
 ];
