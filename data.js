@@ -165,7 +165,7 @@ const LICENCIES = [
   { nom: "Cruchon", prenom: "Wilfried", licence: "Z50926", elo: "1399 E", eloRapide: "1516 F", eloBlitz: "1199 E" },
   { nom: "Deslandre", prenom: "Anatole", licence: "V57495", elo: "1299 E", eloRapide: "1199 E", eloBlitz: "999 E" },
   { nom: "Dutertre", prenom: "Nicolas", licence: "Z69185", elo: "1399 E", eloRapide: "1199 E", eloBlitz: "1199 E" },
-  { nom: "Gaetan", prenom: "Jean-François", licence: "T10595", elo: "1399 E", eloRapide: "1199 E", eloBlitz: "1199 E" },
+  { nom: "Gaetan", prenom: "Jean François", licence: "T10595", elo: "1399 E", eloRapide: "1199 E", eloBlitz: "1199 E" },
   { nom: "Garot", prenom: "Nicolas", licence: "N57705", elo: "1593 F", eloRapide: "1646 F", eloBlitz: "1633 E" },
   { nom: "Gentet", prenom: "Elouan", licence: "Z50927", elo: "1571 F", eloRapide: "1457 F", eloBlitz: "1199 E" },
   { nom: "Gombrowicz", prenom: "Cyrille", licence: "U50918", elo: "1585 F", eloRapide: "1539 F", eloBlitz: "1525 E" },
