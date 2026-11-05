@@ -23,6 +23,14 @@ const CLUB = {
    Toute photo d'actualité doit aussi figurer dans GALERIE ci-dessous. */
 const ACTUALITES = [
   {
+    date: "2026-11-05",
+    titre: "23e Rapide de Dieppe : changement de date, ce sera le 6 décembre",
+    texte: "Attention, le 23e Rapide de Dieppe, 3e étape du Challenge des parties rapides, aura lieu le dimanche 6 décembre 2026, et non le 13 décembre comme annoncé sur le site du comité départemental.\n" +
+      "Le calendrier du Challenge est mis à jour sur la page Tournois.",
+    lien: "https://l-echiquier-dieppois-5fe0df7b5aa75.assoconnect.com/collect/description/766456-l-23e-rapide-de-dieppe",
+    lienTexte: "Informations sur le 23e Rapide de Dieppe",
+  },
+  {
     date: "2026-10-20",
     titre: "Championnat de Seine-Maritime Jeunes, les 14 et 15 novembre à Gonfreville l'Orcher",
     texte: "Le Championnat de Seine-Maritime Jeunes d'échecs aura lieu les 14 et 15 novembre 2026 au dojo du club d'échecs de Gonfreville l'Orcher (2 rue des Sports).\n" +
@@ -225,7 +233,7 @@ const CHALLENGE = {
   rondes: [
     { ronde: "1", date: "2026-10-04", lieu: "Gonfreville-l'Orcher", confirme: true },
     { ronde: "2", date: "2026-11-14", lieu: "Criquebeuf-en-Caux", confirme: false, annule: true },
-    { ronde: "3", date: "2026-12-13", lieu: "Dieppe", confirme: true },
+    { ronde: "3", date: "2026-12-06", lieu: "Dieppe", confirme: true },
     { ronde: "4", date: "2027-01-24", lieu: "Doudeville", confirme: true },
     { ronde: "5", date: "2027-02-14", lieu: "Petit-Caux", confirme: true },
     { ronde: "6", date: "2027-03-14", lieu: "Sotteville-lès-Rouen", confirme: false },
