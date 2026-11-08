@@ -23,6 +23,14 @@ const CLUB = {
    Toute photo d'actualité doit aussi figurer dans GALERIE ci-dessous. */
 const ACTUALITES = [
   {
+    date: "2026-11-08",
+    titre: "Régionale : un week-end de matchs pour nos deux équipes",
+    texte: "Ce samedi 7 novembre, les deux équipes de Doudeville évoluaient dans la somptueuse salle principale de l'Hôtel de Ville. Doudeville 1 s'est incliné 3 à 2 face à la belle équipe de Montivilliers 1 emmenée par Etienne Grancher (2024 Elo). Belles performances de Philippe et Anatole, qui remportent leur partie face à des joueurs à 1448 et 1484 Elo. Doudeville 2 s'incline 4 à 1 face à Gonfreville 5, Marc Chemin sauve l'honneur en s'imposant face à un joueur à 1549 Elo.\n" +
+      "Ce dimanche, écrasante victoire de Doudeville 1 sur un score sans appel de 5-0 face à Montivilliers 2. L'équipe 2 de Doudeville s'incline logiquement face à Montivilliers 1 sur un score de 4 à 1.\n" +
+      "Un beau week-end échiquéen au cours duquel les deux équipes ont pu faire tourner l'effectif, ce qui a permis à un certain nombre de joueurs moins expérimentés de faire leurs débuts en compétition.",
+    photos: ["photo-08", "photo-09", "photo-10"],
+  },
+  {
     date: "2026-11-05",
     titre: "23e Rapide de Dieppe : changement de date, ce sera le 6 décembre",
     texte: "Attention, le 23e Rapide de Dieppe, 3e étape du Challenge des parties rapides, aura lieu le dimanche 6 décembre 2026, et non le 13 décembre comme annoncé sur le site du comité départemental.\n" +
@@ -120,6 +128,9 @@ const TOURNOIS = [
 /* Galerie photos. Pour ajouter une photo : déposer photo-XX.jpg et photo-XX-mini.jpg dans images/galerie/
    puis ajouter une ligne ci-dessous (la plus récente en premier). legende est facultative. */
 const GALERIE = [
+  { fichier: "photo-08", alt: "Deux joueurs face à face au premier plan et une longue rangée d'échiquiers dans la salle de l'Hôtel de Ville de Doudeville, visages floutés", legende: "Championnat par équipes à l'Hôtel de Ville de Doudeville (7 novembre 2026)." },
+  { fichier: "photo-09", alt: "Rangée d'échiquiers sous la charpente en bois de la salle de l'Hôtel de Ville de Doudeville, avec les joueurs concentrés, visages floutés", legende: "Championnat par équipes à l'Hôtel de Ville de Doudeville (7 novembre 2026)." },
+  { fichier: "photo-10", alt: "Deux joueurs de part et d'autre d'un échiquier en pleine partie, visages floutés", legende: "Championnat par équipes (week-end des 7 et 8 novembre 2026)." },
   { fichier: "photo-05", alt: "Cinq membres du club posent ensemble sur un chemin bordé d'arbres", legende: "Championnat par équipes à Gonfreville-l'Orcher (11 octobre 2026)." },
   { fichier: "photo-06", alt: "Un joueur du club concentré devant son échiquier, dans une salle de tournoi", legende: "Championnat par équipes à Gonfreville-l'Orcher (11 octobre 2026)." },
   { fichier: "photo-07", alt: "Vue d'ensemble de la salle de jeu, remplie de joueurs devant leurs échiquiers", legende: "Championnat par équipes à Gonfreville-l'Orcher (11 octobre 2026)." },
