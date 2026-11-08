@@ -128,9 +128,9 @@ const TOURNOIS = [
 /* Galerie photos. Pour ajouter une photo : déposer photo-XX.jpg et photo-XX-mini.jpg dans images/galerie/
    puis ajouter une ligne ci-dessous (la plus récente en premier). legende est facultative. */
 const GALERIE = [
-  { fichier: "photo-08", alt: "Deux joueurs face à face au premier plan et une longue rangée d'échiquiers dans la salle de l'Hôtel de Ville de Doudeville, visages floutés", legende: "Championnat par équipes à l'Hôtel de Ville de Doudeville (7 novembre 2026)." },
-  { fichier: "photo-09", alt: "Rangée d'échiquiers sous la charpente en bois de la salle de l'Hôtel de Ville de Doudeville, avec les joueurs concentrés, visages floutés", legende: "Championnat par équipes à l'Hôtel de Ville de Doudeville (7 novembre 2026)." },
-  { fichier: "photo-10", alt: "Deux joueurs de part et d'autre d'un échiquier en pleine partie, visages floutés", legende: "Championnat par équipes (week-end des 7 et 8 novembre 2026)." },
+  { fichier: "photo-08", alt: "Deux joueurs face à face au premier plan et une longue rangée d'échiquiers dans la salle de l'Hôtel de Ville de Doudeville", legende: "Championnat par équipes à l'Hôtel de Ville de Doudeville (7 novembre 2026)." },
+  { fichier: "photo-09", alt: "Rangée d'échiquiers sous la charpente en bois de la salle de l'Hôtel de Ville de Doudeville, avec les joueurs concentrés", legende: "Championnat par équipes à l'Hôtel de Ville de Doudeville (7 novembre 2026)." },
+  { fichier: "photo-10", alt: "Deux joueurs de part et d'autre d'un échiquier en pleine partie", legende: "Championnat par équipes (week-end des 7 et 8 novembre 2026)." },
   { fichier: "photo-05", alt: "Cinq membres du club posent ensemble sur un chemin bordé d'arbres", legende: "Championnat par équipes à Gonfreville-l'Orcher (11 octobre 2026)." },
   { fichier: "photo-06", alt: "Un joueur du club concentré devant son échiquier, dans une salle de tournoi", legende: "Championnat par équipes à Gonfreville-l'Orcher (11 octobre 2026)." },
   { fichier: "photo-07", alt: "Vue d'ensemble de la salle de jeu, remplie de joueurs devant leurs échiquiers", legende: "Championnat par équipes à Gonfreville-l'Orcher (11 octobre 2026)." },

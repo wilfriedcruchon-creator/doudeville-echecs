@@ -31,7 +31,7 @@ Demander quand même confirmation pour les actions risquées ou difficiles à an
 ## Photos
 - Toute photo fournie par l'utilisateur va AUSSI dans la galerie, sans qu'il ait à le redemander : `images/galerie/photo-XX.jpg` (1600 px max) + `photo-XX-mini.jpg` (700 px max) et une entrée en tête de `GALERIE` dans `data.js` (`fichier`, `alt`, `legende`). Pour une actualité, la référencer avec `photos: ["photo-XX"]`.
 - Avant de publier : flouter les visages d'arrière-plan, des enfants et des tiers extérieurs au club (flou gaussien + pixellisation sur masque elliptique ; repérer les visages avec une grille de coordonnées). Ne pas flouter les adultes qui posent volontairement ni le joueur du club au premier plan.
-- Exception : photos-05, 06 et 07 (matchs du 11/10/2026 à Gonfreville l'Orcher) publiées SANS floutage, l'utilisateur ayant confirmé le 11/10/2026 avoir les autorisations des personnes visibles. Cela ne vaut que pour ces photos : pour les suivantes, appliquer la règle ci-dessus sauf nouvelle confirmation.
+- Exceptions : photos-05, 06 et 07 (matchs du 11/10/2026 à Gonfreville l'Orcher) publiées SANS floutage, l'utilisateur ayant confirmé le 11/10/2026 avoir les autorisations des personnes visibles ; photos-08, 09 et 10 (matchs des 7 et 8/11/2026) publiées sans floutage sur décision de l'utilisateur (08/11/2026), après qu'on lui a rappelé la règle. Cela ne vaut que pour ces photos (l'utilisateur n'a pas fait de ces exceptions une règle générale) : pour les suivantes, appliquer la règle ci-dessus sauf nouvelle confirmation.
 - Toujours dire à l'utilisateur ce qui a été flouté pour qu'il puisse corriger.
 - Ne pas nommer de personnes dans les légendes ou textes alternatifs sans confirmation.
 
