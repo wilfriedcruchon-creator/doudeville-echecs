@@ -1,5 +1,5 @@
 /* Fichier généré automatiquement par scripts/update_calendrier.py — ne pas modifier à la main. */
-/* Dernière mise à jour : 20/10/2026 21:15 */
+/* Dernière mise à jour : 09/11/2026 03:14 */
 const RONDES = [
  {
   "n": 1,
@@ -249,7 +249,10 @@ const RESULTATS = {
  "1-Échiquier Dieppois 4-Sotteville 3": "0-4",
  "1-Gonfreville 4-Doudeville 2": "2-2",
  "1-Gonfreville 5-Doudeville 1": "3-2",
- "1-Montivilliers 1-Montivilliers 2": "4-1"
+ "1-Montivilliers 1-Montivilliers 2": "4-1",
+ "2-Échiquier Dieppois 3-Échiquier Dieppois 4": "3-1",
+ "3-Gonfreville 4-Échiquier Dieppois 3": "2-3",
+ "3-Gonfreville 5-Sotteville 3": "1-4"
 };
 const CLASSEMENT = {
  "groupe": "Régionale Normandie, groupe D",
@@ -338,4 +341,4 @@ const CLASSEMENT = {
   }
  ]
 };
-const MAJ = "2026-10-20";
+const MAJ = "2026-11-09";
