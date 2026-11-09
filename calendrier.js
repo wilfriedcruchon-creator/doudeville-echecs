@@ -1,5 +1,5 @@
 /* Fichier généré automatiquement par scripts/update_calendrier.py — ne pas modifier à la main. */
-/* Dernière mise à jour : 09/11/2026 03:14 */
+/* Dernière mise à jour : 09/11/2026 23:37 */
 const RONDES = [
  {
   "n": 1,
@@ -250,6 +250,9 @@ const RESULTATS = {
  "1-Gonfreville 4-Doudeville 2": "2-2",
  "1-Gonfreville 5-Doudeville 1": "3-2",
  "1-Montivilliers 1-Montivilliers 2": "4-1",
+ "2-Doudeville 1-Montivilliers 1": "2-3",
+ "2-Doudeville 2-Gonfreville 5": "1-4",
+ "2-Sotteville 3-Gonfreville 4": "4-1",
  "2-Échiquier Dieppois 3-Échiquier Dieppois 4": "3-1",
  "3-Gonfreville 4-Échiquier Dieppois 3": "2-3",
  "3-Gonfreville 5-Sotteville 3": "1-4"
