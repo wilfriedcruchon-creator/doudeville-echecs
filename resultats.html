@@ -62,7 +62,7 @@ document.getElementById("bilans").innerHTML = EQUIPES.map(e => {
   return `<div class="card"><h3>${esc(e.nom)}</h3><div class="meta">${esc(e.competition)}</div>` +
     (s.joues
       ? `<div class="chiffres">${c(s.v, "victoire" + (s.v > 1 ? "s" : ""), "win")}${c(s.n, "nul" + (s.n > 1 ? "s" : ""), "draw")}${c(s.d, "défaite" + (s.d > 1 ? "s" : ""), "loss")}</div>
-         <p class="meta">Parties : ${fmtNum(s.pour)} – ${fmtNum(s.contre)} · ${s.joues} match${s.joues > 1 ? "s" : ""} joué${s.joues > 1 ? "s" : ""}</p>`
+         <p class="meta">${s.joues} match${s.joues > 1 ? "s" : ""} joué${s.joues > 1 ? "s" : ""}</p>`
       : `<p class="meta">Aucun match joué pour le moment.</p>`) + composition(e, true) + `</div>`;
 }).join("");
 
