@@ -1,5 +1,5 @@
 /* Fichier généré automatiquement par scripts/update_calendrier.py — ne pas modifier à la main. */
-/* Dernière mise à jour : 09/11/2026 23:37 */
+/* Dernière mise à jour : 10/11/2026 13:57 */
 const RONDES = [
  {
   "n": 1,
@@ -255,93 +255,95 @@ const RESULTATS = {
  "2-Sotteville 3-Gonfreville 4": "4-1",
  "2-Échiquier Dieppois 3-Échiquier Dieppois 4": "3-1",
  "3-Gonfreville 4-Échiquier Dieppois 3": "2-3",
- "3-Gonfreville 5-Sotteville 3": "1-4"
+ "3-Gonfreville 5-Sotteville 3": "1-4",
+ "3-Montivilliers 1-Doudeville 2": "4-1",
+ "3-Montivilliers 2-Doudeville 1": "0-5"
 };
 const CLASSEMENT = {
  "groupe": "Régionale Normandie, groupe D",
  "source": "https://www.echecs.asso.fr/Equipes.aspx?Groupe=2635",
  "equipes": [
   {
-   "pl": null,
-   "nom": "Échiquier Dieppois 3",
-   "pts": null,
-   "j": null,
-   "d": null,
-   "p": null,
-   "c": null
-  },
-  {
    "pl": 1,
    "nom": "Sotteville 3",
-   "pts": 3,
-   "j": 1,
-   "d": 4,
-   "p": 4,
-   "c": 0
+   "pts": 9,
+   "j": 3,
+   "d": 10,
+   "p": 12,
+   "c": 2
   },
   {
    "pl": 2,
    "nom": "Montivilliers 1",
-   "pts": 3,
-   "j": 1,
-   "d": 3,
-   "p": 4,
-   "c": 1
+   "pts": 9,
+   "j": 3,
+   "d": 7,
+   "p": 11,
+   "c": 4
   },
   {
    "pl": 3,
    "nom": "Gonfreville 5",
-   "pts": 3,
-   "j": 1,
+   "pts": 7,
+   "j": 3,
    "d": 1,
-   "p": 3,
-   "c": 2
+   "p": 8,
+   "c": 7
   },
   {
    "pl": 4,
-   "nom": "Doudeville 2",
-   "pts": 2,
-   "j": 1,
-   "d": 0,
-   "p": 2,
-   "c": 2
-  },
-  {
-   "pl": 5,
-   "nom": "Gonfreville 4",
-   "pts": 2,
-   "j": 1,
-   "d": 0,
-   "p": 2,
-   "c": 2
-  },
-  {
-   "pl": 6,
-   "nom": "Doudeville 1",
-   "pts": 1,
-   "j": 1,
-   "d": -1,
-   "p": 2,
+   "nom": "Échiquier Dieppois 3",
+   "pts": 6,
+   "j": 2,
+   "d": 3,
+   "p": 6,
    "c": 3
   },
   {
+   "pl": 5,
+   "nom": "Doudeville 1",
+   "pts": 5,
+   "j": 3,
+   "d": 3,
+   "p": 9,
+   "c": 6
+  },
+  {
+   "pl": 6,
+   "nom": "Gonfreville 4",
+   "pts": 4,
+   "j": 3,
+   "d": -4,
+   "p": 5,
+   "c": 9
+  },
+  {
    "pl": 7,
-   "nom": "Montivilliers 2",
-   "pts": 1,
-   "j": 1,
-   "d": -3,
-   "p": 1,
-   "c": 4
+   "nom": "Doudeville 2",
+   "pts": 4,
+   "j": 3,
+   "d": -6,
+   "p": 4,
+   "c": 10
   },
   {
    "pl": 8,
    "nom": "Échiquier Dieppois 4",
-   "pts": 1,
-   "j": 1,
-   "d": -4,
-   "p": 0,
-   "c": 4
+   "pts": 2,
+   "j": 2,
+   "d": -6,
+   "p": 1,
+   "c": 7
+  },
+  {
+   "pl": 9,
+   "nom": "Montivilliers 2",
+   "pts": 2,
+   "j": 2,
+   "d": -8,
+   "p": 1,
+   "c": 9
   }
  ]
 };
-const MAJ = "2026-11-09";
+const MAJ = "2026-11-10";
