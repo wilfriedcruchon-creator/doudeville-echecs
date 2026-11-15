@@ -37,7 +37,7 @@ const ACTUALITES = [
   {
     date: "2026-11-08",
     titre: "Régionale : un week-end de matchs pour nos deux équipes",
-    texte: "Ce samedi 7 novembre, les deux équipes de Doudeville évoluaient dans la somptueuse salle principale de l'Hôtel de Ville. Doudeville 1 s'est incliné 3 à 2 face à la belle équipe de Montivilliers 1 emmenée par Etienne Grancher (2024 Elo). Belles performances de Philippe et Anatole, qui remportent leur partie face à des joueurs à 1448 et 1484 Elo. Doudeville 2 s'incline 4 à 1 face à Gonfreville 5, Marc Chemin sauve l'honneur en s'imposant face à un joueur à 1549 Elo.\n" +
+    texte: "Ce samedi 7 novembre, les deux équipes de Doudeville évoluaient dans la somptueuse salle principale de l'Hôtel de Ville. Doudeville 1 s'est incliné 3 à 2 face à la belle équipe de Montivilliers 1 emmenée par **Etienne Grancher** (*2024 Elo*). Belles performances de **Philippe** et **Anatole**, qui remportent leur partie face à des joueurs à *1448 Elo* et *1484 Elo*. Doudeville 2 s'incline 4 à 1 face à Gonfreville 5, **Marc Chemin** sauve l'honneur en s'imposant face à un joueur à *1549 Elo*.\n" +
       "Ce dimanche, écrasante victoire de Doudeville 1 sur un score sans appel de 5-0 face à Montivilliers 2. L'équipe 2 de Doudeville s'incline logiquement face à Montivilliers 1 sur un score de 4 à 1.\n" +
       "Un beau week-end échiquéen au cours duquel les deux équipes ont pu faire tourner l'effectif, ce qui a permis à un certain nombre de joueurs moins expérimentés de faire leurs débuts en compétition.",
     photos: ["photo-08", "photo-09", "photo-10"],
@@ -56,7 +56,7 @@ const ACTUALITES = [
     texte: "Le Championnat de Seine-Maritime Jeunes d'échecs aura lieu les 14 et 15 novembre 2026 au dojo du club d'échecs de Gonfreville l'Orcher (2 rue des Sports).\n" +
       "Les U08 et U10 jouent le samedi 14 novembre de 13 h à 19 h ; les U12 à U20 le dimanche 15 novembre de 9 h à 18 h 30.\n" +
       "Licence A obligatoire, droit d'inscription de 10 €. Inscription et paiement avant le mercredi 11 novembre : aucune inscription ne pourra être prise sur place.\n" +
-      "L'inscription se fait à titre individuel ; contacter Hubert ou Wilfried pour plus d'informations.",
+      "L'inscription se fait à titre individuel ; contacter **Hubert** ou **Wilfried** pour plus d'informations.",
     bandeau: "images/affiche-championnat-jeunes-76-2026.jpg",
     bandeauAlt: "Bandeau du Championnat de Seine-Maritime Jeunes d'échecs, les 14 et 15 novembre 2026 à Gonfreville l'Orcher : U08 et U10 le samedi de 13 h à 19 h, U12 à U20 le dimanche de 9 h à 18 h 30, licence A obligatoire, 10 €, inscription avant le mercredi 11 novembre",
     lien: "https://orcherlatour.fr/informationssmjeunes2026",
@@ -65,7 +65,7 @@ const ACTUALITES = [
   {
     date: "2026-10-11",
     titre: "Championnat par équipes : deux matchs à Gonfreville l'Orcher",
-    texte: "Les deux équipes de Doudeville se rendaient aujourd'hui à Gonfreville l'Orcher pour affronter les équipes 4 et 5 du prestigieux club d'Orcher la Tour. L'équipe 1 s'incline 3 à 2 face à l'équipe 5 du club local et l'équipe 2 réussit à arracher le score de parité grâce à deux exploits signés Jacky Hebert et Elouan Gentet.",
+    texte: "Les deux équipes de Doudeville se rendaient aujourd'hui à Gonfreville l'Orcher pour affronter les équipes 4 et 5 du prestigieux club d'Orcher la Tour. L'équipe 1 s'incline 3 à 2 face à l'équipe 5 du club local et l'équipe 2 réussit à arracher le score de parité grâce à deux exploits signés **Jacky Hebert** et **Elouan Gentet**.",
     photos: ["photo-05", "photo-06", "photo-07"],
   },
   {
@@ -80,9 +80,9 @@ const ACTUALITES = [
     date: "2026-10-04",
     titre: "19e Rapide d'Orcher la Tour : une belle journée d'échecs",
     texte: "Une belle journée à Gonfreville l’Orcher pour le 19e Rapide d’Orcher la Tour réunissant 126 participants (dont un Grand Maître et trois Maîtres FIDE).\n" +
-      "David Angot se hisse à la 46e place avec un score de 5/9.\n" +
-      "David Pointel atteint la 66e place avec un joli 4,5/9.\n" +
-      "Wilfried Cruchon fait 72e avec également un 4,5/9.\n" +
+      "**David Angot** se hisse à la 46e place avec un score de 5/9.\n" +
+      "**David Pointel** atteint la 66e place avec un joli 4,5/9.\n" +
+      "**Wilfried Cruchon** fait 72e avec également un 4,5/9.\n" +
       "Une belle journée d’échecs et un repas super copieux partagé au buffet à volonté qui se trouvait à deux pas du tournoi ^^",
     photos: ["photo-03", "photo-04"],
   },
