@@ -34,7 +34,9 @@ function idYoutube(v) {
   return m ? (m[1] || m[2]) : null;
 }
 /* Texte en plusieurs paragraphes : une ligne du texte (séparée par \n) = un paragraphe */
-const paragraphes = t => String(t || "").split("\n").map(p => p.trim()).filter(Boolean).map(p => `<p>${esc(p)}</p>`).join("");
+/* Mise en forme simple dans les actualités : **gras** et *italique* (le reste du texte est échappé) */
+const mef = p => esc(p).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>");
+const paragraphes = t => String(t || "").split("\n").map(p => p.trim()).filter(Boolean).map(p => `<p>${mef(p)}</p>`).join("");
 /* Photos d'une actualité : renvoie le HTML des vignettes, en reprenant légende et texte alternatif de la galerie */
 function photosActu(fichiers) {
   if (!fichiers || !fichiers.length || typeof GALERIE === "undefined") return "";

@@ -26,11 +26,11 @@ const ACTUALITES = [
     date: "2026-11-15",
     titre: "Championnat de Seine-Maritime Jeunes : belles performances du DAE",
     texte: "Belles performances pour nos jeunes représentants du DAE au championnat de Seine-Maritime d'échecs qui se tenait ce week-end à Gonfreville l'Orcher.\n" +
-      "Axel BAUDET décroche la 2e place en U08.\n" +
-      "Vincenzo se hisse à la 13e place en U12.\n" +
-      "Soan GONTHIER atteint une belle 23e place pour son premier tournoi, en U14.\n" +
-      "Benjamin GUYOT fait 39e en U14.\n" +
-      "Elouan GENTET accroche une très belle 11e place en U16.\n" +
+      "**Axel BAUDET** décroche la **2e place** en *U08*.\n" +
+      "**Vincenzo BRAULT** se hisse à la **13e place** en *U12*.\n" +
+      "**Soan GONTHIER** atteint une belle **23e place** pour son premier tournoi, en *U14*.\n" +
+      "**Benjamin GUYOT** fait **39e** en *U14*.\n" +
+      "**Elouan GENTET** accroche une très belle **11e place** en *U16*.\n" +
       "Félicitations à nos champions !",
     photos: ["photo-11", "photo-12", "photo-13", "photo-14"],
   },
