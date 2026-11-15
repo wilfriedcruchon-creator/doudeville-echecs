@@ -23,6 +23,18 @@ const CLUB = {
    Toute photo d'actualité doit aussi figurer dans GALERIE ci-dessous. */
 const ACTUALITES = [
   {
+    date: "2026-11-15",
+    titre: "Championnat de Seine-Maritime Jeunes : belles performances du DAE",
+    texte: "Belles performances pour nos jeunes représentants du DAE au championnat de Seine-Maritime d'échecs qui se tenait ce week-end à Gonfreville l'Orcher.\n" +
+      "Axel BAUDET décroche la 2e place en U08.\n" +
+      "Vincenzo se hisse à la 13e place en U12.\n" +
+      "Soan GONTHIER atteint une belle 23e place pour son premier tournoi, en U14.\n" +
+      "Benjamin GUYOT fait 39e en U14.\n" +
+      "Elouan GENTET accroche une très belle 11e place en U16.\n" +
+      "Félicitations à nos champions !",
+    photos: ["photo-11", "photo-12", "photo-13", "photo-14"],
+  },
+  {
     date: "2026-11-08",
     titre: "Régionale : un week-end de matchs pour nos deux équipes",
     texte: "Ce samedi 7 novembre, les deux équipes de Doudeville évoluaient dans la somptueuse salle principale de l'Hôtel de Ville. Doudeville 1 s'est incliné 3 à 2 face à la belle équipe de Montivilliers 1 emmenée par Etienne Grancher (2024 Elo). Belles performances de Philippe et Anatole, qui remportent leur partie face à des joueurs à 1448 et 1484 Elo. Doudeville 2 s'incline 4 à 1 face à Gonfreville 5, Marc Chemin sauve l'honneur en s'imposant face à un joueur à 1549 Elo.\n" +
@@ -128,6 +140,10 @@ const TOURNOIS = [
 /* Galerie photos. Pour ajouter une photo : déposer photo-XX.jpg et photo-XX-mini.jpg dans images/galerie/
    puis ajouter une ligne ci-dessous (la plus récente en premier). legende est facultative. */
 const GALERIE = [
+  { fichier: "photo-11", alt: "Un jeune joueur réfléchit la main sur la joue devant son échiquier, au milieu des autres joueurs de la salle", legende: "Championnat de Seine-Maritime Jeunes, Gonfreville-l'Orcher (14 et 15 novembre 2026)." },
+  { fichier: "photo-12", alt: "Un jeune joueur déplace une pièce sur un échiquier, avec les pendules numériques allumées, dans une rangée de parties en cours", legende: "Championnat de Seine-Maritime Jeunes, Gonfreville-l'Orcher (14 et 15 novembre 2026)." },
+  { fichier: "photo-13", alt: "Portrait d'un jeune joueur à lunettes concentré qui s'apprête à déplacer une pièce", legende: "Championnat de Seine-Maritime Jeunes, Gonfreville-l'Orcher (14 et 15 novembre 2026)." },
+  { fichier: "photo-14", alt: "Un jeune joueur sourit en tenant une coupe dans la salle de jeu, devant deux adultes", legende: "Championnat de Seine-Maritime Jeunes, Gonfreville-l'Orcher (14 et 15 novembre 2026)." },
   { fichier: "photo-08", alt: "Deux joueurs face à face au premier plan et une longue rangée d'échiquiers dans la salle de l'Hôtel de Ville de Doudeville", legende: "Championnat par équipes à l'Hôtel de Ville de Doudeville (7 novembre 2026)." },
   { fichier: "photo-09", alt: "Rangée d'échiquiers sous la charpente en bois de la salle de l'Hôtel de Ville de Doudeville, avec les joueurs concentrés", legende: "Championnat par équipes à l'Hôtel de Ville de Doudeville (7 novembre 2026)." },
   { fichier: "photo-10", alt: "Deux joueurs de part et d'autre d'un échiquier en pleine partie", legende: "Championnat par équipes (week-end des 7 et 8 novembre 2026)." },
