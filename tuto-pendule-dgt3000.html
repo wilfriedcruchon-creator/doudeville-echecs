@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuto : régler la pendule DGT 3000 – Doudeville Accueil Échecs</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .video-tuto { position: relative; width: 100%; max-width: 860px; aspect-ratio: 16 / 9; border-radius: 8px; border: 1px solid var(--line); background: #000; overflow: hidden; }
+  .video-tuto iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .etapes { padding-left: 22px; }
+  .etapes li { margin: 0 0 12px; }
+  .etapes button { font: inherit; font-size: 13px; cursor: pointer; margin-left: 6px; padding: 1px 8px; border-radius: 6px; border: 1px solid var(--accent); background: var(--bg); color: var(--accent); }
+  .etapes button:hover { background: var(--accent); color: #fff; }
+</style>
+<meta name="description" content="Tutoriel vidéo : comment programmer la pendule électronique DGT 3000 avec la cadence des Interclubs Régionale (1h30 + 30s / 30 mn +30s).">
+<link rel="canonical" href="https://doudeville-echecs.fr/tuto-pendule-dgt3000.html">
+<meta name="theme-color" content="#8a1310">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Doudeville Accueil Échecs">
+<meta property="og:title" content="Tuto : régler la pendule DGT 3000 – Doudeville Accueil Échecs">
+<meta property="og:description" content="Tutoriel vidéo : comment programmer la pendule électronique DGT 3000 avec la cadence des Interclubs Régionale.">
+<meta property="og:url" content="https://doudeville-echecs.fr/tuto-pendule-dgt3000.html">
+<meta property="og:image" content="https://doudeville-echecs.fr/images/partage.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<main><div class="wrap">
+  <h1 class="page">Tuto : régler la pendule DGT 3000</h1>
+  <p class="lead">Comment programmer la pendule électronique DGT 3000 avec une cadence de partie d'Interclubs Régionale (1h30 + 30s / 30 mn +30s), en vidéo puis pas à pas.</p>
+
+  <div class="video-tuto">
+    <iframe id="video" src="https://www.youtube-nocookie.com/embed/tEwRT84W5Mg?start=17&end=185&rel=0" title="Régler la pendule DGT 3000 (Chess_Gorilla / Chessette.com)" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+  <p class="legend">Vidéo en anglais, extrait de « <a href="https://www.youtube.com/watch?v=tEwRT84W5Mg" target="_blank" rel="noopener">Setting the DGT 3000 for the North American Open</a> » par Chess_Gorilla (Chessette.com), sur YouTube. Cliquez sur « ▶ » à côté d'une étape pour aller directement à l'endroit correspondant.</p>
+
+  <h2>La cadence réglée</h2>
+  <p><strong>Période 1 : 1 h 30 avec 30 secondes ajoutées à chaque coup, pour 40 coups. Période 2 : 30 minutes, avec 30 secondes ajoutées à chaque coup</strong> jusqu'à la fin de la partie (cadence Fischer).</p>
+
+  <h2>Les étapes</h2>
+  <ol class="etapes" id="etapes"></ol>
+
+  <h2>À retenir</h2>
+  <ul>
+    <li>Au dos de la pendule, un tableau liste les réglages manuels. Le réglage manuel utilisé ici porte le numéro <strong>26</strong>.</li>
+    <li>Un chiffre ou un mode qui clignote est celui qu'on est en train de régler ; la touche « next » valide et passe à l'écran suivant.</li>
+    <li>Pour une période sans nombre de coups imposé, laissez 000.</li>
+    <li>Le réglage reste en mémoire sous son numéro : la pendule éteinte puis rallumée, il suffit de sélectionner de nouveau le 26.</li>
+  </ul>
+  <p>La pendule DGT 2000 est expliquée sur <a href="tuto-pendule.html">cette autre page</a>.</p>
+
+  <p><a href="club.html">← Retour au club</a></p>
+</div></main>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+const ETAPES = [
+  [32, "Allumer la pendule et choisir un réglage manuel : ici le numéro 26, que l'on sélectionne."],
+  [48, "Choisir le mode « Fischer » (temps ajouté à chaque coup) : attention à ne pas le dépasser."],
+  [66, "Période 1 : régler 1 h 30 (00 seconde), un bonus de 30 secondes par coup et 40 coups."],
+  [99, "Quand « Fischer » clignote pour la deuxième période, passer à l'écran suivant avec « next »."],
+  [112, "Période 2 : régler 30 minutes (00 seconde), bonus de 30 secondes, nombre de coups à 000 (pas de limite)."],
+  [128, "Valider, puis sélectionner « Sound off » et « Freeze off » : la pendule est réglée sous le numéro 26."],
+  [136, "Pour revenir à ce réglage, éteindre puis rallumer la pendule : le 26 clignote, il suffit de le sélectionner."]
+];
+const mmss = s => Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+const lst = document.getElementById("etapes");
+lst.innerHTML = ETAPES.map(e =>
+  `<li>${esc(e[1])} <button type="button" data-t="${e[0]}" aria-label="Aller à ${mmss(e[0])} dans la vidéo">▶ ${mmss(e[0])}</button></li>`).join("");
+lst.addEventListener("click", ev => {
+  const b = ev.target.closest("button[data-t]"); if (!b) return;
+  const v = document.getElementById("video");
+  v.src = "https://www.youtube-nocookie.com/embed/tEwRT84W5Mg?start=" + b.dataset.t + "&end=185&rel=0&autoplay=1";
+  v.scrollIntoView({ behavior: "smooth", block: "center" });
+});
+</script>
+</body>
+</html>
