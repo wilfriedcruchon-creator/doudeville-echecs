@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuto : régler la pendule DGT 2000 – Doudeville Accueil Échecs</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .video-tuto { width: 100%; max-width: 860px; height: auto; display: block; border-radius: 8px; border: 1px solid var(--line); background: #000; }
+  .etapes { padding-left: 22px; }
+  .etapes li { margin: 0 0 12px; }
+  .etapes button { font: inherit; font-size: 13px; cursor: pointer; margin-left: 6px; padding: 1px 8px; border-radius: 6px; border: 1px solid var(--accent); background: var(--bg); color: var(--accent); }
+  .etapes button:hover { background: var(--accent); color: #fff; }
+</style>
+<meta name="description" content="Tutoriel vidéo : comment programmer la pendule électronique DGT 2000 avec une cadence de tournoi (1 h 30 + 30 minutes, 30 secondes par coup).">
+<link rel="canonical" href="https://doudeville-echecs.fr/tuto-pendule.html">
+<meta name="theme-color" content="#8a1310">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Doudeville Accueil Échecs">
+<meta property="og:title" content="Tuto : régler la pendule DGT 2000 – Doudeville Accueil Échecs">
+<meta property="og:description" content="Tutoriel vidéo : comment programmer la pendule électronique DGT 2000 avec une cadence de tournoi.">
+<meta property="og:url" content="https://doudeville-echecs.fr/tuto-pendule.html">
+<meta property="og:image" content="https://doudeville-echecs.fr/images/partage.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<main><div class="wrap">
+  <h1 class="page">Tuto : régler la pendule DGT 2000</h1>
+  <p class="lead">Comment programmer la pendule électronique DGT 2000 avec une cadence de tournoi, en vidéo (3 minutes) puis pas à pas.</p>
+
+  <video id="video" class="video-tuto" controls preload="metadata" poster="videos/tuto-pendule-dgt2000.jpg">
+    <source src="videos/tuto-pendule-dgt2000.mp4" type="video/mp4">
+    Votre navigateur ne sait pas lire cette vidéo : <a href="videos/tuto-pendule-dgt2000.mp4">téléchargez-la</a>.
+  </video>
+  <p class="legend">Cliquez sur « ▶ » à côté d'une étape pour aller directement à l'endroit correspondant de la vidéo.</p>
+
+  <h2>L'exemple de la vidéo</h2>
+  <p>Cadence programmée : <strong>1 h 30 pour la première période, 30 minutes pour la seconde, avec 30 secondes ajoutées à chaque coup</strong> pendant toute la partie.</p>
+
+  <h2>Choisir le programme</h2>
+  <p>Au dos de la pendule, un tableau liste les programmes numérotés. Pour une cadence avec périodes, on utilise les programmes <strong>23, 24 ou 25</strong>. Le 24 est moins courant, mais utilisable. Le <strong>25</strong> est le mode manuel : on y règle librement tous les paramètres. C'est celui de la vidéo.</p>
+
+  <h2>Les étapes</h2>
+  <ol class="etapes" id="etapes"></ol>
+
+  <h2>À retenir</h2>
+  <ul>
+    <li><strong>+1</strong> fait avancer le chiffre qui clignote ; <strong>OK</strong> valide et passe au chiffre ou à l'écran suivant.</li>
+    <li>Pour une période sans nombre de coups imposé, laissez 00.</li>
+    <li>Vérifiez toujours en jouant quelques coups : le temps doit bien augmenter à chaque appui.</li>
+  </ul>
+
+  <p><a href="club.html">← Retour au club</a></p>
+</div></main>
+<script src="data.js"></script>
+<script src="site.js"></script>
+<script>
+const ETAPES = [
+  [17, "Choisir le programme 25 (mode manuel) avec +1, puis valider avec OK : la pendule demande alors de tout régler."],
+  [29, "Régler la durée de la première période : le premier nombre correspond aux heures, le deuxième aux minutes. Ici 1 h 30 (+1 pour ajouter les chiffres, OK pour valider le chiffre qui clignote)."],
+  [67, "Les secondes : on n'en a pas besoin, on valide avec OK."],
+  [80, "Régler l'incrément (minutes puis secondes) : 30 secondes, puis OK."],
+  [100, "Période 1 : indiquer le nombre de coups au bout duquel la période se termine. Avec la cadence FIDE, on ne veut pas l'afficher aux joueurs : on ne met rien."],
+  [115, "Période 2 : 30 minutes (0 h 30, 00 seconde, 00 coup)."],
+  [132, "Périodes 3 et 4 : on n'en a pas, donc 0 partout. Aucun temps supplémentaire n'est ajouté."],
+  [145, "La pendule est réglée. Les deux petits points qui clignotent montrent que la pendule est prête à démarrer."],
+  [159, "Vérifier en jouant : après deux coups, une minute a bien été ajoutée (30 secondes par coup)."],
+  [177, "Start/Stop pour arrêter la pendule."]
+];
+const mmss = s => Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+document.getElementById("etapes").innerHTML = ETAPES.map(e =>
+  `<li>${esc(e[1])} <button type="button" data-t="${e[0]}" aria-label="Aller à ${mmss(e[0])} dans la vidéo">▶ ${mmss(e[0])}</button></li>`).join("");
+document.getElementById("etapes").addEventListener("click", ev => {
+  const b = ev.target.closest("button[data-t]"); if (!b) return;
+  const v = document.getElementById("video");
+  v.currentTime = +b.dataset.t; v.play();
+  v.scrollIntoView({ behavior: "smooth", block: "center" });
+});
+</script>
+</body>
+</html>
