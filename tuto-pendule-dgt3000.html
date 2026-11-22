@@ -6,8 +6,7 @@
 <title>Tuto : régler la pendule DGT 3000 – Doudeville Accueil Échecs</title>
 <link rel="stylesheet" href="style.css">
 <style>
-  .video-tuto { position: relative; width: 100%; max-width: 860px; aspect-ratio: 16 / 9; border-radius: 8px; border: 1px solid var(--line); background: #000; overflow: hidden; }
-  .video-tuto iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video-tuto { width: 100%; max-width: 860px; height: auto; display: block; border-radius: 8px; border: 1px solid var(--line); background: #000; }
   .etapes { padding-left: 22px; }
   .etapes li { margin: 0 0 12px; }
   .etapes button { font: inherit; font-size: 13px; cursor: pointer; margin-left: 6px; padding: 1px 8px; border-radius: 6px; border: 1px solid var(--accent); background: var(--bg); color: var(--accent); }
@@ -30,10 +29,11 @@
   <h1 class="page">Tuto : régler la pendule DGT 3000</h1>
   <p class="lead">Comment programmer la pendule électronique DGT 3000 avec une cadence de partie d'Interclubs Régionale (1h30 + 30s / 30 mn +30s), en vidéo puis pas à pas.</p>
 
-  <div class="video-tuto">
-    <iframe id="video" src="https://www.youtube-nocookie.com/embed/tEwRT84W5Mg?start=17&end=185&rel=0" title="Régler la pendule DGT 3000 (Chess_Gorilla / Chessette.com)" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-  </div>
-  <p class="legend">Vidéo en anglais, extrait de « <a href="https://www.youtube.com/watch?v=tEwRT84W5Mg" target="_blank" rel="noopener">Setting the DGT 3000 for the North American Open</a> » par Chess_Gorilla (Chessette.com), sur YouTube. Cliquez sur « ▶ » à côté d'une étape pour aller directement à l'endroit correspondant.</p>
+  <video id="video" class="video-tuto" controls preload="metadata" poster="videos/tuto-pendule-dgt3000.jpg">
+    <source src="videos/tuto-pendule-dgt3000.mp4" type="video/mp4">
+    Votre navigateur ne sait pas lire cette vidéo : <a href="videos/tuto-pendule-dgt3000.mp4">téléchargez-la</a>.
+  </video>
+  <p class="legend">Vidéo en anglais, extrait de « <a href="https://www.youtube.com/watch?v=tEwRT84W5Mg" target="_blank" rel="noopener">Setting the DGT 3000 for the North American Open</a> » par Chess_Gorilla (Chessette.com), publié ici avec l'accord de l'auteur. Cliquez sur « ▶ » à côté d'une étape pour aller directement à l'endroit correspondant.</p>
 
   <h2>La cadence réglée</h2>
   <p><strong>Période 1 : 1 h 30 avec 30 secondes ajoutées à chaque coup, pour 40 coups. Période 2 : 30 minutes, avec 30 secondes ajoutées à chaque coup</strong> jusqu'à la fin de la partie (cadence Fischer).</p>
@@ -56,13 +56,13 @@
 <script src="site.js"></script>
 <script>
 const ETAPES = [
-  [32, "Allumer la pendule et choisir un réglage manuel : ici le numéro 26, que l'on sélectionne."],
-  [48, "Choisir le mode « Fischer » (temps ajouté à chaque coup) : attention à ne pas le dépasser."],
-  [66, "Période 1 : régler 1 h 30 (00 seconde), un bonus de 30 secondes par coup et 40 coups."],
-  [99, "Quand « Fischer » clignote pour la deuxième période, passer à l'écran suivant avec « next »."],
-  [112, "Période 2 : régler 30 minutes (00 seconde), bonus de 30 secondes, nombre de coups à 000 (pas de limite)."],
-  [128, "Valider, puis sélectionner « Sound off » et « Freeze off » : la pendule est réglée sous le numéro 26."],
-  [136, "Pour revenir à ce réglage, éteindre puis rallumer la pendule : le 26 clignote, il suffit de le sélectionner."]
+  [15, "Allumer la pendule et choisir un réglage manuel : ici le numéro 26, que l'on sélectionne."],
+  [31, "Choisir le mode « Fischer » (temps ajouté à chaque coup) : attention à ne pas le dépasser."],
+  [49, "Période 1 : régler 1 h 30 (00 seconde), un bonus de 30 secondes par coup et 40 coups."],
+  [82, "Quand « Fischer » clignote pour la deuxième période, passer à l'écran suivant avec « next »."],
+  [95, "Période 2 : régler 30 minutes (00 seconde), bonus de 30 secondes, nombre de coups à 000 (pas de limite)."],
+  [111, "Valider, puis sélectionner « Sound off » et « Freeze off » : la pendule est réglée sous le numéro 26."],
+  [119, "Pour revenir à ce réglage, éteindre puis rallumer la pendule : le 26 clignote, il suffit de le sélectionner."]
 ];
 const mmss = s => Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
 const lst = document.getElementById("etapes");
@@ -71,7 +71,7 @@ lst.innerHTML = ETAPES.map(e =>
 lst.addEventListener("click", ev => {
   const b = ev.target.closest("button[data-t]"); if (!b) return;
   const v = document.getElementById("video");
-  v.src = "https://www.youtube-nocookie.com/embed/tEwRT84W5Mg?start=" + b.dataset.t + "&end=185&rel=0&autoplay=1";
+  v.currentTime = +b.dataset.t; v.play();
   v.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 </script>
