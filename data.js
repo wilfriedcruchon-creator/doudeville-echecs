@@ -32,7 +32,7 @@ const ACTUALITES = [
       "**Philippe Lenoble** (*1399 Elo*) remporte sa partie face à un joueur à *1469 Elo*. **Hubert Paillette** (*1505 Elo*) s'incline face à un joueur à *1570 Elo*, **Nicolas Dutertre** (*1399 Elo*) face à un joueur à *1540 Elo* et **Anatole Deslandre** (*1299 Elo*) face à un joueur à *1399 Elo*.\n" +
       "**Ronde 3 : Doudeville 1 - 3 Gonfreville 4.**\n" +
       "**Anatole Deslandre** (*1299 Elo*) signe une deuxième victoire dans la journée face à un joueur à *1299 Elo*. **Hubert Paillette** (*1505 Elo*) s'incline face à un joueur à *1566 Elo*, **Philippe Lenoble** (*1399 Elo*) face à un joueur à *1564 Elo* et **Jacky Hebert** (*1399 Elo*) face à un joueur à *1562 Elo*.\n" +
-      "Au classement provisoire, Doudeville est 17e sur 18 avec 3 matchs joués. La suite de la compétition permettra de se rattraper : félicitations à nos joueurs pour leur courage et leurs trois victoires individuelles !",
+      "Au classement provisoire, Doudeville est 17e sur 18 avec 3 matchs joués.",
   },
   {
     date: "2026-11-15",
