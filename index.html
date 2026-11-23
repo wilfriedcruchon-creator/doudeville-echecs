@@ -69,8 +69,8 @@
   <h2>Prochaines rencontres</h2>
   <div class="grid" id="next"></div>
 
-  <h2>Dernière actualité</h2>
-  <div id="news"></div>
+  <h2>Dernières actualités</h2>
+  <div id="news" style="display:grid;gap:16px"></div>
   <p><a href="actualites.html">Toutes les actualités →</a></p>
 
   <h2>Prochain tournoi</h2>
@@ -93,10 +93,9 @@ document.getElementById("next").innerHTML = EQUIPES.map(e => {
   </div>`;
 }).join("") + `<div class="card"><a href="calendriers.html">Voir tous les calendriers →</a></div>`;
 
-const a = ACTUALITES[0];
-document.getElementById("news").innerHTML = a
-  ? `<div class="card">${bandeauActu(a)}<h3>${esc(a.titre)}</h3><div class="meta">${cap(fmtDate(a.date, true))}</div>${paragraphes(a.texte)}${photosActu(a.photos)}
-      ${a.lien ? `<p><a href="${esc(a.lien)}">${esc(a.lienTexte || "En savoir plus")} →</a></p>` : ""}</div>`
+document.getElementById("news").innerHTML = ACTUALITES.length
+  ? ACTUALITES.slice(0, 3).map(a => `<div class="card">${bandeauActu(a)}<h3>${esc(a.titre)}</h3><div class="meta">${cap(fmtDate(a.date, true))}</div>${paragraphes(a.texte)}${photosActu(a.photos)}
+      ${a.lien ? `<p><a href="${esc(a.lien)}">${esc(a.lienTexte || "En savoir plus")} →</a></p>` : ""}</div>`).join("")
   : `<div class="empty">Aucune actualité pour le moment.</div>`;
 
 const t = TOURNOIS.filter(x => x.date >= todayISO()).sort((x, y) => x.date.localeCompare(y.date))[0];
