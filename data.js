@@ -294,7 +294,7 @@ const TROPHEE = {
   titre: "Trophée départemental 76 2026-2027",
   infos: "Équipes de 4 joueurs · Matchs à 14 h 15 · Cadence : 50 min + 10 s par coup",
   rondes: [
-    { ronde: "1", date: "2026-11-28" },
+    { ronde: "1", reporte: true }, /* reportée (initialement le 28/11/2026), nouvelle date non communiquée */
     { ronde: "2", date: "2026-12-12" },
     { ronde: "3", date: "2027-01-16" },
     { ronde: "4", date: "2027-02-13" },

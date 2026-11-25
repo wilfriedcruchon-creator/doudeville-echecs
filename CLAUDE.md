@@ -43,7 +43,8 @@ Données dans `TROPHEE` (`data.js`), affichées sur `calendriers.html` (onglet �
 - (V09/2026, périmé sur ce point) Elo standard ≤ 1800 à la première apparition en équipe ; 100 points d'écart max entre échiquiers (le mieux classé devant) ; composition remise 5 min avant, sans trou, identique au match retour.
 - Forfait d'équipe : 25 € (50 € à la dernière ronde) ; 3 forfaits de joueurs = match perdu 3-0. Le club qui reçoit fournit salle et matériel. PV à transmettre avant 22 h le soir même.
 - Points de match : victoire 3, nul 2, défaite 1, forfait 0.
-- Dates : 28/11/26, 12/12/26, 16/01/27, 13/02/27, 13/03/27, 10/04/27, 15/05/27, 05/06/27 (tous des samedis).
+- Ronde 1 REPORTÉE (annonce du 25/11/2026), nouvelle date non communiquée : `reporte: true` dans `TROPHEE` (data.js), affichée « Reportée » sur calendriers.html ; à remplacer par `date` quand elle sera connue.
+- Dates initiales : 28/11/26 (reportée), 12/12/26, 16/01/27, 13/02/27, 13/03/27, 10/04/27, 15/05/27, 05/06/27 (tous des samedis).
 
 ## Informations de contact publiées
 Président : Hubert Paillette. Webmaster : Wilfried Cruchon, wilfried.cruchon@gmail.com.
